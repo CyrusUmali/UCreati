@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Portfolio — See It In Action</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAFAF8;--surface:#F0F3EE;--border:#C8D4C8;
+  --primary:#3B6D11;--primary-d:#27500A;--primary-p:#C0DD97;
+  --ink:#1F3028;--ink-mid:#3B6D11;--ink-mute:#639922;--accent:#FF4C3E;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-14px) rotate(2deg)}66%{transform:translateY(6px) rotate(-1.5deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0) rotate(0deg)}40%{transform:translateY(10px) rotate(-2deg)}80%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes floatC{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulseOpacity{0%,100%{opacity:0.35}50%{opacity:0.75}}
+@keyframes trailFade{0%{opacity:0;transform:scale(0.5)}20%{opacity:0.45}100%{opacity:0;transform:scale(1.8)}}
+@keyframes accentPulse{0%,100%{opacity:0.35}50%{opacity:0.9}}
+@keyframes gridSlide{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+@keyframes barFill{from{width:0}to{width:var(--w)}}
+@keyframes floatDiamond{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(-7px)}}
+@keyframes borderTrace{0%,100%{opacity:0.3}50%{opacity:0.9}}
+
+html,body{background:var(--bg);font-family:'Raleway',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── section shell ── */
+.works-section{
+  position:relative;
+  padding:7rem 0;
+  overflow:hidden;
+  background:var(--bg);
+  border-top:1px solid var(--border);
+}
+
+/* bg svg */
+.bg-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.dg1{animation:floatA 9s ease-in-out infinite;opacity:0.85}
+.dg2{animation:floatB 11s ease-in-out infinite;opacity:0.8}
+.dg3{animation:floatC 7s ease-in-out 1s infinite;opacity:0.8}
+.dg4{animation:floatA 8s ease-in-out 3s infinite;opacity:0.75}
+.dg5{animation:floatB 10s ease-in-out 0.5s infinite;opacity:0.75}
+.fp1{animation:pulseOpacity 6s ease-in-out infinite}
+.fp2{animation:pulseOpacity 5s ease-in-out 2s infinite}
+.fp3{animation:pulseOpacity 7s ease-in-out 1s infinite}
+.at{animation:accentPulse 3s ease-in-out infinite}
+.glh{stroke-dasharray:6 4;animation:gridSlide 10s linear infinite}
+.glv{stroke-dasharray:6 4;animation:gridSlide 14s linear infinite}
+
+/* ── centered wrapper ── */
+.inner{
+  position:relative;z-index:1;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 6rem;
+}
+
+/* ── header ── */
+.section-header{
+  margin-bottom:3.5rem;
+  animation:fadeUp 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) both;
+}
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Space Mono',monospace;font-size:10px;
+  letter-spacing:0.22em;color:var(--primary-d);text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--primary)}
+.accent-dot{width:7px;height:7px;background:var(--accent);display:inline-block;flex-shrink:0;transform:rotate(45deg)}
+.section-title{
+  font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--ink);
+  line-height:0.95;letter-spacing:-0.03em;margin-bottom:0.9rem;
+}
+.section-title em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--primary)}
+.section-sub{
+  font-size:15px;font-weight:300;color:var(--ink-mid);
+  line-height:1.8;max-width:480px;
+}
+
+/* ── type filter strip ── */
+.type-strip{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin-bottom:1.6rem;
+  animation:fadeUp 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+}
+.type-label-text{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--ink-mute);margin-right:4px;white-space:nowrap;
+}
+.type-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border:1px solid var(--border);
+  background:var(--surface);
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-mid);cursor:pointer;
+  transition:all 0.18s;white-space:nowrap;user-select:none;
+}
+.type-chip:hover{border-color:var(--active-color,var(--primary));color:var(--active-color,var(--primary-d));background:var(--active-bg,var(--surface))}
+.type-chip.active{background:var(--active-color,var(--primary-d));border-color:var(--active-color,var(--primary-d));color:#EAF3DE}
+.chip-dot{width:6px;height:6px;background:var(--dot-color,var(--primary));flex-shrink:0;transition:background 0.18s}
+.type-chip.active .chip-dot{background:rgba(255,255,255,0.6)}
+.chip-count{
+  font-family:'Space Mono',monospace;font-size:8px;font-weight:700;
+  padding:1px 5px;background:var(--count-bg,var(--primary-p));
+  color:var(--count-text,var(--primary-d));
+}
+.type-chip.active .chip-count{background:rgba(255,255,255,0.2);color:#EAF3DE}
+
+/* ── project thumbs ── */
+.project-strip{
+  display:flex;gap:12px;
+  overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  padding-bottom:6px;
+  animation:fadeUp 0.8s 0.3s cubic-bezier(0.16,1,0.3,1) both;
+}
+.project-strip::-webkit-scrollbar{display:none}
+
+.proj-thumb{
+  flex-shrink:0;display:flex;flex-direction:column;
+  align-items:center;gap:8px;cursor:pointer;
+  border:none;background:none;padding:6px;position:relative;
+}
+.proj-thumb-card{
+  width:110px;height:70px;
+  border:1.5px solid var(--border);background:var(--surface);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  transition:all 0.25s;position:relative;overflow:hidden;
+}
+/* subtle grid texture matching hero */
+.proj-thumb-card::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,109,17,0.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(59,109,17,0.04) 1px,transparent 1px);
+  background-size:12px 12px;
+}
+.pt-icon{
+  width:24px;height:24px;display:grid;place-items:center;
+  position:relative;z-index:1;
+}
+.pt-short{
+  font-family:'Space Mono',monospace;font-size:8px;
+  letter-spacing:0.05em;position:relative;z-index:1;
+  line-height:1.2;text-align:center;padding:0 5px;
+}
+/* active thumb uses diamond outline like hero */
+.proj-thumb.active .proj-thumb-card{
+  border-color:var(--thumb-color,var(--primary));
+  box-shadow:0 0 0 1px var(--thumb-color,var(--primary)), 0 4px 16px rgba(0,0,0,0.1);
+  transform:translateY(-3px);
+  background:var(--thumb-bg,var(--surface));
+}
+.proj-thumb:not(.active):hover .proj-thumb-card{
+  border-color:var(--primary);transform:translateY(-2px);
+}
+.proj-thumb-label{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-mute);transition:color 0.2s;white-space:nowrap;
+}
+.proj-thumb.active .proj-thumb-label{color:var(--ink);font-weight:700}
+/* active indicator dot */
+.proj-thumb::after{
+  content:'';width:5px;height:5px;
+  background:transparent;transform:rotate(45deg);
+  display:block;margin-top:-4px;transition:background 0.2s;
+}
+.proj-thumb.active::after{background:var(--thumb-color,var(--primary))}
+
+/* ── project info panel ── */
+.proj-info-panel{
+  margin:1.5rem 0;
+  display:flex;gap:0;
+  transition:opacity 0.22s ease;
+  animation:fadeUp 0.8s 0.35s cubic-bezier(0.16,1,0.3,1) both;
+}
+.proj-info-panel.fading{opacity:0}
+
+.proj-info-accent{
+  width:2px;flex-shrink:0;
+  background:var(--panel-color,var(--primary));
+  margin-right:18px;align-self:stretch;min-height:40px;
+  opacity:0.6;
+}
+.proj-info-icon{
+  width:34px;height:34px;flex-shrink:0;
+  display:grid;place-items:center;
+  background:var(--panel-bg,var(--surface));
+  color:var(--panel-color,var(--primary));
+  border:1px solid var(--panel-border,var(--border));
+  margin-right:14px;margin-top:1px;
+}
+.proj-info-body{flex:1;min-width:0}
+.proj-info-top{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.proj-info-name{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+.proj-info-tagline{
+  font-family:'Space Mono',monospace;font-size:9px;
+  color:var(--panel-color,var(--primary));letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;
+}
+.proj-info-top .sep{width:3px;height:3px;background:var(--ink-mute);flex-shrink:0;align-self:center}
+.proj-info-desc{font-size:13px;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:10px;max-width:640px}
+.proj-info-tags{display:flex;flex-wrap:wrap;gap:5px}
+.proj-info-tag{
+  font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;
+  text-transform:uppercase;padding:4px 10px;
+  color:var(--panel-color,var(--primary));
+  border:1px solid var(--panel-border,var(--border));
+  background:var(--surface);
+}
+
+/* ── carousel stage ── */
+.carousel-stage{
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 4px 32px rgba(31,48,40,0.07);
+  user-select:none;margin-top:1.5rem;
+  animation:fadeUp 0.8s 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+.carousel-stage.switching::after{
+  content:'';position:absolute;inset:0;
+  background:var(--surface);opacity:0;
+  animation:stagefade 0.35s ease forwards;
+  pointer-events:none;z-index:20;
+}
+@keyframes stagefade{0%{opacity:0.6}100%{opacity:0}}
+.carousel-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.carousel-slide{min-width:100%;flex-shrink:0}
+
+/* slide placeholder — uses portfolio hues */
+.slide-placeholder{
+  --ph-hue:140deg;
+  height:420px;
+  background:linear-gradient(135deg,hsl(var(--ph-hue) 28% 94%),hsl(var(--ph-hue) 22% 90%));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  position:relative;overflow:hidden;
+}
+/* grid texture matching site aesthetic */
+.slide-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(hsl(var(--ph-hue) 20% 75% / 0.25) 1px,transparent 1px),
+    linear-gradient(90deg,hsl(var(--ph-hue) 20% 75% / 0.25) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+.slide-placeholder::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 45% at 50% 50%,rgba(255,255,255,0.45) 0%,transparent 70%);
+}
+.placeholder-diamond{
+  width:62px;height:62px;
+  background:rgba(255,255,255,0.65);
+  border:1.5px solid rgba(255,255,255,0.9);
+  transform:rotate(45deg);
+  position:relative;z-index:1;
+  display:grid;place-items:center;
+}
+.placeholder-diamond-inner{
+  transform:rotate(-45deg);
+  color:hsl(var(--ph-hue) 45% 30%);
+}
+.placeholder-label{
+  font-family:'Raleway',sans-serif;
+  font-size:14px;font-weight:700;letter-spacing:0.04em;
+  color:hsl(var(--ph-hue) 40% 25%);
+  position:relative;z-index:1;text-transform:uppercase;
+}
+.placeholder-hint{
+  font-family:'Space Mono',monospace;font-size:10px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:hsl(var(--ph-hue) 20% 50%);
+  background:rgba(255,255,255,0.55);
+  border:1px solid hsl(var(--ph-hue) 25% 75%);
+  padding:5px 14px;position:relative;z-index:1;
+}
+/* mac chrome bar */
+.slide-chrome{
+  position:absolute;top:0;left:0;right:0;
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  padding:10px 16px;display:flex;align-items:center;gap:7px;
+  font-family:'Space Mono',monospace;font-size:10px;
+  color:hsl(var(--ph-hue) 20% 50%);letter-spacing:0.08em;
+  text-transform:uppercase;z-index:2;
+}
+.chrome-dot{width:10px;height:10px;border-radius:50%}
+.chrome-dot:nth-child(1){background:#ff5f57}
+.chrome-dot:nth-child(2){background:#febc2e}
+.chrome-dot:nth-child(3){background:#28c840}
+.slide-chrome span{margin-left:8px}
+
+/* ── controls ── */
+.carousel-controls{
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;margin-top:1.5rem;
+  animation:fadeUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) both;
+}
+.car-arrow{
+  width:36px;height:36px;
+  background:var(--surface);border:1px solid var(--border);
+  display:grid;place-items:center;
+  cursor:pointer;color:var(--ink-mid);
+  transition:all 0.15s;
+}
+.car-arrow:hover{background:var(--primary-d);border-color:var(--primary-d);color:#EAF3DE}
+.car-dots{display:flex;gap:6px;align-items:center}
+.car-dot{
+  width:7px;height:7px;background:var(--border);
+  transform:rotate(45deg);
+  cursor:pointer;transition:all 0.25s;border:none;padding:0;
+}
+.car-dot.active{background:var(--primary);width:20px;transform:rotate(45deg);border-radius:0}
+.car-dot:hover:not(.active){background:var(--primary-p)}
+
+/* slide info */
+.carousel-info{
+  text-align:center;margin-top:1.2rem;min-height:46px;
+  animation:fadeUp 0.8s 0.55s cubic-bezier(0.16,1,0.3,1) both;
+}
+.car-info-label{
+  font-size:13px;font-weight:800;color:var(--ink);
+  letter-spacing:0.04em;text-transform:uppercase;
+  margin-bottom:4px;transition:opacity 0.25s;
+}
+.car-info-desc{
+  font-size:12px;font-weight:300;color:var(--ink-mid);
+  max-width:500px;margin:0 auto;line-height:1.7;transition:opacity 0.25s;
+}
+
+.no-results{
+  display:none;flex-direction:column;align-items:center;
+  justify-content:center;gap:10px;height:420px;
+  color:var(--ink-mute);
+  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+}
+.no-results.show{display:flex}
+.no-results-diamond{
+  width:36px;height:36px;background:var(--surface);
+  border:1px solid var(--border);transform:rotate(45deg);
+}
+
+@media(max-width:900px){
+  .inner{padding:0 2rem}
+  .slide-placeholder{height:280px}
+  .placeholder-diamond{width:46px;height:46px}
+}
+</style>
+</head>
+<body>
+
+<section class="works-section">
+
+  <!-- BG SVG diamonds — same system as hero/about -->
+  <svg class="bg-svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <line x1="480" y1="0" x2="480" y2="900" stroke="#3B6D11" stroke-width="0.5" opacity="0.05" class="glv"/>
+    <line x1="0" y1="450" x2="1200" y2="450" stroke="#3B6D11" stroke-width="0.5" opacity="0.05" class="glh"/>
+
+    <!-- top-right cluster -->
+    <g class="dg1" style="transform-origin:1080px 60px">
+      <path fill="#F0F3EE" d="M1080,190L940,50c-18-18-18-46,0-64L1080,-70c18-18,46-18,64,0L1284,50c18,18,18,46,0,64L1144,190C1126,208,1098,208,1080,190z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.2" class="fp1" d="M1076,206L936,66c-18-18-18-46,0-64L1076,-86c18-18,46-18,64,0L1280,34c18,18,18,46,0,64L1140,206C1122,224,1094,224,1076,206z"/>
+    </g>
+    <g class="dg2" style="transform-origin:975px 230px">
+      <path fill="#3B6D11" class="fp2" d="M975,308L912,245c-16-16-16-42,0-58L975,124c16-16,42-16,58,0L1096,187c16,16,16,42,0,58L1033,308C1017,324,991,324,975,308z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.5" d="M972,326L909,263c-16-16-16-42,0-58L972,142c16-16,42-16,58,0L1093,205c16,16,16,42,0,58L1030,326C1014,342,988,342,972,326z"/>
+    </g>
+    <g class="dg3" style="transform-origin:1140px 360px">
+      <path fill="#C0DD97" opacity="0.8" d="M1140,415L1104,379c-13-13-13-35,0-48L1140,295c13-13,35-13,48,0L1224,331c13,13,13,35,0,48L1188,415C1175,428,1153,428,1140,415z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.5" d="M1137,434L1101,398c-13-13-13-35,0-48L1137,314c13-13,35-13,48,0L1221,350c13,13,13,35,0,48L1185,434C1172,447,1150,447,1137,434z"/>
+    </g>
+    <polygon fill="#FF4C3E" class="at" points="1050,360 1046,386 1030,370"/>
+
+    <!-- bottom-left cluster -->
+    <g class="dg4" style="transform-origin:50px 680px">
+      <path fill="#F0F3EE" d="M50,800L-60,690c-16-16-16-42,0-58L50,522c16-16,42-16,58,0L168,580c16,16,16,42,0,58L108,800C92,816,66,816,50,800z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.2" class="fp3" d="M46,818L-64,708c-16-16-16-42,0-58L46,540c16-16,42-16,58,0L164,598c16,16,16,42,0,58L104,818C88,834,62,834,46,818z"/>
+    </g>
+    <g class="dg5" style="transform-origin:175px 540px">
+      <path fill="#C0DD97" opacity="0.75" d="M175,596L143,564c-12-12-12-31,0-43L175,489c12-12,31-12,43,0L260,521c12,12,12,31,0,43L218,596C206,608,187,608,175,596z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.55" d="M172,614L140,582c-12-12-12-31,0-43L172,507c12-12,31-12,43,0L257,539c12,12,12,31,0,43L215,614C203,626,184,626,172,614z"/>
+    </g>
+    <g class="dg1" style="transform-origin:52px 490px">
+      <path fill="#3B6D11" class="fp1" opacity="0.65" d="M52,548L24,520c-10-10-10-26,0-36L52,456c10-10,26-10,36,0L116,484c10,10,10,26,0,36L88,548C78,558,62,558,52,548z"/>
+    </g>
+
+    <!-- ripple trails -->
+    <ellipse cx="1090" cy="130" rx="160" ry="160" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:1090px 130px;animation:trailFade 6s ease-out 1s infinite"/>
+    <ellipse cx="1090" cy="130" rx="160" ry="160" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:1090px 130px;animation:trailFade 6s ease-out 4s infinite"/>
+    <ellipse cx="70" cy="660" rx="130" ry="130" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:70px 660px;animation:trailFade 7s ease-out 2.5s infinite"/>
+  </svg>
+
+  <div class="inner">
+
+    <!-- header -->
+    <div class="section-header">
+      <div class="section-label"><div class="accent-dot"></div>See it in action</div>
+      <h2 class="section-title">The full picture,<br/><em>before you sign in.</em></h2>
+      <p class="section-sub">Every screen built around real workflows — from municipal dashboards to individual farm profiles.</p>
+    </div>
+
+    <!-- type filter -->
+    <div class="type-strip" id="type-strip"></div>
+
+    <!-- project thumbs -->
+    <div class="project-strip" id="project-strip"></div>
+
+    <!-- project info panel -->
+    <div class="proj-info-panel" id="proj-info-panel">
+      <div class="proj-info-accent" id="proj-info-accent"></div>
+      <div class="proj-info-icon" id="proj-info-icon"></div>
+      <div class="proj-info-body">
+        <div class="proj-info-top">
+          <div class="proj-info-name" id="proj-info-name"></div>
+          <span class="sep"></span>
+          <div class="proj-info-tagline" id="proj-info-tagline"></div>
+        </div>
+        <div class="proj-info-desc" id="proj-info-desc"></div>
+        <div class="proj-info-tags" id="proj-info-tags"></div>
+      </div>
+    </div>
+
+    <!-- carousel stage -->
+    <div class="carousel-stage" id="carousel-stage">
+      <div class="carousel-track" id="carousel-track"></div>
+      <div class="no-results" id="no-results">
+        <div class="no-results-diamond"></div>
+        No projects in this category yet.
+      </div>
+    </div>
+
+    <!-- controls -->
+    <div class="carousel-controls">
+      <button class="car-arrow" onclick="carMove(-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="car-dots" id="car-dots"></div>
+      <button class="car-arrow" onclick="carMove(1)" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="carousel-info">
+      <div class="car-info-label" id="car-label"></div>
+      <div class="car-info-desc" id="car-desc"></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const PROJECT_TYPES = {
+  agriculture:{ label:'Agriculture', color:'#1c3d2c', bg:'#eaf5ef', dotColor:'#6aab85', countBg:'#c8e6d6', countText:'#2a5c3f', border:'#c8e6d6' },
+  healthcare: { label:'Healthcare',  color:'#185FA5', bg:'#E6F1FB', dotColor:'#378ADD', countBg:'#B5D4F4', countText:'#0C447C', border:'#B5D4F4' },
+  civic:      { label:'Civic & Gov', color:'#3B6D11', bg:'#EAF3DE', dotColor:'#639922', countBg:'#C0DD97', countText:'#27500A', border:'#C0DD97' },
+  finance:    { label:'Finance',     color:'#854F0B', bg:'#FAEEDA', dotColor:'#BA7517', countBg:'#FAC775', countText:'#633806', border:'#FAC775' },
+};
+
+const PROJECTS = [
+  {
+    id:'agritrack', name:'AgriTrack', short:'AgriTrack',
+    type:'agriculture', color:'#1c3d2c', bg:'#eaf5ef', hue:'140deg',
+    tagline:'Farm management for local government units',
+    desc:'AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture — replacing paper-based records with live dashboards and exportable reports.',
+    tags:['5 modules','Municipal-level','DA-compliant','Barangay mapping','Multi-crop'],
+    icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>`,
+    slides:[
+      { label:'Dashboard Overview', desc:'Municipal overview — farm counts, yield totals, sector distribution, and live weather at a glance.', hue:'140deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
+        screenLabel:'AgriTrack · Dashboard' },
+      { label:'Satellite Farm Map', desc:'Every registered farm plotted on satellite imagery with polygon boundaries, crop type, and weather data.', hue:'155deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+        screenLabel:'AgriTrack · Mapa' },
+      { label:'Production Analytics', desc:'Per-farm yearly and monthly yield charts, exportable as Excel or PDF for official DA reporting.', hue:'35deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
+        screenLabel:'AgriTrack · Mga Ani' },
+      { label:'Barangay Heat Map', desc:'Color-coded choropleth map showing yield performance across every barangay — high, medium, and low zones.', hue:'200deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>`,
+        screenLabel:'AgriTrack · Barangay Map' },
+      { label:'Farm Details & Records', desc:'Full farm profile — owner, location, sector, area, crop list, and production history all in one panel.', hue:'280deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+        screenLabel:'AgriTrack · Mga Sakahan' },
+    ]
+  },
+  {
+    id:'mediqueue', name:'MediQueue', short:'MediQueue',
+    type:'healthcare', color:'#185FA5', bg:'#E6F1FB', hue:'210deg',
+    tagline:'Patient queue and appointment management',
+    desc:'MediQueue streamlines patient flow in rural health units and barangay health centers — digitizing walk-in queues, managing appointment schedules, and surfacing wait-time analytics so staff can allocate resources in real time.',
+    tags:['3 modules','Health center','Queue management','Appointment booking','Analytics'],
+    icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    slides:[
+      { label:'Patient Queue Board', desc:'Live queue display showing current wait times, priority levels, and room assignments across all stations.', hue:'210deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+        screenLabel:'MediQueue · Queue' },
+      { label:'Appointment Scheduler', desc:'Drag-and-drop calendar for booking, rescheduling, and managing patient appointments across departments.', hue:'220deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+        screenLabel:'MediQueue · Schedule' },
+      { label:'Department Analytics', desc:'Admission trends, average wait times, and throughput charts per department — exportable for admin reports.', hue:'195deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>`,
+        screenLabel:'MediQueue · Analytics' },
+    ]
+  },
+  {
+    id:'civicmap', name:'CivicMap', short:'CivicMap',
+    type:'civic', color:'#3B6D11', bg:'#EAF3DE', hue:'95deg',
+    tagline:'City infrastructure and incident tracking',
+    desc:'CivicMap gives city planning and engineering offices an interactive layer on top of their jurisdiction — mapping infrastructure assets, tracking permit applications, visualizing census data, and logging incidents by barangay with assignable response teams.',
+    tags:['4 modules','City-level','Infrastructure GIS','Permit tracking','Incident log'],
+    icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>`,
+    slides:[
+      { label:'City Infrastructure Map', desc:'All public infrastructure — roads, utilities, and facilities — layered on an interactive city map.', hue:'95deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>`,
+        screenLabel:'CivicMap · Infrastructure' },
+      { label:'Permit & Zoning Tracker', desc:'Track building permits, zoning classifications, and land use approvals by parcel across the city.', hue:'108deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
+        screenLabel:'CivicMap · Permits' },
+      { label:'Population Heat Map', desc:'Census data visualized as density layers — filterable by age group, income bracket, and barangay.', hue:'80deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10z"/></svg>`,
+        screenLabel:'CivicMap · Demographics' },
+      { label:'Incident Reports', desc:'Real-time log of reported incidents by barangay — categorized, timestamped, and assignable to response teams.', hue:'68deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+        screenLabel:'CivicMap · Incidents' },
+    ]
+  },
+  {
+    id:'budgetflow', name:'BudgetFlow', short:'BudgetFlow',
+    type:'finance', color:'#854F0B', bg:'#FAEEDA', hue:'35deg',
+    tagline:'LGU budget tracking and variance reporting',
+    desc:'BudgetFlow helps local government finance officers monitor departmental spending against approved allocations — with line-item expense logs, automated variance flags, and one-click reports for COA compliance and quarterly budget reviews.',
+    tags:['3 modules','LGU finance','COA-ready','Expense logging','Variance alerts'],
+    icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+    slides:[
+      { label:'Budget Overview', desc:'Top-level view of allocated vs. spent budget across all departments for the current fiscal year.', hue:'35deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/><circle cx="12" cy="14" r="2"/></svg>`,
+        screenLabel:'BudgetFlow · Overview' },
+      { label:'Expense Tracker', desc:'Line-item expenses with category tagging, supplier info, and approval chain — filterable by date and department.', hue:'28deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+        screenLabel:'BudgetFlow · Expenses' },
+      { label:'Variance Analytics', desc:'Planned vs. actual spend charts with automated flag for departments exceeding their quarterly allocation.', hue:'42deg',
+        icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="32" height="32"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>`,
+        screenLabel:'BudgetFlow · Variance' },
+    ]
+  },
+];
+
+let activeType = 'all', activeProject = 0, currentSlide = 0, timer;
+
+const track     = document.getElementById('carousel-track');
+const dotsWrap  = document.getElementById('car-dots');
+const labelEl   = document.getElementById('car-label');
+const descEl    = document.getElementById('car-desc');
+const stage     = document.getElementById('carousel-stage');
+const typeStrip = document.getElementById('type-strip');
+const projStrip = document.getElementById('project-strip');
+const noResults = document.getElementById('no-results');
+const infoPanel = document.getElementById('proj-info-panel');
+const infoAccent= document.getElementById('proj-info-accent');
+const infoIcon  = document.getElementById('proj-info-icon');
+const infoName  = document.getElementById('proj-info-name');
+const infoTag   = document.getElementById('proj-info-tagline');
+const infoDesc  = document.getElementById('proj-info-desc');
+const infoTags  = document.getElementById('proj-info-tags');
+
+function filteredProjects(){ return activeType==='all'?PROJECTS:PROJECTS.filter(p=>p.type===activeType) }
+function activeProj(){ return filteredProjects()[activeProject]||null }
+
+function buildTypeStrip(){
+  typeStrip.innerHTML='<span class="type-label-text">Filter by type</span>';
+  const all=document.createElement('button');
+  all.className='type-chip'+(activeType==='all'?' active':'');
+  all.style.setProperty('--active-color','#27500A');
+  all.style.setProperty('--active-bg','#EAF3DE');
+  all.style.setProperty('--dot-color','#639922');
+  all.style.setProperty('--count-bg','#C0DD97');
+  all.style.setProperty('--count-text','#27500A');
+  all.innerHTML=`<span class="chip-dot"></span>All <span class="chip-count">${PROJECTS.length}</span>`;
+  all.onclick=()=>setType('all');
+  typeStrip.appendChild(all);
+  [...new Set(PROJECTS.map(p=>p.type))].forEach(k=>{
+    const t=PROJECT_TYPES[k], count=PROJECTS.filter(p=>p.type===k).length;
+    const btn=document.createElement('button');
+    btn.className='type-chip'+(activeType===k?' active':'');
+    btn.style.setProperty('--active-color',t.color);
+    btn.style.setProperty('--active-bg',t.bg);
+    btn.style.setProperty('--dot-color',t.dotColor);
+    btn.style.setProperty('--count-bg',t.countBg);
+    btn.style.setProperty('--count-text',t.countText);
+    btn.innerHTML=`<span class="chip-dot"></span>${t.label} <span class="chip-count">${count}</span>`;
+    btn.onclick=()=>setType(k);
+    typeStrip.appendChild(btn);
+  });
+}
+
+function setType(k){
+  activeType=k; activeProject=0; currentSlide=0;
+  buildTypeStrip(); buildProjStrip(); renderSlides();
+  renderDots(); updateInfo(0,false); updateInfoPanel(false);
+  track.style.transition='none'; track.style.transform='translateX(0)';
+  setTimeout(()=>{track.style.transition=''},50);
+  resetTimer();
+}
+
+function buildProjStrip(){
+  projStrip.innerHTML='';
+  const fp=filteredProjects();
+  if(!fp.length){
+    noResults.classList.add('show');track.style.display='none';
+    dotsWrap.innerHTML='';labelEl.textContent='';descEl.textContent='';
+    infoPanel.style.display='none';return;
+  }
+  noResults.classList.remove('show');track.style.display='';infoPanel.style.display='';
+  fp.forEach((p,i)=>{
+    const btn=document.createElement('button');
+    btn.className='proj-thumb'+(i===0?' active':'');
+    btn.style.setProperty('--thumb-color',p.color);
+    btn.style.setProperty('--thumb-bg',p.bg);
+    btn.innerHTML=`
+      <div class="proj-thumb-card">
+        <div class="pt-icon" style="color:${p.color}">${p.icon}</div>
+        <div class="pt-short" style="color:${p.color}">${p.short}</div>
+      </div>
+      <span class="proj-thumb-label">${p.name}</span>`;
+    btn.onclick=()=>switchProject(i);
+    projStrip.appendChild(btn);
+  });
+}
+
+function switchProject(idx){
+  if(idx===activeProject)return;
+  activeProject=idx; currentSlide=0;
+  projStrip.querySelectorAll('.proj-thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  stage.classList.add('switching');
+  setTimeout(()=>stage.classList.remove('switching'),400);
+  renderSlides(); renderDots(); updateInfo(0,false); updateInfoPanel(true);
+  track.style.transition='none'; track.style.transform='translateX(0)';
+  setTimeout(()=>{track.style.transition=''},50);
+  resetTimer();
+}
+
+function updateInfoPanel(animate){
+  const p=activeProj(); if(!p)return;
+  const t=PROJECT_TYPES[p.type];
+  if(animate){
+    infoPanel.classList.add('fading');
+    setTimeout(()=>{setInfoContent(p,t);infoPanel.classList.remove('fading')},200);
+  } else { setInfoContent(p,t) }
+}
+
+function setInfoContent(p,t){
+  infoPanel.style.setProperty('--panel-color',p.color);
+  infoPanel.style.setProperty('--panel-bg',p.bg);
+  infoPanel.style.setProperty('--panel-border',t.border);
+  infoAccent.style.background=p.color;
+  infoIcon.style.background=p.bg;
+  infoIcon.style.color=p.color;
+  infoIcon.style.borderColor=t.border;
+  infoIcon.innerHTML=p.icon;
+  infoName.textContent=p.name;
+  infoTag.textContent=p.tagline;
+  infoDesc.textContent=p.desc;
+  infoTags.innerHTML=p.tags.map(tag=>`<span class="proj-info-tag">${tag}</span>`).join('');
+}
+
+function renderSlides(){
+  const p=activeProj(); if(!p){track.innerHTML='';return;}
+  track.innerHTML=p.slides.map(s=>`
+    <div class="carousel-slide">
+      <div class="slide-placeholder" style="--ph-hue:${s.hue}">
+        <div class="placeholder-diamond">
+          <div class="placeholder-diamond-inner">${s.icon}</div>
+        </div>
+        <div class="placeholder-label">${s.label}</div>
+        <div class="placeholder-hint">Replace with app screenshot</div>
+        <div class="slide-chrome">
+          <div class="chrome-dot"></div><div class="chrome-dot"></div><div class="chrome-dot"></div>
+          <span>${s.screenLabel}</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderDots(){
+  const p=activeProj(); dotsWrap.innerHTML=''; if(!p)return;
+  p.slides.forEach((_,idx)=>{
+    const d=document.createElement('button');
+    d.className='car-dot'+(idx===currentSlide?' active':'');
+    d.setAttribute('aria-label',`Slide ${idx+1}`);
+    d.onclick=()=>goTo(idx);
+    dotsWrap.appendChild(d);
+  });
+}
+
+function goTo(idx,animate=true){
+  currentSlide=idx;
+  if(!animate) track.style.transition='none';
+  track.style.transform=`translateX(-${idx*100}%)`;
+  if(!animate) setTimeout(()=>{track.style.transition=''},50);
+  dotsWrap.querySelectorAll('.car-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  updateInfo(idx,animate); resetTimer();
+}
+
+function updateInfo(idx,animate=true){
+  const p=activeProj(); if(!p)return;
+  const s=p.slides[idx]; if(!s)return;
+  if(animate){
+    labelEl.style.opacity='0'; descEl.style.opacity='0';
+    setTimeout(()=>{
+      labelEl.textContent=s.label; descEl.textContent=s.desc;
+      labelEl.style.opacity='1'; descEl.style.opacity='1';
+    },200);
+  } else { labelEl.textContent=s.label; descEl.textContent=s.desc }
+}
+
+window.carMove=function(dir){
+  const p=activeProj(); if(!p)return;
+  goTo(((currentSlide+dir)+p.slides.length)%p.slides.length);
+};
+
+function resetTimer(){ clearInterval(timer); timer=setInterval(()=>window.carMove(1),4500) }
+
+stage.addEventListener('mouseenter',()=>clearInterval(timer));
+stage.addEventListener('mouseleave',resetTimer);
+let startX=0;
+stage.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+stage.addEventListener('touchend',e=>{const diff=startX-e.changedTouches[0].clientX;if(Math.abs(diff)>40)window.carMove(diff>0?1:-1)});
+
+buildTypeStrip(); buildProjStrip(); renderSlides(); renderDots();
+updateInfo(0,false); updateInfoPanel(false); resetTimer();
+</script>
+</body>
+</html>

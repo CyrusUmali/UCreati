@@ -1,0 +1,380 @@
+/* ContactSection.css */
+
+/* ── Section shell ─────────────────────────────────────────────── */
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-accent-line {
+  position: absolute;
+  top: 0;
+  left: 28%;
+  width: 1px;
+  height: 100%;
+  background: var(--primary);
+  opacity: 0.05;
+  transform: rotate(-10deg) translateX(50%);
+  pointer-events: none;
+}
+
+/* ── Layout grid ───────────────────────────────────────────────── */
+.contact-inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1280px;
+  padding: 5rem 3.5rem 5rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Left copy column ──────────────────────────────────────────── */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contact-left::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  margin-bottom: 1.25rem;
+}
+
+.contact-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary-d);
+  margin-bottom: 1rem;
+}
+
+.contact-heading {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.contact-heading em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary);
+}
+
+.contact-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-mid);
+  line-height: 1.85;
+  margin-bottom: 1.75rem;
+}
+
+.contact-sub strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── Meta trust signals ────────────────────────────────────────── */
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-mid);
+}
+
+.contact-meta-item svg {
+  color: var(--ink-mute);
+  flex-shrink: 0;
+}
+
+/* ── Status badge ──────────────────────────────────────────────── */
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 3px var(--primary-p); }
+  50%       { box-shadow: 0 0 0 6px rgba(59, 109, 17, 0.15); }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  width: fit-content;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary-d);
+  box-shadow: 0 0 0 3px var(--primary-p);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.status-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Right form column ─────────────────────────────────────────── */
+.contact-right {
+  animation: fadeUp 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.form-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  padding: 2rem 2.25rem;
+  position: relative;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 2.25rem;
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+/* ── Progress bar ──────────────────────────────────────────────── */
+.form-progress {
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.form-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+/* ── Section titles ────────────────────────────────────────────── */
+.form-section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section-title:not(:first-child) {
+  margin-top: 1.1rem;
+}
+
+.form-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Form elements ─────────────────────────────────────────────── */
+.form-label {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0.4rem;
+}
+
+.form-field {
+  margin-bottom: 0.85rem;
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  display: block;
+  appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.form-input::placeholder {
+  color: var(--ink-mute);
+  font-size: 12px;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 90px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.7;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.form-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-row .form-field {
+  margin-bottom: 0;
+}
+
+/* ── Chip selectors ────────────────────────────────────────────── */
+.budget-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.budget-chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1.5px solid var(--border);
+  color: var(--ink-mute);
+  background: var(--bg);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.budget-chip:hover,
+.budget-chip.active {
+  border-color: var(--primary);
+  color: var(--primary-d);
+  background: var(--primary-p);
+}
+
+/* ── Form footer ───────────────────────────────────────────────── */
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.form-note {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.btn-send {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #EAF3DE;
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  padding: 13px 24px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.btn-send:hover {
+  background: var(--primary-d);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    padding: 5.5rem 2rem 4rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-inner        { padding: 5rem 1.25rem 3rem; }
+  .form-row             { grid-template-columns: 1fr; }
+  .form-row-3           { grid-template-columns: 1fr; }
+  .form-card            { padding: 1.5rem; }
+  .form-footer          { flex-direction: column; align-items: flex-start; }
+  .btn-send             { width: 100%; justify-content: center; }
+}

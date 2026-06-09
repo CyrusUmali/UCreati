@@ -1,0 +1,178 @@
+import { useState } from "react";
+import "./ContactSection.css";
+import ContactBgSVG from "./svg-bg/ContactBgSVG";
+
+import { IconSend, IconClock, IconBolt, IconLock } from "@tabler/icons-react";
+
+const PROJECT_TYPES = ["Web app", "Mobile", "Landing page", "Design system", "API / backend", "Other"];
+const STACK_OPTIONS = ["React", "Next.js", "Vue", "Node", "Python", "PostgreSQL", "No preference"];
+const TIMELINE_OPTIONS = ["ASAP (< 2 weeks)", "1–2 months", "3–6 months", "Ongoing / retainer", "Not sure yet"];
+const BUDGET_OPTIONS = ["Under $2k", "$2k – $5k", "$5k – $15k", "$15k – $40k", "$40k+", "Let's discuss"];
+const TEAM_OPTIONS = ["Just me", "2–5 people", "6–20 people", "20+ people"];
+
+export default function ContactSection() {
+  const [projectTypes, setProjectTypes] = useState(new Set());
+  const [stackChips, setStackChips] = useState(new Set());
+  const [fields, setFields] = useState({ name: "", email: "", oneliner: "", timeline: "", budget: "", teamsize: "", extra: "" });
+
+  const toggleChip = (chip, setter) => {
+    setter(prev => {
+      const next = new Set(prev);
+      next.has(chip) ? next.delete(chip) : next.add(chip);
+      return next;
+    });
+  };
+
+  const handleChange = (e) => setFields(f => ({ ...f, [e.target.name]: e.target.value }));
+
+  const filledCount = Object.values(fields).filter(v => v.trim()).length;
+  const chipCount = Math.min(projectTypes.size + stackChips.size, 2);
+  const progress = Math.round(Math.min(100, ((filledCount + chipCount) / (Object.keys(fields).length + 2)) * 100));
+
+  return (
+    <section className="contact-section" id="contact">
+      <ContactBgSVG />
+      <div className="contact-accent-line" />
+
+      <div className="contact-inner">
+
+        {/* ── Left: identity column ── */}
+        <div className="contact-left">
+          <span className="contact-eyebrow">Start a project</span>
+          <h2 className="contact-heading">
+            Let's plan<br />your <em>build.</em>
+          </h2>
+          <p className="contact-sub">
+            Fill in what you know — budget, timeline, stack — and I'll return a{" "}
+            <strong>scoped proposal</strong> within 24 hours. No commitment required.
+          </p>
+
+          <div className="contact-meta">
+            <div className="contact-meta-item">
+              <IconClock size={14} stroke={1.5} />
+              3 min to complete
+            </div>
+            <div className="contact-meta-item">
+              <IconBolt size={14} stroke={1.5} />
+              Proposal in 24 hrs
+            </div>
+            <div className="contact-meta-item">
+              <IconLock size={14} stroke={1.5} />
+              No commitment
+            </div>
+          </div>
+
+          <div className="status-badge">
+            <span className="status-dot" />
+            <span className="status-text">Taking new projects</span>
+          </div>
+        </div>
+
+        {/* ── Right: project brief form ── */}
+        <div className="contact-right">
+          <div className="form-card">
+
+            <div className="form-progress">
+              <div className="form-progress-fill" style={{ width: `${progress}%` }} />
+            </div>
+
+            {/* About you */}
+            <div className="form-section-title">About you</div>
+            <div className="form-row">
+              <div className="form-field">
+                <label className="form-label">Name</label>
+                <input className="form-input" type="text" name="name" placeholder="Alex Johnson"
+                  autoComplete="off" value={fields.name} onChange={handleChange} />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Email</label>
+                <input className="form-input" type="email" name="email" placeholder="alex@company.com"
+                  autoComplete="off" value={fields.email} onChange={handleChange} />
+              </div>
+            </div>
+
+            {/* The project */}
+            <div className="form-section-title">The project</div>
+
+            <div className="form-field">
+              <label className="form-label">In one sentence, what are you building?</label>
+              <input className="form-input" type="text" name="oneliner"
+                placeholder="e.g. A SaaS dashboard for tracking team OKRs"
+                autoComplete="off" value={fields.oneliner} onChange={handleChange} />
+            </div>
+
+            <div className="form-field">
+              <label className="form-label">Project type</label>
+              <div className="budget-chips">
+                {PROJECT_TYPES.map(opt => (
+                  <span key={opt}
+                    className={`budget-chip${projectTypes.has(opt) ? " active" : ""}`}
+                    onClick={() => toggleChip(opt, setProjectTypes)}>
+                    {opt}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="form-row form-row-3">
+              <div className="form-field">
+                <label className="form-label">Timeline</label>
+                <select className="form-input form-select" name="timeline" value={fields.timeline} onChange={handleChange}>
+                  <option value="">Select</option>
+                  {TIMELINE_OPTIONS.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+              <div className="form-field">
+                <label className="form-label">Budget</label>
+                <select className="form-input form-select" name="budget" value={fields.budget} onChange={handleChange}>
+                  <option value="">Select</option>
+                  {BUDGET_OPTIONS.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+              <div className="form-field">
+                <label className="form-label">Team size</label>
+                <select className="form-input form-select" name="teamsize" value={fields.teamsize} onChange={handleChange}>
+                  <option value="">Select</option>
+                  {TEAM_OPTIONS.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+            </div>
+
+            {/* Stack & needs */}
+            <div className="form-section-title">Stack &amp; needs</div>
+
+            <div className="form-field">
+              <label className="form-label">Preferred tech (optional)</label>
+              <div className="budget-chips">
+                {STACK_OPTIONS.map(opt => (
+                  <span key={opt}
+                    className={`budget-chip${stackChips.has(opt) ? " active" : ""}`}
+                    onClick={() => toggleChip(opt, setStackChips)}>
+                    {opt}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="form-field">
+              <label className="form-label">Anything else I should know?</label>
+              <textarea className="form-input" name="extra"
+                placeholder="Existing codebase, design files, must-have integrations, constraints..."
+                value={fields.extra} onChange={handleChange} />
+            </div>
+
+            <div className="form-footer">
+              <span className="form-note">Scoped proposal<br />within 24 hours</span>
+              <button className="btn-send">
+                <IconSend size={14} stroke={1.5} />
+                Send Brief
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services — INFFINI</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Tabler Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAFAF8;--surface:#F0F3EE;--border:#C8D4C8;
+  --primary:#3B6D11;--primary-d:#27500A;--primary-p:#C0DD97;
+  --ink:#1F3028;--ink-mid:#3B6D11;--ink-mute:#639922;--accent:#FF4C3E;
+}
+html,body{background:var(--bg);font-family:'Raleway',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* ── DIAMOND ANIMATIONS (mirrored from hero) ── */
+@keyframes floatA{0%,100%{transform:translateY(0px) rotate(0deg)}33%{transform:translateY(-18px) rotate(2deg)}66%{transform:translateY(8px) rotate(-1.5deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0px) rotate(0deg)}40%{transform:translateY(14px) rotate(-2deg)}80%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes floatC{0%,100%{transform:translateY(0px)}50%{transform:translateY(-12px)}}
+@keyframes driftX{0%,100%{transform:translateX(0)}50%{transform:translateX(12px)}}
+@keyframes pulseOpacity{0%,100%{opacity:0.45}50%{opacity:0.8}}
+@keyframes pulseOpacityBig{0%,100%{opacity:0.7}50%{opacity:1}}
+@keyframes accentPulse{0%,100%{opacity:0.35}50%{opacity:0.85}}
+@keyframes trailFade{0%{opacity:0;transform:scale(0.5)}20%{opacity:0.5}100%{opacity:0;transform:scale(1.8)}}
+@keyframes smallFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,-9px)}}
+@keyframes gridSlide{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+
+.d-float-a{animation:floatA 9s ease-in-out infinite;opacity:0.95}
+.d-float-b{animation:floatB 11s ease-in-out infinite;opacity:0.95}
+.d-float-c{animation:floatC 7s ease-in-out 1s infinite;opacity:0.9}
+.d-drift{animation:driftX 13s ease-in-out 2s infinite;opacity:0.9}
+.d-float-e{animation:floatA 8s ease-in-out 3s infinite;opacity:0.9}
+.d-float-f{animation:floatB 10s ease-in-out 0.5s infinite;opacity:0.9}
+.d-mini{animation:smallFloat 5s ease-in-out infinite;opacity:0.85}
+.d-outline-a{animation:pulseOpacityBig 4s ease-in-out infinite}
+.d-outline-b{animation:pulseOpacityBig 5s ease-in-out 1.5s infinite}
+.d-fill-a{animation:pulseOpacity 6s ease-in-out infinite}
+.d-fill-b{animation:pulseOpacity 5s ease-in-out 2s infinite}
+.d-fill-c{animation:pulseOpacity 7s ease-in-out 1s infinite}
+.d-accent{animation:accentPulse 3s ease-in-out infinite}
+.d-grid-h{stroke-dasharray:6 4;animation:gridSlide 8s linear infinite}
+.d-grid-v{stroke-dasharray:6 4;animation:gridSlide 12s linear infinite}
+
+/* ── REVEAL ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── SECTION ── */
+#services{
+  padding:6rem 3.5rem 7rem;
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+}
+.bg-svg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── HEADING ── */
+.svc-heading{
+  position:relative;z-index:1;
+  text-align:center;
+  margin-bottom:3.5rem;
+}
+.svc-heading h2{
+  font-size:clamp(30px,4vw,48px);
+  font-weight:800;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1;
+}
+.svc-heading h2 em{
+  font-style:normal;color:transparent;
+  -webkit-text-stroke:2px var(--primary);
+}
+
+/* ── GRID ── */
+.svc-grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:1.25rem;
+  max-width:1100px;margin:0 auto;
+}
+
+/* ── BASE CARD ── */
+.svc-card{
+  background:rgba(250,250,248,0.88);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  border:1px solid var(--border);
+  padding:2rem 1.875rem;
+  display:flex;flex-direction:column;gap:0.875rem;
+  transition:box-shadow 0.25s,transform 0.25s,background 0.25s;
+  position:relative;
+}
+.svc-card:hover{
+  background:rgba(240,243,238,0.97);
+  box-shadow:0 8px 32px rgba(39,80,10,0.1);
+  transform:translateY(-3px);
+}
+
+/* ── FEATURED CARD ── */
+.svc-card.featured{
+  grid-column:1;grid-row:1 / span 2;
+  background:var(--primary);
+  border-color:var(--primary);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:2.5rem 2.25rem;
+}
+.svc-card.featured:hover{
+  background:var(--primary-d);
+  box-shadow:0 12px 40px rgba(39,80,10,0.3);
+}
+.featured-arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;
+  border:2px solid rgba(192,221,151,0.45);
+  color:var(--primary-p);align-self:flex-start;
+  transition:background 0.2s,border-color 0.2s;flex-shrink:0;
+}
+.featured-arrow i{font-size:20px}
+.svc-card.featured:hover .featured-arrow{background:rgba(192,221,151,0.12);border-color:var(--primary-p)}
+.featured-body{display:flex;flex-direction:column;gap:1rem}
+.featured-label{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(192,221,151,0.7);
+}
+.featured-title{
+  font-size:clamp(20px,2.2vw,26px);font-weight:800;
+  color:#EAF3DE;line-height:1.15;letter-spacing:-0.02em;
+}
+.featured-desc{
+  font-size:13.5px;font-weight:300;
+  color:rgba(192,221,151,0.85);line-height:1.7;
+}
+.featured-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
+.featured-tags span{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--primary-p);
+  border:1px solid rgba(192,221,151,0.3);
+  padding:4px 9px;
+}
+
+/* ── REGULAR CARD PARTS ── */
+.card-icon-wrap{
+  width:42px;height:42px;border-radius:50%;
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;background:var(--surface);
+  transition:background 0.2s,border-color 0.2s;
+}
+.svc-card:not(.featured):hover .card-icon-wrap{
+  background:var(--primary-p);border-color:var(--primary);
+}
+.card-icon-wrap i{font-size:18px;color:var(--primary)}
+.card-title{
+  font-size:15px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.01em;line-height:1.2;margin-top:0.25rem;
+}
+.card-desc{
+  font-size:12.5px;font-weight:300;
+  color:var(--ink-mid);line-height:1.65;flex:1;
+}
+.card-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink-mute);text-decoration:none;margin-top:auto;
+  transition:color 0.2s;
+}
+.card-link i{font-size:11px;transition:transform 0.2s}
+.card-link:hover{color:var(--primary)}
+.card-link:hover i{transform:translateX(3px)}
+
+/* ── FOOTER ── */
+.svc-footer{
+  position:relative;z-index:1;
+  max-width:1100px;margin:3rem auto 0;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+  padding-top:2.5rem;border-top:1px solid var(--border);
+}
+.svc-footer-note{
+  font-family:'Space Mono',monospace;font-size:10px;
+  color:var(--ink-mute);letter-spacing:0.12em;
+  display:flex;align-items:center;gap:10px;
+}
+.svc-footer-note::before{content:'';display:block;width:18px;height:1px;background:var(--primary);opacity:0.5}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--primary);color:#EAF3DE;
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;
+  padding:14px 28px;transition:background 0.2s,transform 0.15s;
+}
+.btn-primary:hover{background:var(--primary-d);transform:translateY(-2px)}
+.btn-primary i{font-size:14px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-card.featured{grid-column:1 / span 2;grid-row:1;flex-direction:row;align-items:center;gap:2rem}
+  .featured-arrow{align-self:center;flex-shrink:0}
+  #services{padding:5rem 2rem 5.5rem}
+}
+@media(max-width:580px){
+  #services{padding:4rem 1.25rem 4.5rem}
+  .svc-grid{grid-template-columns:1fr;gap:1rem}
+  .svc-card.featured{grid-column:1;grid-row:auto;flex-direction:column}
+  .svc-footer{flex-direction:column;align-items:flex-start}
+  .btn-primary{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .svc-card{transition:none}
+  .d-float-a,.d-float-b,.d-float-c,.d-drift,.d-float-e,.d-float-f,.d-mini,
+  .d-outline-a,.d-outline-b,.d-fill-a,.d-fill-b,.d-fill-c,.d-accent,
+  .d-grid-h,.d-grid-v{animation:none}
+}
+</style>
+</head>
+<body>
+
+<section id="services">
+
+  <!-- ═══ HERO-MATCHED DIAMOND SVG BACKGROUND ═══ -->
+  <svg class="bg-svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- subtle grid lines -->
+    <line x1="480" y1="0" x2="480" y2="800" stroke="#3B6D11" stroke-width="0.5" opacity="0.06" class="d-grid-v"/>
+    <line x1="960" y1="0" x2="960" y2="800" stroke="#3B6D11" stroke-width="0.5" opacity="0.04" class="d-grid-v"/>
+    <line x1="0" y1="400" x2="1440" y2="400" stroke="#3B6D11" stroke-width="0.5" opacity="0.06" class="d-grid-h"/>
+
+    <!-- LEFT CLUSTER -->
+    <!-- large outline diamond — top left bleed -->
+    <g class="d-float-a" style="transform-origin:0px 100px">
+      <path fill="#F0F3EE" d="M-30,260 L-190,100 c-18-18-18-46,0-64 L-30,-60 c18-18,46-18,64,0 L194,164 c18,18,18,46,0,64 L34,392 C16,410,-12,410,-30,392 Z" opacity="0.9"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.5" class="d-outline-a"
+        d="M-26,272 L-186,112 c-18-18-18-46,0-64 L-26,-48 c18-18,46-18,64,0 L198,176 c18,18,18,46,0,64 L38,404 C20,422,-8,422,-26,404 Z"/>
+    </g>
+
+    <!-- medium filled diamond — left mid -->
+    <g class="d-float-c" style="transform-origin:80px 420px">
+      <path fill="#3B6D11" class="d-fill-b"
+        d="M80,510 L22,452 c-15-15-15-40,0-55 L80,339 c15-15,40-15,55,0 L193,397 c15,15,15,40,0,55 L135,510 C120,525,95,525,80,510 Z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.55"
+        d="M76,526 L18,468 c-15-15-15-40,0-55 L76,355 c15-15,40-15,55,0 L189,413 c15,15,15,40,0,55 L131,526 C116,541,91,541,76,526 Z"/>
+    </g>
+
+    <!-- small accent diamond — left lower -->
+    <g class="d-mini" style="transform-origin:220px 310px">
+      <path fill="#C0DD97" opacity="0.8"
+        d="M220,356 L194,330 c-8-8-8-21,0-29 L220,275 c8-8,21-8,29,0 L275,301 c8,8,8,21,0,29 L249,356 C241,364,228,364,220,356 Z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.6"
+        d="M218,372 L192,346 c-8-8-8-21,0-29 L218,291 c8-8,21-8,29,0 L273,317 c8,8,8,21,0,29 L247,372 C239,380,226,380,218,372 Z"/>
+    </g>
+
+    <!-- tiny dot diamond -->
+    <path fill="#3B6D11" opacity="0.65" class="d-mini"
+      d="M310,480 L302,472 c-4-4-4-10,0-14 L310,450 c4-4,10-4,14,0 L332,458 c4,4,4,10,0,14 L324,480 C320,484,314,484,310,480 Z"/>
+
+    <!-- RIGHT CLUSTER -->
+    <!-- large surface diamond — right bleed -->
+    <g class="d-float-b" style="transform-origin:1380px 480px">
+      <path fill="#F0F3EE"
+        d="M1380,680 L1210,510 c-18-18-18-48,0-66 L1380,274 c18-18,48-18,66,0 L1616,450 c18,18,18,48,0,66 L1446,680 C1428,698,1398,698,1380,680 Z" opacity="0.95"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.5" class="d-outline-b"
+        d="M1374,694 L1204,524 c-18-18-18-48,0-66 L1374,288 c18-18,48-18,66,0 L1610,464 c18,18,18,48,0,66 L1440,694 C1422,712,1392,712,1374,694 Z"/>
+    </g>
+
+    <!-- medium green diamond — right upper -->
+    <g class="d-float-e" style="transform-origin:1160px 220px">
+      <path fill="#3B6D11" class="d-fill-c"
+        d="M1160,310 L1090,240 c-16-16-16-42,0-58 L1160,112 c16-16,42-16,58,0 L1288,170 c16,16,16,42,0,58 L1218,310 C1202,326,1176,326,1160,310 Z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.6"
+        d="M1156,326 L1086,256 c-16-16-16-42,0-58 L1156,128 c16-16,42-16,58,0 L1284,186 c16,16,16,42,0,58 L1214,326 C1198,342,1172,342,1156,326 Z"/>
+    </g>
+
+    <!-- pale mid diamond — right center -->
+    <g class="d-drift" style="transform-origin:940px 380px">
+      <path fill="#C0DD97" opacity="0.75"
+        d="M940,450 L896,406 c-12-12-12-32,0-44 L940,318 c12-12,32-12,44,0 L1028,362 c12,12,12,32,0,44 L984,450 C972,462,952,462,940,450 Z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.55"
+        d="M936,466 L892,422 c-12-12-12-32,0-44 L936,334 c12-12,32-12,44,0 L1024,378 c12,12,12,32,0,44 L980,466 C968,478,948,478,936,466 Z"/>
+    </g>
+
+    <!-- small border diamond — right lower mid -->
+    <g class="d-mini" style="transform-origin:1070px 560px">
+      <path fill="#C8D4C8" opacity="0.82"
+        d="M1070,605 L1044,579 c-8-8-8-21,0-29 L1070,524 c8-8,21-8,29,0 L1125,550 c8,8,8,21,0,29 L1099,605 C1091,613,1078,613,1070,605 Z"/>
+    </g>
+
+    <!-- accent triangle — matches hero -->
+    <polygon fill="#FF4C3E" class="d-accent" points="1050,530 1046,558 1030,542"/>
+
+    <!-- ripple rings — left origin -->
+    <ellipse cx="0" cy="100" rx="200" ry="200" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0"
+      style="transform-origin:0px 100px;animation:trailFade 6s ease-out 0.5s infinite"/>
+    <ellipse cx="0" cy="100" rx="200" ry="200" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0"
+      style="transform-origin:0px 100px;animation:trailFade 6s ease-out 3s infinite"/>
+
+    <!-- ripple rings — right origin -->
+    <ellipse cx="1440" cy="480" rx="190" ry="190" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0"
+      style="transform-origin:1440px 480px;animation:trailFade 7s ease-out 1.5s infinite"/>
+    <ellipse cx="1440" cy="480" rx="190" ry="190" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0"
+      style="transform-origin:1440px 480px;animation:trailFade 7s ease-out 4.5s infinite"/>
+  </svg>
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="svc-heading reveal">
+    <h2>Our <em>Services</em></h2>
+  </div>
+
+  <div class="svc-grid">
+
+    <!-- FEATURED — spans 2 rows -->
+    <div class="svc-card featured reveal">
+      <div class="featured-arrow">
+        <i class="ti ti-layers-subtract"></i>
+      </div>
+      <div class="featured-body">
+        <div class="featured-label">Core Offering</div>
+        <div class="featured-title">Full-Stack<br/>Development</div>
+        <p class="featured-desc">
+          Complete web applications — from database schema to polished UI.
+          One developer, full ownership, zero handoff friction.
+        </p>
+        <div class="featured-tags">
+          <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Next.js</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- R1 C2 — Front-End -->
+    <div class="svc-card reveal">
+      <div class="card-icon-wrap">
+        <i class="ti ti-code"></i>
+      </div>
+      <div class="card-title">Front-End Engineering</div>
+      <p class="card-desc">Pixel-perfect, responsive interfaces with deliberate motion. Built in React or vanilla — accessible and production-ready from day one.</p>
+      <a href="#" class="card-link">Learn more <i class="ti ti-arrow-narrow-right"></i></a>
+    </div>
+
+    <!-- R1 C3 — Back-End -->
+    <div class="svc-card reveal">
+      <div class="card-icon-wrap">
+        <i class="ti ti-server-2"></i>
+      </div>
+      <div class="card-title">Back-End & API Design</div>
+      <p class="card-desc">Scalable REST and GraphQL APIs, database architecture, and auth flows. Built to handle real traffic with clean separation between layers.</p>
+      <a href="#" class="card-link">Learn more <i class="ti ti-arrow-narrow-right"></i></a>
+    </div>
+
+    <!-- R2 C2 — UI/UX -->
+    <div class="svc-card reveal">
+      <div class="card-icon-wrap">
+        <i class="ti ti-vector-bezier-2"></i>
+      </div>
+      <div class="card-title">UI / UX Design</div>
+      <p class="card-desc">High-fidelity Figma work grounded in system thinking — tokens, components, and interaction specs that hand off cleanly and scale well.</p>
+      <a href="#" class="card-link">Learn more <i class="ti ti-arrow-narrow-right"></i></a>
+    </div>
+
+    <!-- R2 C2b — Consulting -->
+    <div class="svc-card reveal">
+      <div class="card-icon-wrap">
+        <i class="ti ti-tool"></i>
+      </div>
+      <div class="card-title">Technical Consulting</div>
+      <p class="card-desc">Stack decisions, code reviews, and architecture workshops. Useful for startups hiring their first engineers or teams tackling a tricky pivot.</p>
+      <a href="#" class="card-link">Learn more <i class="ti ti-arrow-narrow-right"></i></a>
+    </div>
+
+ 
+
+  </div>
+
+  <div class="svc-footer reveal">
+    <span class="svc-footer-note">Custom scope? Let's figure it out together.</span>
+    <a href="#" class="btn-primary">
+      Start a Project
+      <i class="ti ti-arrow-narrow-right"></i>
+    </a>
+  </div>
+
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const siblings = [...document.querySelectorAll('.svc-grid .reveal')];
+      const idx = siblings.indexOf(entry.target);
+      const delay = idx >= 0 ? idx * 90 : 0;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

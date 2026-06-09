@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAFAF8;--surface:#F0F3EE;--border:#C8D4C8;
+  --primary:#3B6D11;--primary-d:#27500A;--primary-p:#C0DD97;
+  --ink:#1F3028;--ink-mid:#3B6D11;--ink-mute:#639922;--accent:#FF4C3E;
+}
+html,body{background:var(--bg);font-family:'Raleway',sans-serif;overflow-x:hidden;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes floatA{0%,100%{transform:translateY(0px) rotate(0deg)}33%{transform:translateY(-18px) rotate(2deg)}66%{transform:translateY(8px) rotate(-1.5deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0px) rotate(0deg)}40%{transform:translateY(14px) rotate(-2deg)}80%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes floatC{0%,100%{transform:translateY(0px)}50%{transform:translateY(-12px)}}
+@keyframes driftX{0%,100%{transform:translateX(0)}50%{transform:translateX(12px)}}
+@keyframes pulseOpacity{0%,100%{opacity:0.55}50%{opacity:0.85}}
+@keyframes pulseOpacityBig{0%,100%{opacity:0.75}50%{opacity:1}}
+@keyframes accentPulse{0%,100%{opacity:0.4}50%{opacity:0.9}}
+@keyframes trailFade{0%{opacity:0;transform:scale(0.5)}20%{opacity:0.6}100%{opacity:0;transform:scale(1.8)}}
+@keyframes smallFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-6px,-10px)}}
+@keyframes gridSlide{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+
+.diamond-group-1{animation:floatA 9s ease-in-out infinite;opacity:0.95}
+.diamond-group-2{animation:floatB 11s ease-in-out infinite;opacity:0.95}
+.diamond-group-3{animation:floatC 7s ease-in-out 1s infinite;opacity:0.9}
+.diamond-group-4{animation:driftX 13s ease-in-out 2s infinite;opacity:0.9}
+.diamond-group-5{animation:floatA 8s ease-in-out 3s infinite;opacity:0.9}
+.diamond-group-6{animation:floatB 10s ease-in-out 0.5s infinite;opacity:0.9}
+.diamond-mini{animation:smallFloat 5s ease-in-out infinite;opacity:0.85}
+.outline-1{stroke-dasharray:1 0;animation:pulseOpacityBig 4s ease-in-out infinite}
+.outline-2{stroke-dasharray:1 0;animation:pulseOpacityBig 5s ease-in-out 1.5s infinite}
+.fill-pulse-1{animation:pulseOpacity 6s ease-in-out infinite}
+.fill-pulse-2{animation:pulseOpacity 5s ease-in-out 2s infinite}
+.fill-pulse-3{animation:pulseOpacity 7s ease-in-out 1s infinite}
+.accent-triangle{animation:accentPulse 3s ease-in-out infinite}
+.grid-line-h{stroke-dasharray:6 4;animation:gridSlide 8s linear infinite}
+.grid-line-v{stroke-dasharray:6 4;animation:gridSlide 12s linear infinite}
+
+.hero{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
+.bg-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+nav{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:2rem 3.5rem;z-index:10}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:28px;height:28px;background:var(--primary);transform:rotate(45deg)}
+.nav-logo-text{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:0.1em}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:12px;font-weight:600;color:var(--ink-mid);text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;border:1.5px solid var(--border);padding:10px 22px;transition:border-color 0.2s,background 0.2s;background:transparent}
+.nav-cta:hover{border-color:var(--primary);background:var(--primary-p)}
+.hero-inner{position:relative;z-index:5;text-align:center;max-width:860px;padding:0 2rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Space Mono',monospace;font-size:10px;font-weight:400;color:var(--primary-d);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp 0.9s 0.1s cubic-bezier(0.16,1,0.3,1) both}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:30px;height:1px;background:var(--primary)}
+.hero-name{font-size:clamp(54px,8vw,94px);font-weight:800;color:var(--ink);line-height:0.93;letter-spacing:-0.03em;margin-bottom:1.5rem;animation:fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) both}
+.hero-name em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--primary)}
+.hero-role{font-size:clamp(14px,1.8vw,17px);font-weight:300;color:var(--ink-mid);letter-spacing:0.02em;line-height:1.75;max-width:500px;margin:0 auto 3rem;animation:fadeUp 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) both}
+.hero-role strong{color:var(--ink);font-weight:600}
+.hero-ctas{display:flex;gap:14px;justify-content:center;align-items:center;animation:fadeUp 0.9s 0.4s cubic-bezier(0.16,1,0.3,1) both}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#EAF3DE;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:15px 30px;transition:background 0.2s,transform 0.15s}
+.btn-primary:hover{background:var(--primary-d);transform:translateY(-2px)}
+.btn-primary svg{width:13px;height:13px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-mid);font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:14px 28px;border:1.5px solid var(--border);transition:color 0.2s,border-color 0.2s,transform 0.15s}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink-mid);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:5;animation:fadeUp 0.9s 0.7s cubic-bezier(0.16,1,0.3,1) both}
+.scroll-hint span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;color:var(--ink-mute);text-transform:uppercase}
+.scroll-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--primary),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
+.status-badge{position:absolute;bottom:3rem;right:3.5rem;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);padding:10px 18px;z-index:10;animation:fadeUp 0.9s 0.6s cubic-bezier(0.16,1,0.3,1) both}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--primary-d);box-shadow:0 0 0 3px var(--primary-p);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--primary-p)}50%{box-shadow:0 0 0 6px rgba(59,109,17,0.15)}}
+.status-text{font-family:'Space Mono',monospace;font-size:10px;color:var(--ink-mid);letter-spacing:0.1em;text-transform:uppercase}
+.stat-strip{position:absolute;left:3rem;bottom:3rem;display:flex;flex-direction:column;gap:18px;z-index:10;animation:fadeUp 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) both}
+.stat-item{display:flex;flex-direction:column;gap:3px}
+.stat-num{font-size:24px;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em}
+.stat-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase}
+.stat-divider{width:22px;height:1px;background:var(--primary);opacity:0.5}
+.accent-line{position:absolute;top:0;right:30%;width:1px;height:100%;background:var(--primary);opacity:0.06;transform:rotate(12deg) translateX(50%);pointer-events:none}
+
+@media(max-width:900px){
+  nav{padding:1.5rem 2rem}
+  .nav-links{gap:1.5rem}
+  .stat-strip{left:2rem;bottom:2rem}
+  .status-badge{right:2rem;bottom:2rem}
+}
+
+@media(max-width:640px){
+  nav{padding:1.25rem 1.5rem}
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .hero-inner{padding:0 1.5rem}
+  .hero-eyebrow{margin-bottom:1.25rem}
+  .hero-name{margin-bottom:1.25rem}
+  .hero-role{font-size:15px;margin-bottom:2rem}
+  .hero-ctas{flex-direction:column;gap:10px;width:100%}
+  .btn-primary,.btn-ghost{width:100%;justify-content:center;padding:14px 24px}
+  .stat-strip{position:static;display:flex;flex-direction:row;justify-content:center;gap:0;padding:2rem 1.5rem 0;margin-top:2rem;width:100%}
+  .stat-item{align-items:center;flex:1}
+  .stat-divider{display:none}
+  .status-badge{position:static;margin:1.5rem auto 0;width:fit-content}
+  .scroll-hint{display:none}
+  .hero{flex-direction:column;padding-top:5rem;padding-bottom:2rem;min-height:100svh;justify-content:center;align-items:center}
+  .mob-menu{display:flex}
+  .mob-nav.open{display:flex}
+}
+
+.mob-menu{display:none;position:absolute;top:1.25rem;right:1.5rem;z-index:20;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mob-menu span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+.mob-nav{display:none;position:absolute;top:0;left:0;right:0;z-index:15;background:var(--bg);border-bottom:1px solid var(--border);padding:5rem 1.5rem 2rem;flex-direction:column;gap:1.25rem}
+.mob-nav a{font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+
+    <line x1="600" y1="0" x2="600" y2="900" stroke="#3B6D11" stroke-width="0.5" opacity="0.07" class="grid-line-v"/>
+    <line x1="0" y1="450" x2="1440" y2="450" stroke="#3B6D11" stroke-width="0.5" opacity="0.07" class="grid-line-h"/>
+
+    <!-- LEFT CLUSTER -->
+    <g class="diamond-group-1" style="transform-origin:33px 119px">
+      <path fill="#F0F3EE" d="M33-102L-202,133c-20,20-20,52,0,72L33,340c20,20,52,20,72,0L340,105c20-20,20-52,0-72L105-102C85-122,53-122,33-102z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.5" class="outline-1" d="M40-95L-195,140c-20,20-20,52,0,72L40,347c20,20,52,20,72,0L347,112c20-20,20-52,0-72L112-95C92-115,60-115,40-95z"/>
+    </g>
+
+    <g class="diamond-group-2" style="transform-origin:299px 14px">
+      <path fill="#3B6D11" class="fill-pulse-1" d="M270,45L210,15c-16-16-16-42,0-58L270-103c16-16,42-16,58,0L388,15c16,16,16,42,0,58L328,131C312,147,286,147,270,131z" transform="translate(0,-30)"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" class="outline-2" d="M274,52L214,22c-16-16-16-42,0-58L274-96c16-16,42-16,58,0L392,22c16,16,16,42,0,58L332,138C316,154,290,154,274,138z" transform="translate(0,-30)"/>
+    </g>
+
+    <g class="diamond-group-3" style="transform-origin:-8px 294px">
+      <path fill="#C8D4C8" opacity="0.92" d="M-8,390L-72,326c-18-18-18-47,0-65L-8,197c18-18,47-18,65,0L121,261c18,18,18,47,0,65L57,390C39,408,10,408,-8,390z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.7" d="M-4,398L-68,334c-18-18-18-47,0-65L-4,205c18-18,47-18,65,0L125,269c18,18,18,47,0,65L61,398C43,416,14,416,-4,398z"/>
+    </g>
+
+    <g class="diamond-group-4" style="transform-origin:237px 282px">
+      <path fill="#C0DD97" opacity="0.85" d="M197,376L123,302c-11-11-11-29,0-40L197,188c11-11,29-11,40,0L311,262c11,11,11,29,0,40L237,376C226,387,208,387,197,376z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.65" d="M201,388L127,314c-11-11-11-29,0-40L201,200c11-11,29-11,40,0L315,274c11,11,11,29,0,40L241,388C230,399,212,399,201,388z"/>
+    </g>
+
+    <g class="diamond-group-5" style="transform-origin:98px 480px">
+      <path fill="#3B6D11" class="fill-pulse-2" d="M98,570L38,510c-16-16-16-43,0-59L98,391c16-16,43-16,59,0L217,451c16,16,16,43,0,59L157,570C141,586,114,586,98,570z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.65" d="M102,590L42,530c-16-16-16-43,0-59L102,411c16-16,43-16,59,0L221,471c16,16,16,43,0,59L161,590C145,606,118,606,102,590z"/>
+    </g>
+
+    <g class="diamond-mini" style="transform-origin:315px 229px">
+      <path fill="#C8D4C8" opacity="0.8" d="M315,271L289,245c-8-8-8-21,0-29L315,190c8-8,21-8,29,0L370,216c8,8,8,21,0,29L344,271C336,279,323,279,315,271z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.7" d="M317,288L291,262c-8-8-8-21,0-29L317,207c8-8,21-8,29,0L372,233c8,8,8,21,0,29L346,288C338,296,325,296,317,288z"/>
+    </g>
+    <path fill="#3B6D11" opacity="0.7" d="M323,360l-8-8c-4-4-4-11,0-15l8-8c4-4,11-4,15,0l8,8c4,4,4,11,0,15l-8,8C334,364,327,364,323,360z" class="diamond-mini"/>
+
+    <!-- RIGHT CLUSTER -->
+    <g class="diamond-group-2" style="transform-origin:1140px 544px">
+      <path fill="#F0F3EE" d="M1140,760L960,580c-20-20-20-52,0-72L1140,328c20-20,52-20,72,0L1392,508c20,20,20,52,0,72L1212,760C1192,780,1160,780,1140,760z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1.5" class="outline-1" d="M1134,774L954,594c-20-20-20-52,0-72L1134,342c20-20,52-20,72,0L1386,522c20,20,20,52,0,72L1206,774C1186,794,1154,794,1134,774z"/>
+    </g>
+
+    <g class="diamond-group-3" style="transform-origin:1115px 359px">
+      <path fill="#3B6D11" class="fill-pulse-3" d="M1115,468L1038,391c-18-18-18-47,0-65L1115,249c18-18,47-18,65,0L1257,326c18,18,18,47,0,65L1180,468C1162,486,1133,486,1115,468z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.7" d="M1111,488L1034,411c-18-18-18-47,0-65L1111,269c18-18,47-18,65,0L1253,346c18,18,18,47,0,65L1176,488C1158,506,1129,506,1111,488z"/>
+    </g>
+
+    <g class="diamond-group-6" style="transform-origin:888px 392px">
+      <path fill="#C0DD97" opacity="0.82" d="M888,454L848,414c-12-12-12-32,0-44L888,330c12-12,32-12,44,0L972,370c12,12,12,32,0,44L932,454C920,466,900,466,888,454z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.65" d="M884,472L844,432c-12-12-12-32,0-44L884,348c12-12,32-12,44,0L968,388c12,12,12,32,0,44L928,472C916,484,896,484,884,472z"/>
+    </g>
+
+    <g class="diamond-group-4" style="transform-origin:882px 578px">
+      <path fill="#C8D4C8" opacity="0.82" d="M882,669L814,601c-18-18-18-47,0-65L882,468c18-18,47-18,65,0L1015,535c18,18,18,47,0,65L947,669C929,687,900,687,882,669z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.6" d="M878,685L810,617c-18-18-18-47,0-65L878,484c18-18,47-18,65,0L1011,551c18,18,18,47,0,65L943,685C925,703,896,703,878,685z"/>
+    </g>
+
+    <g class="diamond-group-1" style="transform-origin:1282px 735px">
+      <path fill="#F0F3EE" opacity="0.97" d="M1282,820L1226,764c-16-16-16-42,0-58L1282,650c16-16,42-16,58,0L1396,706c16,16,16,42,0,58L1340,820C1324,836,1298,836,1282,820z"/>
+    </g>
+
+    <g class="diamond-mini" style="transform-origin:998px 425px">
+      <path fill="#C8D4C8" opacity="0.88" d="M998,465L972,439c-8-8-8-21,0-29L998,384c8-8,21-8,29,0L1053,410c8,8,8,21,0,29L1027,465C1019,473,1006,473,998,465z"/>
+    </g>
+
+    <g class="diamond-group-5" style="transform-origin:1129px 217px">
+      <path fill="#C0DD97" opacity="0.78" d="M1129,275L1096,242c-14-14-14-37,0-51L1129,158c14-14,37-14,51,0L1213,191c14,14,14,37,0,51L1180,275C1166,289,1143,289,1129,275z"/>
+      <path fill="none" stroke="#3B6D11" stroke-width="1" opacity="0.65" d="M1126,293L1093,260c-14-14-14-37,0-51L1126,176c14-14,37-14,51,0L1210,209c14,14,14,37,0,51L1177,293C1163,307,1140,307,1126,293z"/>
+    </g>
+
+    <polygon fill="#FF4C3E" class="accent-triangle" points="1033,587 1029,620 1010,600"/>
+
+    <ellipse cx="76" cy="119" rx="240" ry="240" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:76px 119px;animation:trailFade 6s ease-out 1s infinite"/>
+    <ellipse cx="76" cy="119" rx="240" ry="240" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:76px 119px;animation:trailFade 6s ease-out 3.5s infinite"/>
+    <ellipse cx="1173" cy="544" rx="220" ry="220" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:1173px 544px;animation:trailFade 7s ease-out 2s infinite"/>
+    <ellipse cx="1173" cy="544" rx="220" ry="220" fill="none" stroke="#3B6D11" stroke-width="0.5" opacity="0" style="transform-origin:1173px 544px;animation:trailFade 7s ease-out 5s infinite"/>
+  </svg>
+
+  <div class="accent-line"></div>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-mark"></div>
+      <span class="nav-logo-text">INFFINI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#works">Work</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Process</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Let's Talk</a>
+  </nav>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Creative Developer</div>
+    <h1 class="hero-name">Crafting<br/><em>Digital</em> Worlds</h1>
+    <p class="hero-role">
+      I design and build <strong>immersive interfaces</strong> and interactive experiences —
+      where geometry meets motion and every pixel is intentional.
+    </p>
+    <div class="hero-ctas">
+      <a href="#works" class="btn-primary">
+        View Work
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+      <a href="#" class="btn-ghost">Download CV</a>
+    </div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-item"><span class="stat-num">06+</span><span class="stat-label">Years exp.</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num">42</span><span class="stat-label">Projects</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num">18</span><span class="stat-label">Clients</span></div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <div class="status-badge">
+    <div class="status-dot"></div>
+    <span class="status-text">Available for work</span>
+  </div>
+
+  <!-- mobile-only hamburger -->
+  <button class="mob-menu" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mob-nav">
+    <a href="#works">Work</a>
+    <a href="#">About</a>
+    <a href="#">Process</a>
+    <a href="#" class="nav-cta" style="display:inline-flex;width:fit-content">Let's Talk</a>
+  </div>
+</section>
+
+</body>
+</html>
