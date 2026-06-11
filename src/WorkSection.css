@@ -544,7 +544,7 @@ img.slide-real-image {
     border-radius: 10px;
 }
 
-.empty-diamond {
+.empty-diamond { 
     width: 36px;
     height: 36px;
     background: var(--surface);
@@ -571,4 +571,80 @@ img.slide-real-image {
     img.slide-real-image{
       object-fit: fill;
     }
+}
+
+
+
+.device-mobile-outer {
+    width: 200px;
+    margin: 1.5rem auto;
+    border: 2px solid var(--border);
+    border-radius: 28px;
+    overflow: hidden;
+  }
+  
+  .device-desktop .browser-screen,
+  .device-desktop .phone-screen {
+    /* inherits height from SlidePlaceholder */
+  }
+
+  .works-carousel--mobile {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+.info-panel-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    text-decoration: none;
+    transition: all 0.18s;
+}
+
+.info-panel-github:hover {
+    background: var(--surface);
+}
+
+.works-thumb-strip-wrap {
+    position: relative;
+}
+
+.thumb-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%); /* offset for the name label below thumbs */
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: var(--ink-mid);
+    transition: all 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.thumb-scroll-btn:hover {
+    background: var(--primary-d);
+    border-color: var(--primary-d);
+    color: #eaf3de;
+}
+
+.thumb-scroll-left  { left: -14px; }
+.thumb-scroll-right { right: -14px; }
+
+/* hide arrows on mobile — touch scroll handles it */
+@media (max-width: 900px) {
+    .thumb-scroll-btn { display: none; }
 }

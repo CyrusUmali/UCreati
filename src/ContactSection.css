@@ -1,5 +1,3 @@
-/* ContactSection.css */
-
 /* ── Section shell ─────────────────────────────────────────────── */
 .contact-section {
   position: relative;
@@ -38,9 +36,9 @@
   z-index: 5;
   width: 100%;
   max-width: 1280px;
-  padding: 5rem 3.5rem 5rem;
+  padding: 5rem 3.5rem;
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 4rem;
   align-items: start;
 }
@@ -191,6 +189,66 @@
   transition: width 0.4s ease;
 }
 
+/* ── Step indicator ────────────────────────────────────────────── */
+.step-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-mute);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.step-num.active {
+  border-color: var(--primary);
+  color: var(--primary-d);
+  background: var(--primary-p);
+}
+
+.step-num.done {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #EAF3DE;
+}
+
+.step-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  transition: color 0.2s;
+}
+
+.step-label.active {
+  color: var(--primary-d);
+}
+
+.step-connector {
+  flex: 0 0 24px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
 /* ── Section titles ────────────────────────────────────────────── */
 .form-section-title {
   font-family: 'Space Mono', monospace;
@@ -329,6 +387,12 @@ textarea.form-input {
   border-top: 1px solid var(--border);
 }
 
+.form-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .form-note {
   font-family: 'Space Mono', monospace;
   font-size: 9px;
@@ -338,6 +402,7 @@ textarea.form-input {
   line-height: 1.6;
 }
 
+/* ── Buttons ───────────────────────────────────────────────────── */
 .btn-send {
   display: inline-flex;
   align-items: center;
@@ -361,6 +426,29 @@ textarea.form-input {
   transform: translateY(-2px);
 }
 
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--ink-mid);
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--border);
+  padding: 11px 18px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary-d);
+}
+
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .contact-inner {
@@ -376,5 +464,43 @@ textarea.form-input {
   .form-row-3           { grid-template-columns: 1fr; }
   .form-card            { padding: 1.5rem; }
   .form-footer          { flex-direction: column; align-items: flex-start; }
+  .form-footer-right    { width: 100%; justify-content: space-between; }
   .btn-send             { width: 100%; justify-content: center; }
+
+  
+} 
+
+
+
+
+/* ── Panels wrap ───────────────────────────────────────────────── */
+.panels-wrap {
+  overflow: hidden;
 }
+
+.step-panel.panel-hidden {
+  display: none;
+}
+
+/* ── Step transition animations ────────────────────────────────── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-32px); }
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(32px); }
+}
+
+.step-panel.enter-from-right { animation: slideInRight  0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.step-panel.enter-from-left  { animation: slideInLeft   0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.step-panel.exit-to-left     { animation: slideOutLeft  0.22s ease both; }
+.step-panel.exit-to-right    { animation: slideOutRight 0.22s ease both; }
