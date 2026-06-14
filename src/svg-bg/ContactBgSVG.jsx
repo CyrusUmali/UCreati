@@ -11,7 +11,7 @@ export default function ContactBgSVG() {
         <line x1="0" y1="420" x2="1440" y2="420" stroke="#3B6D11" strokeWidth="0.5" opacity="0.06" className="anim-grid-h" />
   
         {/* ── LEFT CLUSTER ── */}
-        <g transform="translate(-80, 50)">
+        <g transform="translate(-200, 50)">
           <g className="anim-diamond-group-1" style={{ transformOrigin: "118px 220px" }}>
             <path fill="#F0F3EE" d="M28,4L-207,239c-20,20-20,52,0,72L28,546c20,20,52,20,72,0L335,311c20-20,20-52,0-72L100,4C80-16,48-16,28,4z" />
             <path fill="none" stroke="#3B6D11" strokeWidth="1.5" className="anim-outline-1" d="M34,11L-201,246c-20,20-20,52,0,72L34,553c20,20,52,20,72,0L341,318c20-20,20-52,0-72L106,11C86-9,54-9,34,11z" />

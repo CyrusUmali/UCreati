@@ -36,7 +36,7 @@ export default function HeroSVG() {
         <path fill="none" stroke="#3B6D11" strokeWidth="1" opacity="0.7" d="M317,288L291,262c-8-8-8-21,0-29L317,207c8-8,21-8,29,0L372,233c8,8,8,21,0,29L346,288C338,296,325,296,317,288z" />
       </g>
       <path fill="#3B6D11" opacity="0.7" className="anim-diamond-mini" d="M323,360l-8-8c-4-4-4-11,0-15l8-8c4-4,11-4,15,0l8,8c4,4,4,11,0,15l-8,8C334,364,327,364,323,360z" />
-
+ 
       <g className="anim-diamond-group-2" style={{ transformOrigin: "1140px 544px" }}>
         <path fill="#F0F3EE" d="M1140,760L960,580c-20-20-20-52,0-72L1140,328c20-20,52-20,72,0L1392,508c20,20,20,52,0,72L1212,760C1192,780,1160,780,1140,760z" />
         <path fill="none" stroke="#3B6D11" strokeWidth="1.5" className="anim-outline-1" d="M1134,774L954,594c-20-20-20-52,0-72L1134,342c20-20,52-20,72,0L1386,522c20,20,20,52,0,72L1206,774C1186,794,1154,794,1134,774z" />
@@ -54,11 +54,16 @@ export default function HeroSVG() {
         <path fill="none" stroke="#3B6D11" strokeWidth="1" opacity="0.6" d="M878,685L810,617c-18-18-18-47,0-65L878,484c18-18,47-18,65,0L1011,551c18,18,18,47,0,65L943,685C925,703,896,703,878,685z" />
       </g>
 
+      
       <g transform="translate(30, -50)">
-      <g className="anim-diamond-group-1" style={{ transformOrigin: "1282px 735px" }}>
-        <path fill="#F0F3EE" opacity="0.97" d="M1282,820L1226,764c-16-16-16-42,0-58L1282,650c16-16,42-16,58,0L1396,706c16,16,16,42,0,58L1340,820C1324,836,1298,836,1282,820z" />
-      </g>
-      </g>
+  <g className="anim-diamond-group-2" style={{ transformOrigin: "1282px 735px" }}>
+    {/* Fill with pulse animation */}
+    <path fill="#3B6D11" className="anim-fill-pulse-1" d="M1282,820L1226,764c-16-16-16-42,0-58L1282,650c16-16,42-16,58,0L1396,706c16,16,16,42,0,58L1340,820C1324,836,1298,836,1282,820z" />
+    
+    {/* Outline */}
+    <path fill="none" stroke="#3B6D11" strokeWidth="1" className="anim-outline-2" d="M1276,834L1220,778c-16-16-16-42,0-58L1276,664c16-16,42-16,58,0L1390,720c16,16,16,42,0,58L1334,834C1318,850,1292,850,1276,834z" />
+  </g>
+</g>
 
 
 

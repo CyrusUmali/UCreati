@@ -12,6 +12,8 @@
 /* ─── Design Tokens ──────────────────────────────────────── */
 :root {
     --bg: #FFFFFF;
+
+    /* --bg: oklch(0.98 0 0); */
     --surface: #f0f3ee;
     --border: #c8d4c8;
     --primary: #3b6d11;

@@ -25,7 +25,7 @@ const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
       <span
         className="type-chip-count"
         style={{
-          background: isActive ? "rgba(255,255,255,0.15)" : t.countBg,
+          background: isActive ? "rgba(255,255,255,0.15)" : null,
           color: isActive ? "rgba(255,255,255,0.85)" : t.countText,
         }}
       >
@@ -149,7 +149,7 @@ export default function WorksSection() {
   const [activeType, setActiveTypeState] = useState("all");
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [infoFading, setInfoFading] = useState(false);
+  const [infoFading, setInfoFading] = useState(false); 
   const [labelVisible, setLabelVisible] = useState(true);
   const timerRef = useRef(null);
   const stageRef = useRef(null);

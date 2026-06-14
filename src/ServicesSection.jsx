@@ -8,6 +8,7 @@ import {
   IconArrowNarrowRight,
 } from "@tabler/icons-react";
 import ServicesSVG from "./svg-bg/ServicesSVG";
+import "./ServicesSection.css";
 
 const CARDS = [
   {
@@ -73,153 +74,52 @@ export default function Services() {
   }, []);
 
   return (
-    <>
-      <style>{`
-        /* ── DIAMOND ANIMATIONS ── */
-        @keyframes floatA{0%,100%{transform:translateY(0px) rotate(0deg)}33%{transform:translateY(-18px) rotate(2deg)}66%{transform:translateY(8px) rotate(-1.5deg)}}
-        @keyframes floatB{0%,100%{transform:translateY(0px) rotate(0deg)}40%{transform:translateY(14px) rotate(-2deg)}80%{transform:translateY(-10px) rotate(1deg)}}
-        @keyframes floatC{0%,100%{transform:translateY(0px)}50%{transform:translateY(-12px)}}
-        @keyframes driftX{0%,100%{transform:translateX(0)}50%{transform:translateX(12px)}}
-        @keyframes pulseOpacity{0%,100%{opacity:0.45}50%{opacity:0.8}}
-        @keyframes pulseOpacityBig{0%,100%{opacity:0.7}50%{opacity:1}}
-        @keyframes accentPulse{0%,100%{opacity:0.35}50%{opacity:0.85}}
-        @keyframes trailFade{0%{opacity:0;transform:scale(0.5)}20%{opacity:0.5}100%{opacity:0;transform:scale(1.8)}}
-        @keyframes smallFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,-9px)}}
-        @keyframes gridSlide{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+    <section id="services" ref={sectionRef}>
+      <ServicesSVG />
 
-        .d-float-a{animation:floatA 9s ease-in-out infinite;opacity:0.95}
-        .d-float-b{animation:floatB 11s ease-in-out infinite;opacity:0.95}
-        .d-float-c{animation:floatC 7s ease-in-out 1s infinite;opacity:0.9}
-        .d-drift{animation:driftX 13s ease-in-out 2s infinite;opacity:0.9}
-        .d-float-e{animation:floatA 8s ease-in-out 3s infinite;opacity:0.9}
-        .d-float-f{animation:floatB 10s ease-in-out 0.5s infinite;opacity:0.9}
-        .d-mini{animation:smallFloat 5s ease-in-out infinite;opacity:0.85}
-        .d-outline-a{animation:pulseOpacityBig 4s ease-in-out infinite}
-        .d-outline-b{animation:pulseOpacityBig 5s ease-in-out 1.5s infinite}
-        .d-fill-a{animation:pulseOpacity 6s ease-in-out infinite}
-        .d-fill-b{animation:pulseOpacity 5s ease-in-out 2s infinite}
-        .d-fill-c{animation:pulseOpacity 7s ease-in-out 1s infinite}
-        .d-accent{animation:accentPulse 3s ease-in-out infinite}
-        .d-grid-h{stroke-dasharray:6 4;animation:gridSlide 8s linear infinite}
-        .d-grid-v{stroke-dasharray:6 4;animation:gridSlide 12s linear infinite}
+      <div className="svc-heading reveal">
+        <h2>Our <em>Services</em></h2>
+      </div>
 
-        /* ── REVEAL ── */
-        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-        .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1)}
-        .reveal.visible{opacity:1;transform:none}
-
-        /* ── SECTION ── */
-        #services{padding:6rem 3.5rem 7rem;background:var(--bg);position:relative;overflow:hidden}
-
-        /* ── HEADING ── */
-        .svc-heading{position:relative;z-index:1;text-align:center;margin-bottom:3.5rem}
-        .svc-heading h2{font-size:clamp(30px,4vw,48px);font-weight:800;color:var(--ink);letter-spacing:-0.025em;line-height:1}
-        .svc-heading h2 em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--primary)}
-
-        /* ── GRID ── */
-        .svc-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.25rem;max-width:1100px;margin:0 auto}
-
-        /* ── BASE CARD ── */
-        .svc-card{background:rgba(250,250,248,0.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--border);padding:2rem 1.875rem;display:flex;flex-direction:column;gap:0.875rem;transition:box-shadow 0.25s,transform 0.25s,background 0.25s;position:relative}
-        .svc-card:hover{background:rgba(240,243,238,0.97);box-shadow:0 8px 32px rgba(39,80,10,0.1);transform:translateY(-3px)}
-
-        /* ── FEATURED CARD ── */
-        .svc-card.featured{grid-column:1;grid-row:1 / span 2;background:var(--primary);border-color:var(--primary);display:flex;flex-direction:column;justify-content:space-between;padding:2.5rem 2.25rem}
-        .svc-card.featured:hover{background:var(--primary-d);box-shadow:0 12px 40px rgba(39,80,10,0.3)}
-        .featured-arrow{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid rgba(192,221,151,0.45);color:var(--primary-p);align-self:flex-start;transition:background 0.2s,border-color 0.2s;flex-shrink:0}
-        .svc-card.featured:hover .featured-arrow{background:rgba(192,221,151,0.12);border-color:var(--primary-p)}
-        .featured-body{display:flex;flex-direction:column;gap:1rem}
-        .featured-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(192,221,151,0.7)}
-        .featured-title{font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#EAF3DE;line-height:1.15;letter-spacing:-0.02em}
-        .featured-desc{font-size:13.5px;font-weight:300;color:rgba(192,221,151,0.85);line-height:1.7}
-        .featured-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
-        .featured-tags span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary-p);border:1px solid rgba(192,221,151,0.3);padding:4px 9px}
-
-        /* ── REGULAR CARD PARTS ── */
-        .card-icon-wrap{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--surface);transition:background 0.2s,border-color 0.2s;color:var(--primary)}
-        .svc-card:not(.featured):hover .card-icon-wrap{background:var(--primary-p);border-color:var(--primary)}
-        .card-title{font-size:15px;font-weight:800;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;margin-top:0.25rem}
-        .card-desc{font-size:12.5px;font-weight:300;color:var(--ink-mid);line-height:1.65;flex:1}
-        .card-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mute);text-decoration:none;margin-top:auto;transition:color 0.2s}
-        .card-link svg{transition:transform 0.2s}
-        .card-link:hover{color:var(--primary)}
-        .card-link:hover svg{transform:translateX(3px)}
-
-        /* ── FOOTER ── */
-        .svc-footer{position:relative;z-index:1;max-width:1100px;margin:3rem auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
-        .svc-footer-note{font-family:'Space Mono',monospace;font-size:10px;color:var(--ink-mute);letter-spacing:0.12em;display:flex;align-items:center;gap:10px}
-        .svc-footer-note::before{content:'';display:block;width:18px;height:1px;background:var(--primary);opacity:0.5}
-
-        /* ── RESPONSIVE ── */
-        @media(max-width:900px){
-          .svc-grid{grid-template-columns:1fr 1fr}
-          .svc-card.featured{grid-column:1 / span 2;grid-row:1;flex-direction:row;align-items:center;gap:2rem}
-          .featured-arrow{align-self:center;flex-shrink:0}
-          #services{padding:5rem 2rem 5.5rem}
-        }
-        @media(max-width:580px){
-          #services{padding:4rem 1.25rem 4.5rem}
-          .svc-grid{grid-template-columns:1fr;gap:1rem}
-          .svc-card.featured{grid-column:1;grid-row:auto;flex-direction:column}
-          .svc-footer{flex-direction:column;align-items:flex-start}
-          .btn-primary{width:100%;justify-content:center}
-        }
-        @media(prefers-reduced-motion:reduce){
-          .reveal{opacity:1;transform:none;transition:none}
-          .svc-card{transition:none}
-          .d-float-a,.d-float-b,.d-float-c,.d-drift,.d-float-e,.d-float-f,.d-mini,
-          .d-outline-a,.d-outline-b,.d-fill-a,.d-fill-b,.d-fill-c,.d-accent,
-          .d-grid-h,.d-grid-v{animation:none}
-        }
-      `}</style>
-
-      <section id="services" ref={sectionRef}>
-        <ServicesSVG />
-
-        <div className="svc-heading reveal">
-          <h2>Our <em>Services</em></h2>
-        </div>
-
-        <div className="svc-grid">
-          {/* Featured card — spans 2 rows */}
-          <div className="svc-card featured reveal">
-            <div className="featured-arrow">
-              <IconLayersSubtract size={20} />
+      <div className="svc-grid">
+        {/* Featured card — spans 2 rows */}
+        <div className="svc-card featured reveal">
+          <div className="featured-arrow">
+            <IconLayersSubtract size={20} />
+          </div>
+          <div className="featured-body">
+            <div className="featured-label">Core Offering</div>
+            <div className="featured-title">
+              Full-Stack<br />Development
             </div>
-            <div className="featured-body">
-              <div className="featured-label">Core Offering</div>
-              <div className="featured-title">
-                Full-Stack<br />Development
-              </div>
-              <p className="featured-desc">
-                Complete web applications — from database schema to polished UI.
-                One developer, full ownership, zero handoff friction.
-              </p>
-              <div className="featured-tags">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>Next.js</span>
-              </div>
+            <p className="featured-desc">
+              Complete web applications — from database schema to polished UI.
+              One developer, full ownership, zero handoff friction.
+            </p>
+            <div className="featured-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+              <span>Next.js</span>
             </div>
           </div>
-
-          {/* Regular cards */}
-          {CARDS.map((card) => (
-            <ServiceCard key={card.title} {...card} />
-          ))}
         </div>
 
-        <div className="svc-footer reveal">
-          <span className="svc-footer-note">
-            Custom scope? Let&apos;s figure it out together.
-          </span>
-          <a href="#" className="btn-primary">
-            Start a Project
-            <IconArrowNarrowRight size={14} />
-          </a>
-        </div>
-      </section>
-    </>
+        {/* Regular cards */}
+        {CARDS.map((card) => (
+          <ServiceCard key={card.title} {...card} />
+        ))}
+      </div>
+
+      <div className="svc-footer reveal">
+        <span className="svc-footer-note">
+          Custom scope? Let's figure it out together.
+        </span>
+        <a href="#" className="btn-primary">
+          Start a Project
+          <IconArrowNarrowRight size={14} />
+        </a>
+      </div>
+    </section>
   );
 }

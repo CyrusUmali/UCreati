@@ -19,7 +19,7 @@
 .works-inner {
     position: relative;
     z-index: 1;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 6rem;
     text-align: center;
@@ -178,13 +178,14 @@
 /* ── Horizontal project thumb strip ── */
 .works-thumb-strip {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
     gap: 10px;
     overflow-x: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 4px;
-    margin-bottom: 0;
+    margin-bottom: 0; 
 }
 
 .works-thumb-strip::-webkit-scrollbar {
@@ -379,7 +380,7 @@
 }
 
 .slide-placeholder {
-    height: 500px;
+    /* height: 500px; */
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -559,7 +560,7 @@ img.slide-real-image {
         padding: 0 1rem !important;
     }
     .slide-placeholder {
-        height: 400px !important; 
+        /* height: 400px !important;  */
     }
     .proj-thumb {
         width: 110px;
@@ -582,11 +583,7 @@ img.slide-real-image {
     border-radius: 28px;
     overflow: hidden;
   }
-  
-  .device-desktop .browser-screen,
-  .device-desktop .phone-screen {
-    /* inherits height from SlidePlaceholder */
-  }
+   
 
   .works-carousel--mobile {
     border: none;
@@ -644,7 +641,53 @@ img.slide-real-image {
 .thumb-scroll-left  { left: -14px; }
 .thumb-scroll-right { right: -14px; }
 
-/* hide arrows on mobile — touch scroll handles it */
+
+
+
+
+/* Add these new styles for different device heights */
+
+/* Desktop/Laptop - taller carousel */
+.works-carousel:not(.works-carousel--mobile) .slide-placeholder {
+    height: 500px;
+}
+
+/* Mobile - shorter carousel */
+.works-carousel--mobile .slide-placeholder {
+    height: 400px;
+}
+
+/* For browser/desktop device mockup */
+.device-desktop .slide-placeholder {
+    height: 480px;
+}
+
+/* For phone device mockup */
+.device-mobile-outer .slide-placeholder {
+    height: 380px;
+}
+
+
+
+
+
+/* Responsive adjustments */
 @media (max-width: 900px) {
-    .thumb-scroll-btn { display: none; }
+    .works-carousel:not(.works-carousel--mobile) .slide-placeholder {
+        height: 400px;
+    }
+    
+    .works-carousel--mobile .slide-placeholder {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .works-carousel:not(.works-carousel--mobile) .slide-placeholder {
+        height: 250px;
+    }
+    
+    .works-carousel--mobile .slide-placeholder {
+        height: 400px;
+    }
 }

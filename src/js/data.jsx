@@ -123,88 +123,6 @@ export const PROJECT_TYPES = {
 
 export const PROJECTS = [
 
-  {
-    id: "pirate-treasure", name: "Pirate Treasure Hunt", short: "Treasure Hunt",
-    type: "game", color: "#2a6b6b", bg: "#e8f4f4",
-    tagline: "Spring Boot expedition game with session-based persistence",
-    desc: "A pirate treasure hunt game built with Spring Boot users choose expedition areas, set sail, and discover treasure (or misfortune). Features session management to track wealth between requests, POST route handling, and redirect patterns. The UI is inspired by Genshin Impact's expedition interface with Beidou as the main character.",
-    tags: ["Spring Boot", "Session management", "POST routes", "Mini-game", "Genshin-inspired"],
-    github: "https://github.com/CyrusUmali/Beidou-Treasure-Hunt",
-    slides: [
-      {
-        label: "Expedition Selection",
-        desc: "Choose which area to explore each location shows predicted outcomes, duration, and potential rewards. Right panel displays 'Set Sail' with area description.",
-        hue: "180deg", screenLabel: "Treasure Hunt · Expedition",
-        image: "/pirate/pirate.png",
-      },
-      {
-        label: "Sailing Animation",
-        desc: "A short sailing animation plays after selecting an expedition building anticipation before revealing the outcome.",
-        hue: "190deg", screenLabel: "Treasure Hunt · Sailing",
-        image: "/pirate/pirate (1).png",
-      },
-      {
-        label: "Treasure Found!",
-        desc: "Success modal featuring chibi Beidou laughing treasure amount added to your session-stored wealth.",
-        hue: "45deg", screenLabel: "Treasure Hunt · Success",
-        image: "/pirate/pirate (2).png",
-      },
-      {
-        label: "Expedition Failed",
-        desc: "Failure modal with chibi Beidou crying you lose some wealth or return empty-handed.",
-        hue: "350deg", screenLabel: "Treasure Hunt · Failed",
-        image: "/pirate/pirate (3).png",
-      },
-      {
-        label: "Marooned Screen",
-        desc: "Special penalty state if you lose too much wealth or fail too many expeditions, you get marooned and must restart your journey.",
-        hue: "200deg", screenLabel: "Treasure Hunt · Marooned",
-        image: "/pirate/pirate (4).png",
-      },
-    ],
-  },
-
-  {
-    id: "jjk-selector", name: "JJK Character Selector", short: "JJK Selector",
-    type: "game", color: "#7a1f2c", bg: "#fcf0f2",
-    tagline: "Dynamic character selection UI with real-time updates",
-    desc: "A Jujutsu Kaisen character selector built for a frontend assignment demonstrating data attributes, event handling, and dynamic UI updates. Users click on any character card to see their name and portrait appear in the main display area, with visual feedback for the currently selected character.",
-    tags: ["Data attributes", "Event handling", "Dynamic UI", "DOM manipulation", "2-3 hour build"],
-    github: "https://github.com/yourusername/jjk-character-selector",
-    slides: [
-      {
-        label: "Character Grid",
-        desc: "All selectable characters displayed in a responsive grid each card stores character data in data attributes (name, image, description).",
-        hue: "350deg", screenLabel: "JJK Selector · Character Grid",
-        image: "/jjk/jjk.png",
-      },
-      {
-        label: "Selection Highlight",
-        desc: "Visual cue (border glow, shadow, or background change) indicates which character is currently selected.",
-        hue: "340deg", screenLabel: "JJK Selector · Selected State",
-        image: "/jjk/jjk (1).png",
-      },
-      {
-        label: "Main Display Area",
-        desc: "Selected character's name and larger image dynamically appear in the main display panel upon selection.",
-        hue: "355deg", screenLabel: "JJK Selector · Display",
-        image: "/jjk/jjk (2).png",
-      },
-      {
-        label: "Character Details",
-        desc: "Additional info (cursed technique, grade, or fun fact) appears alongside the character's portrait.",
-        hue: "345deg", screenLabel: "JJK Selector · Details",
-        image: "/jjk/jjk (3).png",
-      },
-      {
-        label: "Real-time Updates",
-        desc: "Every click triggers immediate UI changes no page reload, just smooth, dynamic interaction.",
-        hue: "335deg", screenLabel: "JJK Selector · Interactive",
-        image: "/jjk/jjk (4).png",
-      },
-    ],
-  }
-  ,
 
 
   {
@@ -637,7 +555,91 @@ export const PROJECTS = [
         image: "/aicrop/aicrop (5).png",
     },
     ],
+  },
+
+  
+  {
+    id: "pirate-treasure", name: "Pirate Treasure Hunt", short: "Treasure Hunt",
+    type: "game", color: "#2a6b6b", bg: "#e8f4f4",
+    tagline: "Spring Boot expedition game with session-based persistence",
+    desc: "A pirate treasure hunt game built with Spring Boot users choose expedition areas, set sail, and discover treasure (or misfortune). Features session management to track wealth between requests, POST route handling, and redirect patterns. The UI is inspired by Genshin Impact's expedition interface with Beidou as the main character.",
+    tags: ["Spring Boot", "Session management", "POST routes", "Mini-game", "Genshin-inspired"],
+    github: "https://github.com/CyrusUmali/Beidou-Treasure-Hunt",
+    slides: [
+      {
+        label: "Expedition Selection",
+        desc: "Choose which area to explore each location shows predicted outcomes, duration, and potential rewards. Right panel displays 'Set Sail' with area description.",
+        hue: "180deg", screenLabel: "Treasure Hunt · Expedition",
+        image: "/pirate/pirate.png",
+      },
+      {
+        label: "Sailing Animation",
+        desc: "A short sailing animation plays after selecting an expedition building anticipation before revealing the outcome.",
+        hue: "190deg", screenLabel: "Treasure Hunt · Sailing",
+        image: "/pirate/pirate (1).png",
+      },
+      {
+        label: "Treasure Found!",
+        desc: "Success modal featuring chibi Beidou laughing treasure amount added to your session-stored wealth.",
+        hue: "45deg", screenLabel: "Treasure Hunt · Success",
+        image: "/pirate/pirate (2).png",
+      },
+      {
+        label: "Expedition Failed",
+        desc: "Failure modal with chibi Beidou crying you lose some wealth or return empty-handed.",
+        hue: "350deg", screenLabel: "Treasure Hunt · Failed",
+        image: "/pirate/pirate (3).png",
+      },
+      {
+        label: "Marooned Screen",
+        desc: "Special penalty state if you lose too much wealth or fail too many expeditions, you get marooned and must restart your journey.",
+        hue: "200deg", screenLabel: "Treasure Hunt · Marooned",
+        image: "/pirate/pirate (4).png",
+      },
+    ],
+  },
+
+  {
+    id: "jjk-selector", name: "JJK Character Selector", short: "JJK Selector",
+    type: "game", color: "#7a1f2c", bg: "#fcf0f2",
+    tagline: "Dynamic character selection UI with real-time updates",
+    desc: "A Jujutsu Kaisen character selector built for a frontend assignment demonstrating data attributes, event handling, and dynamic UI updates. Users click on any character card to see their name and portrait appear in the main display area, with visual feedback for the currently selected character.",
+    tags: ["Data attributes", "Event handling", "Dynamic UI", "DOM manipulation", "2-3 hour build"],
+    github: "https://github.com/yourusername/jjk-character-selector",
+    slides: [
+      {
+        label: "Character Grid",
+        desc: "All selectable characters displayed in a responsive grid each card stores character data in data attributes (name, image, description).",
+        hue: "350deg", screenLabel: "JJK Selector · Character Grid",
+        image: "/jjk/jjk.png",
+      },
+      {
+        label: "Selection Highlight",
+        desc: "Visual cue (border glow, shadow, or background change) indicates which character is currently selected.",
+        hue: "340deg", screenLabel: "JJK Selector · Selected State",
+        image: "/jjk/jjk (1).png",
+      },
+      {
+        label: "Main Display Area",
+        desc: "Selected character's name and larger image dynamically appear in the main display panel upon selection.",
+        hue: "355deg", screenLabel: "JJK Selector · Display",
+        image: "/jjk/jjk (2).png",
+      },
+      {
+        label: "Character Details",
+        desc: "Additional info (cursed technique, grade, or fun fact) appears alongside the character's portrait.",
+        hue: "345deg", screenLabel: "JJK Selector · Details",
+        image: "/jjk/jjk (3).png",
+      },
+      {
+        label: "Real-time Updates",
+        desc: "Every click triggers immediate UI changes no page reload, just smooth, dynamic interaction.",
+        hue: "335deg", screenLabel: "JJK Selector · Interactive",
+        image: "/jjk/jjk (4).png",
+      },
+    ],
   }
+  
 
 
 

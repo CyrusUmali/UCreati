@@ -2,7 +2,7 @@ import styles from "./AboutSection.module.css";
 import AboutSVG from "./svg-bg/AboutSVG";
 import { skills, tags } from "./js/data";
 const profileImage = "/cyrus-2.png";
-
+import { useEffect, useRef, useState } from 'react';
 const TAG_ICONS = {
   "React":       "ti-brand-react",
   "Next.js":     "ti-brand-nextjs",
@@ -33,8 +33,32 @@ const TAG_ICONS = {
 };
 
 export default function AboutSection() {
+
+
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.about} id="about">
+    <section   ref={sectionRef} 
+    className={`${styles.about} ${isVisible ? styles.visible : ''}`} id="about">
       <AboutSVG />
 
       <div className={styles.contentWrap}>
