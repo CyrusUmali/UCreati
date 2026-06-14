@@ -32,7 +32,25 @@
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.45s;
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Skill bars only animate when visible */
 .skillBar {
@@ -114,6 +132,7 @@
 }
 .photoFrameOuter {
   position: relative;
+  border-radius: 8px;
   width: 230px; height: 310px;
   flex-shrink: 0;
 }
@@ -227,10 +246,10 @@
 .highlightBlock {
   background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: 8px;
   border-left: 3px solid var(--primary);
   padding: 1.1rem 1.3rem;
-  margin: 1.6rem 0;
-  border-radius: 0;
+  margin: 1.6rem 0; 
   transition: all 0.25s ease;
 }
 .highlightBlock:hover {

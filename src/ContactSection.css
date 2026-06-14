@@ -46,8 +46,7 @@
 /* ── Left copy column ──────────────────────────────────────────── */
 .contact-left {
   display: flex;
-  flex-direction: column;
-  animation: fadeUp 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  flex-direction: column; 
 }
 
 .contact-left::before {
@@ -151,14 +150,32 @@
   text-transform: uppercase;
 }
 
-/* ── Right form column ─────────────────────────────────────────── */
-.contact-right {
-  animation: fadeUp 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+.contact-left  { transform: translateX(-40px); }
+.contact-right { transform: translateX(40px); }
+
+.contact-section.in-view .contact-left {
+    animation: slideInFromLeft 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contact-section.in-view .contact-right {
+    animation: slideInFromRight 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
 .form-card {
   background: var(--bg);
   border: 1.5px solid var(--border);
+  border-radius: 24px;
   padding: 2rem 2.25rem;
   position: relative;
 }
@@ -207,6 +224,7 @@
   width: 24px;
   height: 24px;
   border: 1.5px solid var(--border);
+  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,6 +317,7 @@
   color: var(--ink);
   font-family: 'Raleway', sans-serif;
   font-size: 13px;
+  border-radius: 8px;
   font-weight: 400;
   padding: 10px 12px;
   outline: none;
@@ -361,6 +380,8 @@ textarea.form-input {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 6px 12px;
+  
+  border-radius: 4px;
   border: 1.5px solid var(--border);
   color: var(--ink-mute);
   background: var(--bg);
@@ -392,7 +413,7 @@ textarea.form-input {
   align-items: center;
   gap: 1rem;
 }
-
+ 
 .form-note {
   font-family: 'Space Mono', monospace;
   font-size: 9px;
@@ -407,6 +428,7 @@ textarea.form-input {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border-radius: 12px;
   background: var(--primary);
   color: #EAF3DE;
   font-family: 'Raleway', sans-serif;

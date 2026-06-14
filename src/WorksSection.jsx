@@ -11,6 +11,10 @@ const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
       ? { color: "#27500A", bg: "#EAF3DE", dotColor: "#639922", countBg: "#C0DD97", countText: "#27500A" }
       : PROJECT_TYPES[typeKey];
 
+
+
+      
+
   return (
     <button
       onClick={onClick}
@@ -169,6 +173,25 @@ export default function WorksSection() {
     }, 4500);
   }, [activeProj]);
  
+
+  const sectionRef = useRef(null);
+
+// 2. Add this useEffect (alongside your other effects)
+useEffect(() => {
+  const el = sectionRef.current;
+  if (!el) return;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add("in-view");
+        observer.disconnect(); // only trigger once
+      }
+    },
+    { threshold: 0.15 }
+  );
+  observer.observe(el);
+  return () => observer.disconnect();
+}, []);
  
 
   useEffect(() => {
@@ -246,7 +269,7 @@ const scrollThumbs = (dir) => {
 };
 
   return (
-    <section className="works-section" id="works">
+    <section className="works-section"  ref={sectionRef} id="works">
       <WorksSVG />
 
       <div className="works-inner">

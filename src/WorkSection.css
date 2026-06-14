@@ -103,8 +103,16 @@
 }
 
 .works-fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: none;
+}
+
+.works-section.in-view .works-fade-up {
     animation: worksFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+
 .works-fade-up-1 {
     animation-delay: 0.1s;
 }
@@ -141,7 +149,7 @@
     padding: 5px 13px;
     border: 1px solid var(--border);
     background: var(--bg);
-    border-radius: 99px;
+    border-radius: 8px;
     font-family: "Space Mono", monospace;
     font-size: 9px;
     letter-spacing: 0.08em;
@@ -355,7 +363,7 @@
     padding: 3px 10px;
     border: 1px solid var(--border);
     background: var(--bg);
-    border-radius: 99px;
+    border-radius: 8px;
 }
 
 /* ── Carousel ── */
@@ -602,7 +610,7 @@ img.slide-real-image {
     padding: 4px 12px;
     border: 1px solid var(--border);
     border-radius: 99px;
-    text-decoration: none;
+    text-decoration: none; 
     transition: all 0.18s;
 }
 
@@ -612,6 +620,8 @@ img.slide-real-image {
 
 .works-thumb-strip-wrap {
     position: relative;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .thumb-scroll-btn {

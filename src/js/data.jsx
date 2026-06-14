@@ -88,8 +88,7 @@ export const PROJECT_TYPES = {
     dotColor: "#8b3a5a",
     countBg: "#f0d4e4",
     countText: "#5c1a3a"
-  },
-  // ADD THESE NEW TYPES:
+  }, 
   game: {
     label: "Games",
     color: "#1a4a5c",
@@ -668,9 +667,9 @@ export const PROJECTS = [
   ];
   
   export const tags = [
-    "React", "Three.js", "GSAP", "Figma",
-    "TypeScript", "WebGL", "Framer", "Next.js",
-    "Blender", "CSS / SVG",
+    "React/React Native", "Flutter", "MySQL", "Figma",
+    "JavaScript", "Firebase",  "Python", "Php",
+    "SpringBoot", "Tailwind", "GitHub", "Node.js","Supabase", "AI/ML"
   ];
 
 

@@ -14,7 +14,7 @@ const CARDS = [
   {
     icon: <IconCode size={18} />,
     title: "Front-End Engineering",
-    desc: "Pixel-perfect, responsive interfaces with deliberate motion. Built in React or vanilla — accessible and production-ready from day one.",
+    desc: "Pixel-perfect, responsive interfaces with deliberate motion. Built in React or vanilla accessible and production-ready from day one.",
   },
   {
     icon: <IconServer2 size={18} />,
@@ -24,7 +24,7 @@ const CARDS = [
   {
     icon: <IconVectorBezier2 size={18} />,
     title: "UI / UX Design",
-    desc: "High-fidelity Figma work grounded in system thinking — tokens, components, and interaction specs that hand off cleanly and scale well.",
+    desc: "High-fidelity Figma work grounded in system thinking tokens, components, and interaction specs that hand off cleanly and scale well.",
   },
   {
     icon: <IconTool size={18} />,
@@ -82,7 +82,7 @@ export default function Services() {
       </div>
 
       <div className="svc-grid">
-        {/* Featured card — spans 2 rows */}
+        {/* Featured card spans 2 rows */}
         <div className="svc-card featured reveal">
           <div className="featured-arrow">
             <IconLayersSubtract size={20} />
@@ -93,7 +93,7 @@ export default function Services() {
               Full-Stack<br />Development
             </div>
             <p className="featured-desc">
-              Complete web applications — from database schema to polished UI.
+              Complete web applications from database schema to polished UI.
               One developer, full ownership, zero handoff friction.
             </p>
             <div className="featured-tags">

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.44.0",
+    "@tabler/icons-webfont": "^3.44.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tabler": "^1.0.0"

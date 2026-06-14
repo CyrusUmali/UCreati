@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef , useEffect } from "react";
 import "./ContactSection.css";
 import ContactBgSVG from "./svg-bg/ContactBgSVG";
 
@@ -59,8 +59,27 @@ export default function ContactSection() {
   const totalFields = step1Fields.length + step2Fields.length + 2;
   const progress = Math.round(Math.min(100, ((s1Filled + s2Filled) / totalFields) * 100));
 
+
+  const sectionRef = useRef(null);
+
+useEffect(() => {
+  const el = sectionRef.current;
+  if (!el) return;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add("in-view");
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.15 }
+  );
+  observer.observe(el);
+  return () => observer.disconnect();
+}, []);
+
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact"  ref={sectionRef}>
       <ContactBgSVG />
       <div className="contact-accent-line" />
 
@@ -92,10 +111,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="status-badge">
-            <span className="status-dot" />
-            <span className="status-text">Taking new projects</span>
-          </div>
+       
         </div>
 
         {/* ── Right: project brief form ── */}
