@@ -690,6 +690,9 @@ img.slide-real-image {
     .works-carousel--mobile .slide-placeholder {
         height: 350px;
     }
+
+
+
 }
 
 @media (max-width: 600px) {
@@ -699,5 +702,13 @@ img.slide-real-image {
     
     .works-carousel--mobile .slide-placeholder {
         height: 400px;
+    }
+
+
+
+    .works-title {
+        font-size: clamp(45px, 5vw, 65px); 
+        line-height: 0.95;
+        letter-spacing: -0.03em; 
     }
 }

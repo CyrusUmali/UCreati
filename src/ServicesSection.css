@@ -462,6 +462,11 @@
   }
   
   @media (max-width: 580px) {
+
+
+    .svc-heading h2 {
+      font-size: clamp(45px, 4vw, 65px); 
+    }
     #services {
       padding: 4rem 1.25rem 4.5rem;
     }

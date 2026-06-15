@@ -489,7 +489,14 @@ textarea.form-input {
   .form-footer-right    { width: 100%; justify-content: space-between; }
   .btn-send             { width: 100%; justify-content: center; }
 
-  
+  .contact-heading {
+    font-size: clamp(45px, 4vw, 65px);
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
 } 
 
 

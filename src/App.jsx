@@ -5,10 +5,12 @@ import ContactSection from "./ContactSection";
 import ServicesSection from "./ServicesSection";
 import ScrollControls from "./ScrollControls";
 import Navbar from "./Navbar"
+import { BorderSnake } from "./BorderSnake";
 
 export default function App() {
   return (
     <>
+    <BorderSnake />
     <Navbar />
       <HeroSection />
       <AboutSection />
