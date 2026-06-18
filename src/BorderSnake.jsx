@@ -1,3 +1,4 @@
+// BorderSnake.jsx — scoped version
 import { useEffect, useRef } from "react";
 
 function BorderSnake({
@@ -8,6 +9,7 @@ function BorderSnake({
   baseSize = 16,
   color = "#3B6D11",
   zIndex = 350,
+  containerRef, 
 }) {
   const wrapRef = useRef(null);
 
@@ -21,17 +23,14 @@ function BorderSnake({
     for (let i = 0; i < segments; i++) {
       const seg = document.createElement("div");
       const size = Math.max(5, baseSize - i * 1.4);
-      seg.style.position = "absolute";
-      seg.style.top = "0";
-      seg.style.left = "0";
-      seg.style.width = size + "px";
-      seg.style.height = size + "px";
-      seg.style.background = color;
-      seg.style.borderRadius = "35%";
-      seg.style.boxShadow = "0 4px 10px -4px rgba(31,48,40,0.3)";
-      seg.style.opacity = Math.max(0.08, 1 - i * 0.105);
-      seg.style.pointerEvents = "none";
-      seg.style.willChange = "transform";
+      seg.style.cssText = `
+        position: absolute; top: 0; left: 0;
+        width: ${size}px; height: ${size}px;
+        background: ${color}; border-radius: 35%;
+        box-shadow: 0 4px 10px -4px rgba(31,48,40,0.3);
+        opacity: ${Math.max(0.08, 1 - i * 0.105)};
+        pointer-events: none; will-change: transform;
+      `;
       wrap.appendChild(seg);
       segs.push({ el: seg, size });
     }
@@ -54,8 +53,11 @@ function BorderSnake({
     }
 
     function step() {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      // 👇 measure the hero, not the window
+      const target = containerRef?.current ?? wrap.parentElement;
+      const w = target.offsetWidth;
+      const h = target.offsetHeight;
+
       progress += speed;
       for (let i = 0; i < segs.length; i++) {
         const p = pointAt(progress - i * spacing, w, h);
@@ -70,51 +72,20 @@ function BorderSnake({
       cancelAnimationFrame(raf);
       segs.forEach((s) => s.el.remove());
     };
-  }, [segments, inset, spacing, speed, baseSize, color]);
+  }, [segments, inset, spacing, speed, baseSize, color, containerRef]);
 
   return (
     <div
       ref={wrapRef}
       aria-hidden="true"
-      style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex }}
+      style={{
+        position: "absolute", // 👈 was "fixed"
+        inset: 0,
+        pointerEvents: "none",
+        zIndex,
+      }}
     />
   );
 }
 
 export { BorderSnake };
-
-export default function BorderSnakeDemo() {
-  const isMobile = window.innerWidth < 768;
-
-  return (
-    <div
-      style={{ background: "#FAFAF8", color: "#1F3028" }}
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
-    >
-      <BorderSnake
-        segments={isMobile ? 5 : 9}
-        speed={isMobile ? 0.4 : 0.8}
-        baseSize={isMobile ? 9 : 16}
-        inset={isMobile ? 6 : 10}
-        color={isMobile ? "rgba(59, 109, 17, 0.55)" : "#3B6D11"}
-      />
-
-      <div className="text-center px-6 max-w-md">
-        <p
-          style={{ fontFamily: "monospace", color: "#639922", letterSpacing: "0.2em" }}
-          className="text-xs uppercase mb-4"
-        >
-          Border Snake
-        </p>
-        <h1 className="text-4xl font-extrabold mb-3" style={{ color: "#1F3028" }}>
-          Drop this anywhere
-        </h1>
-        <p className="text-sm leading-relaxed" style={{ color: "#3B6D11" }}>
-          A self-contained overlay that traces the viewport edge with a trail of
-          rounded cubes — straight along each side, turning at the corners.
-          Import <code>BorderSnake</code> and render it once near the root of your app.
-        </p>
-      </div>
-    </div>
-  );
-}

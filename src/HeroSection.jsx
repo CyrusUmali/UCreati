@@ -1,16 +1,17 @@
 // HeroSection.jsx
-import { useState } from "react";
+import { useState, useRef} from "react";
 import styles from "./HeroSection.module.css";
 import HeroSVG from "./svg-bg/HeroSVG";
 import { BorderSnake } from "./BorderSnake";
 
 export default function HeroSection() { 
   const [menuOpen, setMenuOpen] = useState(false);
+  const heroRef = useRef(null);
 
   return (
     <section className={styles.hero}>
       <HeroSVG />
-      <BorderSnake />
+      <BorderSnake containerRef={heroRef} color="#3B6D11" />
       <div className={styles.accentLine} />
  
       <div className={styles.heroInner}>

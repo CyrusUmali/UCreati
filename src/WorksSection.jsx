@@ -6,15 +6,9 @@ import WorksSVG from "./svg-bg/WorksSVG";
 import { PROJECT_TYPES, PROJECTS } from "./js/data";
 
 const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
-  const t =
-    typeKey === "all"
-      ? { color: "#27500A", bg: "#EAF3DE", dotColor: "#639922", countBg: "#C0DD97", countText: "#27500A" }
-      : PROJECT_TYPES[typeKey];
+  const t = PROJECT_TYPES[typeKey];
 
-
-
-      
-
+ 
   return (
     <button
       onClick={onClick}
@@ -73,7 +67,7 @@ const ProjThumb = ({ project, isActive, onClick }) => {
 
 const SlidePlaceholder = ({ slide }) => {
   const [imgState, setImgState] = useState("skeleton"); // "skeleton" | "loading" | "loaded" | "error"
-  const imgRef = useRef(null);
+  const imgRef = useRef(null); 
 
   // Kick off loading explicitly so we control the state machine
   useEffect(() => {
@@ -186,8 +180,10 @@ const PhoneFrame = ({ children }) => (
 );
  
 
-export default function WorksSection() {
-  const [activeType, setActiveTypeState] = useState("all");
+export default function WorksSection() { 
+const [activeType, setActiveTypeState] = useState(
+  [...new Set(PROJECTS.map((p) => p.type))][0]
+);
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [infoFading, setInfoFading] = useState(false); 
@@ -196,8 +192,7 @@ export default function WorksSection() {
   const stageRef = useRef(null);
   const touchStartX = useRef(0);
 
-  const filteredProjects =
-    activeType === "all" ? PROJECTS : PROJECTS.filter((p) => p.type === activeType);
+  const filteredProjects = PROJECTS.filter((p) => p.type === activeType);
   const activeProj = filteredProjects[activeProjectIdx] || null;
 
   const resetTimer = useCallback(() => {
@@ -332,13 +327,7 @@ const scrollThumbs = (dir) => {
 
         {/* ── Type filter strip ── */}
         <div className="works-fade-up works-fade-up-2 works-filter-strip">
-          <TypeChip
-            typeKey="all"
-            label="All"
-            count={PROJECTS.length}
-            isActive={activeType === "all"}
-            onClick={() => handleSetType("all")}
-          />
+  
           {[...new Set(PROJECTS.map((p) => p.type))].map((k) => (
             <TypeChip
               key={k}

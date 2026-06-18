@@ -4,8 +4,8 @@ import WorksSection from "./WorksSection";
 import ContactSection from "./ContactSection";
 import ServicesSection from "./ServicesSection";
 import ScrollControls from "./ScrollControls";
-import Navbar from "./Navbar"
-import { BorderSnake } from "./BorderSnake";
+import Navbar from "./Navbar" 
+import ServiceBridge from "./ServiceBridge";
 
 export default function App() {
   return (
@@ -15,6 +15,7 @@ export default function App() {
       <HeroSection />
       <AboutSection />
       <WorksSection />
+      <ServiceBridge />
       <ServicesSection />
       <ContactSection />
 

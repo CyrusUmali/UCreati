@@ -53,12 +53,12 @@ export default function ServicesSVG() {
             d="M1156,326 L1086,256 c-16-16-16-42,0-58 L1156,128 c16-16,42-16,58,0 L1284,186 c16,16,16,42,0,58 L1214,326 C1198,342,1172,342,1156,326 Z" />
         </g>
   
-        <g className="d-drift" style={{ transformOrigin: "940px 380px" }}>
+        {/* <g className="d-drift" style={{ transformOrigin: "940px 380px" }}>
           <path fill="#C0DD97" opacity="0.75"
             d="M940,450 L896,406 c-12-12-12-32,0-44 L940,318 c12-12,32-12,44,0 L1028,362 c12,12,12,32,0,44 L984,450 C972,462,952,462,940,450 Z" />
           <path fill="none" stroke="#3B6D11" strokeWidth="1" opacity="0.55"
             d="M936,466 L892,422 c-12-12-12-32,0-44 L936,334 c12-12,32-12,44,0 L1024,378 c12,12,12,32,0,44 L980,466 C968,478,948,478,936,466 Z" />
-        </g>
+        </g> */}
   
         <g className="d-mini" style={{ transformOrigin: "1070px 560px" }}>
           <path fill="#C8D4C8" opacity="0.82"
