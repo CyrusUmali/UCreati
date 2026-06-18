@@ -34,7 +34,7 @@ body {
     color: var(--ink);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    max-width: 1820px;
+    max-width: 2120px;
     margin: 0 auto;
 }
 

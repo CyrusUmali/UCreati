@@ -10,7 +10,7 @@ import { BorderSnake } from "./BorderSnake";
 export default function App() {
   return (
     <>
-    <BorderSnake />
+    {/* <BorderSnake /> */}
     <Navbar />
       <HeroSection />
       <AboutSection />

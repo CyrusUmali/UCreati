@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 
- 
 function BorderSnake({
   segments = 9,
   inset = 10,
@@ -22,7 +21,7 @@ function BorderSnake({
     for (let i = 0; i < segments; i++) {
       const seg = document.createElement("div");
       const size = Math.max(5, baseSize - i * 1.4);
-      seg.style.position = "fixed";
+      seg.style.position = "absolute";
       seg.style.top = "0";
       seg.style.left = "0";
       seg.style.width = size + "px";
@@ -73,18 +72,32 @@ function BorderSnake({
     };
   }, [segments, inset, spacing, speed, baseSize, color]);
 
-  return <div ref={wrapRef} aria-hidden="true" style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex }} />;
+  return (
+    <div
+      ref={wrapRef}
+      aria-hidden="true"
+      style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex }}
+    />
+  );
 }
 
 export { BorderSnake };
 
 export default function BorderSnakeDemo() {
+  const isMobile = window.innerWidth < 768;
+
   return (
     <div
       style={{ background: "#FAFAF8", color: "#1F3028" }}
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
-      <BorderSnake />
+      <BorderSnake
+        segments={isMobile ? 5 : 9}
+        speed={isMobile ? 0.4 : 0.8}
+        baseSize={isMobile ? 9 : 16}
+        inset={isMobile ? 6 : 10}
+        color={isMobile ? "rgba(59, 109, 17, 0.55)" : "#3B6D11"}
+      />
 
       <div className="text-center px-6 max-w-md">
         <p

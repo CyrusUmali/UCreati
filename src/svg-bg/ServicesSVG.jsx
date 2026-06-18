@@ -13,11 +13,13 @@ export default function ServicesSVG() {
         <line x1="0" y1="400" x2="1440" y2="400" stroke="#3B6D11" strokeWidth="0.5" opacity="0.06" className="d-grid-h" />
   
         {/* LEFT CLUSTER */}
-        <g className="d-float-a" style={{ transformOrigin: "0px 100px" }}>
-          <path fill="#F0F3EE" d="M-30,260 L-190,100 c-18-18-18-46,0-64 L-30,-60 c18-18,46-18,64,0 L194,164 c18,18,18,46,0,64 L34,392 C16,410,-12,410,-30,392 Z" opacity="0.9" />
-          <path fill="none" stroke="#3B6D11" strokeWidth="1.5" className="d-outline-a"
-            d="M-26,272 L-186,112 c-18-18-18-46,0-64 L-26,-48 c18-18,46-18,64,0 L198,176 c18,18,18,46,0,64 L38,404 C20,422,-8,422,-26,404 Z" />
-        </g>
+
+        <g transform="translate(-120, 50)">
+    <g className="d-float-a" style={{ transformOrigin: "0px 100px" }} transform="scale(0.3)">
+  <path fill="#F0F3EE" d="M-30,260 L-190,100 c-18-18-18-46,0-64 L-30,-60 c18-18,46-18,64,0 L194,164 c18,18,18,46,0,64 L34,392 C16,410,-12,410,-30,392 Z" opacity="0.9" />
+  <path fill="none" stroke="#3B6D11" strokeWidth="1.5" className="d-outline-a"
+    d="M-26,272 L-186,112 c-18-18-18-46,0-64 L-26,-48 c18-18,46-18,64,0 L198,176 c18,18,18,46,0,64 L38,404 C20,422,-8,422,-26,404 Z" />
+</g></g>
   
         <g className="d-float-c" style={{ transformOrigin: "80px 420px" }}>
           <path fill="#3B6D11" className="d-fill-b"
