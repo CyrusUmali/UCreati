@@ -12,7 +12,7 @@ export default function AboutSVG() {
       <line x1="0" y1="400" x2="1200" y2="400" stroke="#3B6D11" strokeWidth="0.5" opacity="0.06" className="anim-grid-h" />
 
       {/* Increased translation from 120 to 200 to move everything further down */}
-      <g transform="translate(130, 320)">
+      <g transform="translate(80, 320)">
         <g className="anim-diamond-group-1" style={{ transformOrigin: "1050px 80px" }}>
           <path fill="#F0F3EE" d="M1050,200L920,70c-18-18-18-46,0-64L1050,-60c18-18,46-18,64,0L1244,70c18,18,18,46,0,64L1114,200C1096,218,1068,218,1050,200z" />
           <path fill="none" stroke="#3B6D11" strokeWidth="1.2" className="anim-fill-pulse-1" d="M1046,214L916,84c-18-18-18-46,0-64L1046,-74c18-18,46-18,64,0L1240,56c18,18,18,46,0,64L1110,214C1092,232,1064,232,1046,214z" />
@@ -29,7 +29,7 @@ export default function AboutSVG() {
 
       <polygon fill="#FF4C3E" className="anim-accent-triangle" points="1058,342 1054,368 1038,352" />
 
-      <g transform="translate(-100, -300)">
+      <g transform="translate(0, -300)">
         <g className="anim-diamond-group-4" style={{ transformOrigin: "60px 620px" }}>
           <path fill="#F0F3EE" d="M60,740L-50,630c-16-16-16-42,0-58L60,462c16-16,42-16,58,0L178,520c16,16,16,42,0,58L118,740C102,756,76,756,60,740z" />
           <path fill="none" stroke="#3B6D11" strokeWidth="1.2" className="anim-fill-pulse-3" d="M56,758L-54,648c-16-16-16-42,0-58L56,480c16-16,42-16,58,0L174,538c16,16,16,42,0,58L114,758C98,774,72,774,56,758z" />
