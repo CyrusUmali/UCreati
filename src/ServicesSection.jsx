@@ -38,10 +38,7 @@ function ServiceCard({ icon, title, desc }) {
     <div className="svc-card reveal">
       <div className="card-icon-wrap">{icon}</div>
       <div className="card-title">{title}</div>
-      <p className="card-desc">{desc}</p>
-      <a href="#" className="card-link">
-        Learn more <IconArrowNarrowRight size={11} />
-      </a>
+      <p className="card-desc">{desc}</p> 
     </div>
   );
 }
@@ -78,7 +75,7 @@ export default function Services() {
       <ServicesSVG />
 
       <div className="svc-heading reveal">
-        <h2>Our <em>Services</em></h2>
+        <h2>My <em>Services</em></h2>
       </div>
 
       <div className="svc-grid">
@@ -99,8 +96,8 @@ export default function Services() {
             <div className="featured-tags">
               <span>React</span>
               <span>Node.js</span>
-              <span>PostgreSQL</span>
-              <span>Next.js</span>
+              <span>Flutter</span>
+              <span>React Native</span>
             </div>
           </div>
         </div>

@@ -459,7 +459,25 @@
   .heroEyebrow { margin-bottom: 1.25rem; }
   .heroName { margin-bottom: 1.25rem; }
   .heroRole { font-size: 15px; margin-bottom: 2rem; }
-  .heroCtas { flex-direction: column; gap: 10px; width: 100%; }
+
+
+
+  .heroCtas {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .heroCtas a {
+    width: 100%;
+    max-width: 280px; /* Adjust to your desired button width */
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+  }
+  
+
   .statStrip {
     position: static;
     flex-direction: row;

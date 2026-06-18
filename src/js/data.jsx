@@ -53,8 +53,8 @@ export   const PenIcon = ({ size = 20 }) => (
 // In your js/data.js file, update PROJECT_TYPES:
 
 export const PROJECT_TYPES = {
-  agriculture: {
-    label: "AgriTech",
+  featured: {
+    label: "Featured",
     color: "#1c3d2c",
     bg: "#eaf5ef",
     border: "#c5e0d0",
@@ -70,16 +70,7 @@ export const PROJECT_TYPES = {
   dotColor: "#3a8a5f",
   countBg: "#d4eedf",
   countText: "#2b6e4f"
-},
-  developer: {
-    label: "Developer",
-    color: "#1a2e52",
-    bg: "#e8eef8",
-    border: "#c5d5e8",
-    dotColor: "#2c4c7c",
-    countBg: "#d4e0f0",
-    countText: "#1a2e52"
-  },
+}, 
   productivity: {
     label: "Productivity",
     color: "#5c1a3a",
@@ -98,24 +89,15 @@ export const PROJECT_TYPES = {
     countBg: "#d4e8f0",
     countText: "#1a4a5c"
   },
-  library: {
-    label: "Library",
+  academic: {
+    label: "Academic",
     color: "#5c1a3a",
     bg: "#f8e8f0",
     border: "#e8c5d5",
     dotColor: "#8b3a5a",
     countBg: "#f0d4e4",
     countText: "#5c1a3a"
-  },
-  ecommerce: {
-    label: "E-Commerce",
-    color: "#2d5a3b",
-    bg: "#eaf4e6",
-    border: "#c5e0d0",
-    dotColor: "#3a7a4f",
-    countBg: "#d4e8db",
-    countText: "#2d5a3b"
-  }
+  }, 
 };
 
 // ─── Projects Data ─────────────────────────────────────────────────────────────
@@ -126,11 +108,10 @@ export const PROJECTS = [
 
   {
     id: "agritrack", name: "AgriTrack", short: "AgriTrack",
-    type: "agriculture", color: "#1c3d2c", bg: "#eaf5ef",
+    type: "featured", color: "#1c3d2c", bg: "#eaf5ef",
     tagline: "Farm management for local government units",
     desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
-    tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"],
-    Icon: HomeIcon,
+    tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"], 
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/Agritrack_",
     slides: [
@@ -138,13 +119,13 @@ export const PROJECTS = [
         label: "Dashboard Overview",
         desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
         hue: "140deg", screenLabel: "AgriTrack · Dashboard",
-        image: "/agritrack/agritrack.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
       },
       {
         label: "Sector Data Analytics",
         desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
         hue: "155deg", screenLabel: "AgriTrack · Sector Analytics",
-        image: "/agritrack/agritrack (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
       },
       {
         label: "Barangay Yield Heat Map",
@@ -156,22 +137,24 @@ export const PROJECTS = [
         label: "Farm Information Modal",
         desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
         hue: "200deg", screenLabel: "AgriTrack · Farm Details",
-        image: "/agritrack/agritrack (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
       },
       {
         label: "Mapped Farm (Selected)",
         desc: "Satellite view showing a specific farm's polygon boundary appears when you tap any farm on the map. Displays crop type and area data inline.",
         hue: "280deg", screenLabel: "AgriTrack · Farm Select",
-        image: "/agritrack/agritrack (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755824/agritrack_4_vkjx8q.png",
       },
       {
         label: "Map View (Default)",
         desc: "Full satellite map interface before farm selection all registered farms visible as interactive polygons across San Pablo City's agricultural lands.",
         hue: "150deg", screenLabel: "AgriTrack · Map Explorer",
-        image: "/agritrack/agritrack (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
       },
     ],
 },
+
+
   {
     id: "codeborn", name: "CodeBorn", short: "CodeBorn",
     type: "game", color: "#1a2e52", bg: "#e8eef8",
@@ -185,47 +168,46 @@ export const PROJECTS = [
         label: "Title Screen",
         desc: "The gateway into the digital abyss a late-night coder's last stop before reality bends.",
         hue: "220deg", screenLabel: "CodeBorn · Title",
-        image: "/codeborn/codeborn.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756050/codeborn_vz7lv2.png",
       },
       {
         label: "Before the Collapse",
         desc: "A tired programmer, deep in a late-night coding session unaware that reality is about to glitch.",
         hue: "235deg", screenLabel: "CodeBorn · Prologue",
-        image: "/codeborn/codeborn (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756045/codeborn_1_gm84dj.png",
       },
       {
         label: "The Blackout",
         desc: "Exhaustion takes over the screen flickers, the world dissolves, and the coder is pulled into another dimension.",
         hue: "210deg", screenLabel: "CodeBorn · Collapse",
-        image: "/codeborn/codeborn (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756059/codeborn_2_tljpo2.png",
       },
       {
         label: "The Guide",
         desc: "Awakening in a strange, corrupted world, a digital guide explains the truth: solve coding challenges or face turn-based combat. Only by clearing glitches can you move forward.",
         hue: "200deg", screenLabel: "CodeBorn · Awakening",
-        image: "/codeborn/codeborn (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756045/codeborn_3_m1m2aw.png",
       },
       {
         label: "Glitched World",
         desc: "Explore an unstable dimension filled with distortions each area locked until you solve its coding puzzle.",
         hue: "245deg", screenLabel: "CodeBorn · Exploration",
-        image: "/codeborn/codeborn (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756062/codeborn_4_ks4ge1.png",
       },
       {
         label: "Failed Code · Turn-Based Combat",
         desc: "A wrong answer triggers an old-school turn-based RPG battle fight digital mobs the hard way until you can retry the challenge.",
         hue: "200deg", screenLabel: "CodeBorn · Combat Fallback",
-        image: "/codeborn/codeborn (5).png", // kept as placeholder; you can replace with actual combat screenshot
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756066/codeborn_5_tchgj2.png", // kept as placeholder; you can replace with actual combat screenshot
       },
     ],
   },
   {
     id: "novelnexus", name: "NovelNexus", short: "NovelNexus",
-    type: "library", color: "#5c1a3a", bg: "#f8e8f0",
+    type: "featured", color: "#5c1a3a", bg: "#f8e8f0",
     tagline: "Subscription-based library management system",
     desc: "NovelNexus is a subscription-based library management system built with PHP and Stripe. It handles member subscriptions, book borrowing, digital lending, and automated late fees designed for modern libraries transitioning to hybrid physical-digital collections.",
     tags: ["Subscription-based", "Library management", "Digital lending", "Automated billing", "Member portal", "PHP", "Stripe"],
-    Icon: PenIcon,
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/NovelNexus",
     slides: [
@@ -233,52 +215,116 @@ export const PROJECTS = [
         label: "Landing Page",
         desc: "Hero section introducing NovelNexus subscription plans, features, and call-to-action for new members.",
         hue: "330deg", screenLabel: "NovelNexus · Landing",
-        image: "/novelnexus/novelnexus.png",
-      },
-      {
-        label: "Admin Dashboard (Overview)",
-        desc: "Payment reports, book category distribution, popular titles, book availability status, and key analytics all in one view.",
-        hue: "315deg", screenLabel: "NovelNexus · Admin Dashboard",
-        image: "/novelnexus/novelnexus (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756214/novelnexus_jij9hy.png",
       },
       {
         label: "Landing Page · Book Showcase",
         desc: "Bottom section of the landing page featuring available books, popular picks, and newest additions.",
         hue: "345deg", screenLabel: "NovelNexus · Book Showcase",
-        image: "/novelnexus/novelnexus (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756211/novelnexus_2_ngxlqf.png",
       },
       {
         label: "Login Page",
         desc: "Member and admin authentication gateway with email/password and subscription status validation.",
         hue: "300deg", screenLabel: "NovelNexus · Login",
-        image: "/novelnexus/novelnexus (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756214/novelnexus_3_liwnnj.png",
       },
+
       {
-        label: "User Dashboard (Dark Mode)",
+        label: "Admin Dashboard (KPI View)",
+        desc: "Alternative admin view focused on key performance indicators popular books ranking and overdue books tracking.",
+        hue: "325deg", screenLabel: "NovelNexus · Admin KPIs",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756217/novelnexus_7_ncmdzv.png",
+      },
+
+      {
+        label: "Admin Dashboard (Overview)",
+        desc: "Payment reports, book category distribution, popular titles, book availability status, and key analytics all in one view.",
+        hue: "315deg", screenLabel: "NovelNexus · Admin Dashboard",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756206/novelnexus_1_p01iea.png",
+      },
+
+      {
+        label: "User (Dark Mode)",
         desc: "Member's home view after login available books, current loans, due dates, and subscription status in dark mode.",
         hue: "320deg", screenLabel: "NovelNexus · Member View",
-        image: "/novelnexus/novelnexus (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756217/novelnexus_4_eopp0a.png",
       },
       {
         label: "Search Books",
         desc: "Advanced search page with filters by title, author, genre, and availability results shown instantly.",
         hue: "310deg", screenLabel: "NovelNexus · Search",
-        image: "/novelnexus/novelnexus (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756213/novelnexus_5_p3mamp.png",
       },
       {
         label: "Book Details Page",
         desc: "Full book view with borrow/add to shelf actions, detailed info, user reviews, ratings, and personalized recommendations.",
         hue: "335deg", screenLabel: "NovelNexus · Book Page",
-        image: "/novelnexus/novelnexus (6).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756212/novelnexus_6_xarwan.png",
       },
-      {
-        label: "Admin Dashboard (KPI View)",
-        desc: "Alternative admin view focused on key performance indicators popular books ranking and overdue books tracking.",
-        hue: "325deg", screenLabel: "NovelNexus · Admin KPIs",
-        image: "/novelnexus/novelnexus (7).png",
-      },
+ 
     ],
   },
+
+
+
+  {
+    id: "primeroadmotors", 
+    name: "Prime Road Motors", 
+    short: "PrimeRoad",
+    type: "featured", 
+    color: "#1a2a4a", 
+    bg: "#f0f4fa",
+    tagline: "Premium car e-commerce & test drive platform",
+    desc: "Prime Road Motors is a full-featured car e-commerce platform built during our OJT internship with a randomly assigned team. The platform enables users to browse vehicles, filter by make/model/price, schedule test drives, and manage appointments. Built with React for the frontend and Node.js for the backend API.",
+    tags: ["E-commerce", "Vehicle listings", "Test drive scheduler", "Team project", "React", "Node.js", "Random team"], 
+    viewType: "desktop",
+    github: "https://github.com/yourusername/primeroadmotors",
+    slides: [
+      {
+        label: "Landing Page",
+        desc: "Hero section showcasing featured vehicles with a clean, premium design that reflects the brand's luxury positioning.",
+        hue: "210deg", 
+        screenLabel: "Prime Road · Home",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757131/primeroad_p9af6t.png",
+      },
+      {
+        label: "Featured Vehicles",
+        desc: "Curated selection of premium vehicles displayed with key specs, pricing, and quick view options for browsing.",
+        hue: "220deg", 
+        screenLabel: "Prime Road · Features",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757135/primeroad_1_aembtt.png",
+      },
+      {
+        label: "All Vehicles with Filters",
+        desc: "Complete inventory with make, model, year, and price filters to help users find their perfect vehicle quickly.",
+        hue: "200deg", 
+        screenLabel: "Prime Road · Inventory",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757241/primeroad_3_wqtwvx.png",
+      },
+      {
+        label: "Car Preview & Test Drive",
+        desc: "Detailed vehicle view with specs, photos, and a test drive scheduler that lets users book appointments directly.",
+        hue: "190deg", 
+        screenLabel: "Prime Road · Schedule Drive",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757240/primeroad_4_pf5mpe.png",
+      },
+      {
+        label: "Scheduled Test Drives",
+        desc: "User dashboard showing upcoming test drive appointments with date, time, and vehicle details for easy management.",
+        hue: "180deg", 
+        screenLabel: "Prime Road · My Drives",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757237/primeroad_2_zqeorh.png",
+      },
+      {
+        label: "Contact Us",
+        desc: "Dealer contact information with inquiry form for sales, service, and general questions about the dealership.",
+        hue: "170deg", 
+        screenLabel: "Prime Road · Contact",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757125/primeroad_5_erkpa0.png",
+      },
+    ],
+},
 
   {
     id: "aeroblast", name: "AeroBlast", short: "AeroBlast",
@@ -329,10 +375,9 @@ export const PROJECTS = [
     ],
   },
   
-
   {
     id: "alpshop", name: "Alpshop", short: "Alpshop",
-    type: "ecommerce", color: "#2d5a3b", bg: "#eaf4e6",
+    type: "featured", color: "#2d5a3b", bg: "#eaf4e6",
     tagline: "Full-featured e-commerce platform",
     desc: "Alpshop is my first full-stack project, built during my second year of college for a client who sells fashion items on Facebook. It's a complete e-commerce solution with product catalog, shopping cart, user authentication, order management, and payment gateway integration designed to help small fashion businesses start selling online.",
     tags: ["E-commerce", "First full-stack", "Fashion", "Product catalog", "Cart & checkout", "Payment gateway", "Order management"],
@@ -344,47 +389,46 @@ export const PROJECTS = [
         label: "Landing Page",
         desc: "Hero section showcasing featured fashion items, brand story, and call-to-action for new shoppers.",
         hue: "140deg", screenLabel: "Alpshop · Landing",
-        image: "/alpshop/alpshop.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756434/alpshop_wk2ofl.png",
       },
       {
         label: "Product Preview",
         desc: "Quick view of fashion item details price, variants (size/color), and add-to-cart option.",
         hue: "25deg", screenLabel: "Alpshop · Product Preview",
-        image: "/alpshop/alpshop (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756427/alpshop_1_uzk3od.png",
       },
       {
         label: "Empty Cart + Login Prompt",
         desc: "Shopping cart page showing empty state prompts users to log in to view and manage their cart items.",
         hue: "200deg", screenLabel: "Alpshop · Empty Cart",
-        image: "/alpshop/alpshop (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756426/alpshop_2_xfovvp.png",
       },
       {
         label: "Login Page",
         desc: "Customer authentication gateway sign in or create an account to start shopping.",
         hue: "300deg", screenLabel: "Alpshop · Login",
-        image: "/alpshop/alpshop (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756426/alpshop_3_km40ha.png",
       },
       {
         label: "Shop Categories & New Arrivals",
         desc: "Browse by fashion category (tops, bottoms, dresses, etc.) plus a banner highlighting newly added items.",
         hue: "35deg", screenLabel: "Alpshop · Categories",
-        image: "/alpshop/alpshop (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756432/alpshop_4_mqr9rb.png",
       },
       {
         label: "All Products View",
         desc: "Complete catalog grid showing all available fashion items with filters and sorting options.",
         hue: "150deg", screenLabel: "Alpshop · All Products",
-        image: "/alpshop/alpshop (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756434/alpshop_5_p0weeq.png",
       },
     ],
   },
-  
-  
+    
   {
     id: "contactsapp",
     name: "Contacts",
     short: "Contacts",
-    type: "productivity",
+    type: "academic",
     color: "#2563eb",
     bg: "#eff6ff",
     tagline: "Smart contact management powered by Flutter & Firebase",
@@ -395,8 +439,7 @@ export const PROJECTS = [
       "Contact Management",
       "Cloud Sync",
       "Mobile App"
-    ],
-    Icon: PenIcon,
+    ], 
     viewType: "mobile",
     github: "https://github.com/CyrusUmali/contact_manager",
     slides: [
@@ -405,52 +448,54 @@ export const PROJECTS = [
         desc: "Authentication gateway sign in with email and password to access your saved contacts.",
         hue: "220deg",
         screenLabel: "Contacts · Login",
-        image: "/contacts/contacts.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756541/contacts_vxu7he.jpg",
+      },
+
+      
+      {
+        label: "Create Account View",
+        desc: "New user registration sign up with email, password, and profile details to start managing contacts.",
+        hue: "260deg",
+        screenLabel: "Contacts · Sign Up",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756544/contacts_3_hsv0j3.jpg",
       },
       {
         label: "Add Contact Page",
         desc: "Create new contacts by entering name, phone number, email, address, and optional profile photo.",
         hue: "200deg",
         screenLabel: "Contacts · Add Contact",
-        image: "/contacts/contacts (1).png",
-      },
-      {
-        label: "All Contacts View",
-        desc: "Complete contact list with search bar, filter options, and sorting by name or date added.",
-        hue: "180deg",
-        screenLabel: "Contacts · Contact List",
-        image: "/contacts/contacts (2).png",
-      },
-      {
-        label: "Create Account View",
-        desc: "New user registration sign up with email, password, and profile details to start managing contacts.",
-        hue: "260deg",
-        screenLabel: "Contacts · Sign Up",
-        image: "/contacts/contacts (3).png",
-      },
-      {
-        label: "Upcoming Birthdays",
-        desc: "Smart view showing contacts with upcoming birthdays never miss a friend's or client's special day.",
-        hue: "300deg",
-        screenLabel: "Contacts · Birthdays",
-        image: "/contacts/contacts (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756546/contacts_5_vaollm.jpg",
       },
       {
         label: "Add Contact (Prefilled Data)",
         desc: "Contact creation form with example data filled in demonstrates fields like name, phone, email, and notes.",
         hue: "240deg",
         screenLabel: "Contacts · Add with Data",
-        image: "/contacts/contacts (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756546/contacts_5_vaollm.jpg",
       },
+      {
+        label: "All Contacts View",
+        desc: "Complete contact list with search bar, filter options, and sorting by name or date added.",
+        hue: "180deg",
+        screenLabel: "Contacts · Contact List",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756543/contacts_2_tfbyyg.jpg",
+      },
+      {
+        label: "Upcoming Birthdays",
+        desc: "Smart view showing contacts with upcoming birthdays never miss a friend's or client's special day.",
+        hue: "300deg",
+        screenLabel: "Contacts · Birthdays",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756545/contacts_4_httyuo.jpg",
+      },
+ 
     ],
   },
-
 
   {
     id: "bulkquil",
     name: "BulkQuil",
     short: "BulkQuil",
-    type: "productivity",
+    type: "featured",
     color: "#2c3e66",
     bg: "#edf2fa",
     tagline: "Interactive EPUB cleaning and editing tool",
@@ -465,47 +510,45 @@ export const PROJECTS = [
         desc: "Main entry point drag and drop or browse to upload an EPUB file for cleaning and editing.",
         hue: "220deg",
         screenLabel: "BulkQuil · Upload",
-        image: "/bulkquil/bulkquil.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756653/bulkquil_zawaug.png",
       },
       {
         label: "Features Overview",
         desc: "Scroll section highlighting what BulkQuil can do remove residual elements, set cleaning rules, edit CSS, batch replace, and change covers.",
         hue: "200deg",
         screenLabel: "BulkQuil · Features",
-        image: "/bulkquil/bulkquil (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756652/bulkquil_1_r8qpio.png",
       },
       {
         label: "Help Guide",
         desc: "Step-by-step instructions on how to use the interactive editor from selecting elements to applying rules across pages.",
         hue: "180deg",
         screenLabel: "BulkQuil · Guide",
-        image: "/bulkquil/bulkquil (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756660/bulkquil_2_h1y92y.png",
       },
       {
         label: "Element Action Bar",
         desc: "When you tap an element in the EPUB preview, an action bar appears options to remove similar elements, keep only this, or highlight it in the element tree.",
         hue: "260deg",
         screenLabel: "BulkQuil · Element Actions",
-        image: "/bulkquil/bulkquil (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756655/bulkquil_3_fvwftx.png",
       },
       {
         label: "Element Tree View",
         desc: "Tapping the tree option reveals the full HTML element tree on the right side navigate and select elements directly from the structure.",
         hue: "300deg",
         screenLabel: "BulkQuil · Element Tree",
-        image: "/bulkquil/bulkquil (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756655/bulkquil_4_hjtynm.png",
       },
       {
         label: "CSS Settings",
         desc: "Custom stylesheet editor modify the EPUB's appearance by adding or editing CSS rules in real time.",
         hue: "240deg",
         screenLabel: "BulkQuil · CSS Editor",
-        image: "/bulkquil/bulkquil (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756650/bulkquil_5_t4nefm.png",
       },
     ],
   },
-
-
 
   {
     id: "aicrop", name: "Agritrack AI", short: "Agritrack AI",
@@ -521,42 +564,41 @@ export const PROJECTS = [
         label: "Environmental Parameters",
         desc: "Farmers enter soil data nitrogen, phosphorus, potassium, pH, temperature, humidity, and rainfall or connect Bluetooth soil testers for automatic readings.",
         hue: "145deg", screenLabel: "Agritrack AI · Input Parameters",
-        image: "/aicrop/aicrop.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756759/aicrop_rncs0z.png",
       },
       {
         label: "How It Works",
         desc: "A modal explaining the ML pipeline from soil data collection in San Pablo fields to model training and real-time inference.",
         hue: "160deg", screenLabel: "Agritrack AI · AI Model",
-        image: "/aicrop/aicrop (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756760/aicrop_1_sezvg3.png",
       },
       {
         label: "Crop Recommendations",
         desc: "Top 3 recommended crops with confidence scores, plus alternative options based on similar soil profiles in the training data.",
         hue: "135deg", screenLabel: "Agritrack AI · Recommendations",
-        image: "/aicrop/aicrop (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756762/aicrop_2_zfewwp.png",
       },
       {
         label: "Crop Compatibility Check",
         desc: "Select a specific crop and enter environmental conditions to check compatibility shows a confidence breakdown where parameter analysis contributes 70% of the final score.",
         hue: "155deg", screenLabel: "Agritrack AI · Compatibility",
-        image: "/aicrop/aicrop (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756763/aicrop_3_h46ovx.png",
        },
       {
         label: "Parameter Analysis",
         desc: "Detailed breakdown of each soil parameter shows whether current levels are optimal, insufficient, or excessive for the selected crop.",
         hue: "140deg", screenLabel: "Agritrack AI · Parameter Analysis",
-        image: "/aicrop/aicrop (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756764/aicrop_4_ayiqhw.png",
       },
       {
         label: "AI-Powered Improvements",
         desc: "Gemini API generates actionable suggestions what the farmer can do to improve soil conditions for growing their desired crop, from fertilization to irrigation adjustments.",
         hue: "170deg", screenLabel: "Agritrack AI · Gemini Suggestions",
-        image: "/aicrop/aicrop (5).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756758/aicrop_5_j3oztc.png",
     },
     ],
   },
 
-  
   {
     id: "pirate-treasure", name: "Pirate Treasure Hunt", short: "Treasure Hunt",
     type: "game", color: "#2a6b6b", bg: "#e8f4f4",
@@ -569,38 +611,38 @@ export const PROJECTS = [
         label: "Expedition Selection",
         desc: "Choose which area to explore each location shows predicted outcomes, duration, and potential rewards. Right panel displays 'Set Sail' with area description.",
         hue: "180deg", screenLabel: "Treasure Hunt · Expedition",
-        image: "/pirate/pirate.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756860/pirate_rxyuod.png",
       },
       {
         label: "Sailing Animation",
         desc: "A short sailing animation plays after selecting an expedition building anticipation before revealing the outcome.",
         hue: "190deg", screenLabel: "Treasure Hunt · Sailing",
-        image: "/pirate/pirate (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756853/pirate_1_ev8wyw.png",
       },
       {
         label: "Treasure Found!",
         desc: "Success modal featuring chibi Beidou laughing treasure amount added to your session-stored wealth.",
         hue: "45deg", screenLabel: "Treasure Hunt · Success",
-        image: "/pirate/pirate (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756854/pirate_2_sw5srb.png",
       },
       {
         label: "Expedition Failed",
         desc: "Failure modal with chibi Beidou crying you lose some wealth or return empty-handed.",
         hue: "350deg", screenLabel: "Treasure Hunt · Failed",
-        image: "/pirate/pirate (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756855/pirate_3_aqdlaq.png",
       },
       {
         label: "Marooned Screen",
         desc: "Special penalty state if you lose too much wealth or fail too many expeditions, you get marooned and must restart your journey.",
         hue: "200deg", screenLabel: "Treasure Hunt · Marooned",
-        image: "/pirate/pirate (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756857/pirate_4_cpitjw.png",
       },
     ],
   },
 
   {
     id: "jjk-selector", name: "JJK Character Selector", short: "JJK Selector",
-    type: "game", color: "#7a1f2c", bg: "#fcf0f2",
+    type: "academic", color: "#7a1f2c", bg: "#fcf0f2",
     tagline: "Dynamic character selection UI with real-time updates",
     desc: "A Jujutsu Kaisen character selector built for a frontend assignment demonstrating data attributes, event handling, and dynamic UI updates. Users click on any character card to see their name and portrait appear in the main display area, with visual feedback for the currently selected character.",
     tags: ["Data attributes", "Event handling", "Dynamic UI", "DOM manipulation", "2-3 hour build"],
@@ -610,31 +652,31 @@ export const PROJECTS = [
         label: "Character Grid",
         desc: "All selectable characters displayed in a responsive grid each card stores character data in data attributes (name, image, description).",
         hue: "350deg", screenLabel: "JJK Selector · Character Grid",
-        image: "/jjk/jjk.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756966/jjk_2_cwr0jp.png",
       },
       {
         label: "Selection Highlight",
         desc: "Visual cue (border glow, shadow, or background change) indicates which character is currently selected.",
         hue: "340deg", screenLabel: "JJK Selector · Selected State",
-        image: "/jjk/jjk (1).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756968/jjk_4_cgevua.png",
       },
       {
         label: "Main Display Area",
         desc: "Selected character's name and larger image dynamically appear in the main display panel upon selection.",
         hue: "355deg", screenLabel: "JJK Selector · Display",
-        image: "/jjk/jjk (2).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756967/jjk_3_wvmogu.png",
       },
       {
         label: "Character Details",
         desc: "Additional info (cursed technique, grade, or fun fact) appears alongside the character's portrait.",
         hue: "345deg", screenLabel: "JJK Selector · Details",
-        image: "/jjk/jjk (3).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756960/jjk_bghvsd.png",
       },
       {
         label: "Real-time Updates",
         desc: "Every click triggers immediate UI changes no page reload, just smooth, dynamic interaction.",
         hue: "335deg", screenLabel: "JJK Selector · Interactive",
-        image: "/jjk/jjk (4).png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756961/jjk_1_ttkc0v.png",
       },
     ],
   }

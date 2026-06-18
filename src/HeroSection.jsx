@@ -10,26 +10,16 @@ export default function HeroSection() {
     <section className={styles.hero}>
       <HeroSVG />
       <div className={styles.accentLine} />
-
-      {/* Mobile Menu Button */}
-      {/* <button 
-        className={styles.mobMenu} 
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        <span className={menuOpen ? styles.mobMenuOpen1 : ""} />
-        <span className={menuOpen ? styles.mobMenuOpen2 : ""} />
-        <span className={menuOpen ? styles.mobMenuOpen3 : ""} />
-      </button> */}
-
+ 
       <div className={styles.heroInner}>
-        <div className={styles.heroEyebrow}>Creative Developer</div>
+        <div className={styles.heroEyebrow}>Full-Stack Developer</div>
         <h1 className={styles.heroName}>
           Crafting<br /><em>Digital</em> Worlds
         </h1>
         <p className={styles.heroRole}>
-          I design and build <strong>immersive interfaces</strong> and interactive experiences —
-          where geometry meets motion and every pixel is intentional.
+        I design and develop modern web applications, combining strong engineering
+  fundamentals with intuitive user experiences to build software that solves
+  real problems.
         </p>
         <div className={styles.heroCtas}>
   <a href="#works" className="btn-primary">
@@ -58,18 +48,18 @@ export default function HeroSection() {
 
       <div className={styles.statStrip}>
         <div className={styles.statItem}>
-          <span className={styles.statNum}>06+</span>
-          <span className={styles.statLabel}>Years exp.</span>
+          <span className={styles.statNum}>6</span>
+          <span className={styles.statLabel}>Freelance clients.</span>
         </div>
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
-          <span className={styles.statNum}>42</span>
+          <span className={styles.statNum}>20+</span>
           <span className={styles.statLabel}>Projects</span>
         </div>
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
-          <span className={styles.statNum}>18</span>
-          <span className={styles.statLabel}>Clients</span>
+          <span className={styles.statNum}>800+</span>
+          <span className={styles.statLabel}>Active Users</span>
         </div>
       </div>
 

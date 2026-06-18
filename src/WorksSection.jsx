@@ -72,52 +72,89 @@ const ProjThumb = ({ project, isActive, onClick }) => {
 
 
 const SlidePlaceholder = ({ slide }) => {
-  const [imgError, setImgError] = useState(false);
+  const [imgState, setImgState] = useState("skeleton"); // "skeleton" | "loading" | "loaded" | "error"
+  const imgRef = useRef(null);
 
-  if (slide.image && !imgError) {
+  // Kick off loading explicitly so we control the state machine
+  useEffect(() => {
+    if (!slide.image) return;
+    setImgState("skeleton");
+
+    const img = new Image();
+    img.src = slide.image;
+
+    // If browser already cached it, naturalWidth is set immediately
+    if (img.complete && img.naturalWidth > 0) {
+      setImgState("loaded");
+      return;
+    }
+
+    const timer = setTimeout(() => setImgState("loading"), 300); // show skeleton briefly
+    img.onload = () => { clearTimeout(timer); setImgState("loaded"); };
+    img.onerror = () => { clearTimeout(timer); setImgState("error"); };
+
+    return () => { clearTimeout(timer); img.onload = null; img.onerror = null; };
+  }, [slide.image]);
+
+  // ── Fallback placeholder (no image or error) ──
+  if (!slide.image || imgState === "error") {
     return (
       <div
         className="slide-placeholder"
-        style={{ background: "#0a0a0a", overflow: "hidden", position: "relative" }}
+        style={{
+          background: `linear-gradient(135deg, hsl(${slide.hue} 28% 94%), hsl(${slide.hue} 22% 90%))`,
+        }}
       >
-        <img
-          className="slide-real-image"
-          src={slide.image}
-          alt={slide.label}
-          onError={() => setImgError(true)}
+        <div
+          className="slide-grid"
+          style={{
+            backgroundImage: `linear-gradient(hsl(${slide.hue} 20% 75% / 0.25) 1px, transparent 1px), linear-gradient(90deg, hsl(${slide.hue} 20% 75% / 0.25) 1px, transparent 1px)`,
+            backgroundSize: "36px 36px",
+          }}
         />
+        <div className="slide-diamond">
+          <div className="slide-diamond-inner" style={{ color: `hsl(${slide.hue} 45% 30%)` }}>
+            {slide.icon}
+          </div>
+        </div>
+        <div className="slide-label" style={{ color: `hsl(${slide.hue} 40% 25%)` }}>
+          {slide.label}
+        </div>
+        <div
+          className="slide-placeholder-text"
+          style={{ color: `hsl(${slide.hue} 20% 50%)`, borderColor: `hsl(${slide.hue} 25% 75%)` }}
+        >
+          Replace with app screenshot
+        </div>
       </div>
     );
   }
 
-  return (
-    <div
-      className="slide-placeholder"
-      style={{
-        background: `linear-gradient(135deg, hsl(${slide.hue} 28% 94%), hsl(${slide.hue} 22% 90%))`,
-      }}
-    >
-      <div
-        className="slide-grid"
-        style={{
-          backgroundImage: `linear-gradient(hsl(${slide.hue} 20% 75% / 0.25) 1px, transparent 1px), linear-gradient(90deg, hsl(${slide.hue} 20% 75% / 0.25) 1px, transparent 1px)`,
-          backgroundSize: "36px 36px",
-        }}
-      />
-      <div className="slide-diamond">
-        <div className="slide-diamond-inner" style={{ color: `hsl(${slide.hue} 45% 30%)` }}>
-          {slide.icon}
+  return ( 
+      <div className="slide-placeholder" style={{ background: "#f0f0ee", overflow: "hidden", position: "relative" }}> 
+      {/* Skeleton shimmer — shown first */}
+      {imgState === "skeleton" && (
+        <div className="slide-skeleton">
+          <div className="slide-skeleton-icon" />
+          <div className="slide-skeleton-line slide-skeleton-line--lg" />
+          <div className="slide-skeleton-line slide-skeleton-line--sm" />
         </div>
-      </div>
-      <div className="slide-label" style={{ color: `hsl(${slide.hue} 40% 25%)` }}>
-        {slide.label}
-      </div>
-      <div
-        className="slide-placeholder-text"
-        style={{ color: `hsl(${slide.hue} 20% 50%)`, borderColor: `hsl(${slide.hue} 25% 75%)` }}
-      >
-        Replace with app screenshot
-      </div>
+      )}
+
+      {/* Spinner — shown while image is actively loading */}
+      {imgState === "loading" && (
+        <div className="slide-spinner-wrap">
+          <div className="slide-spinner" />
+          <span className="slide-spinner-label">Loading</span>
+        </div>
+      )}
+
+<img
+  ref={imgRef}
+  className={`slide-real-image ${imgState === "loaded" ? "slide-real-image--visible" : ""}`}
+        src={slide.image}
+  alt={slide.label}
+/>
     </div>
   );
 };
@@ -138,11 +175,11 @@ const BrowserFrame = ({ children, url }) => (
 
 const PhoneFrame = ({ children }) => (
   <div className="device-frame device-mobile-outer">
-    <div className="phone-notch-bar">
+    {/* <div className="phone-notch-bar">
       <span className="phone-time">9:41</span>
       <div className="phone-notch" />
       <span className="phone-time">●●●</span>
-    </div>
+    </div> */}
     <div className="phone-screen">{children}</div>
     <div className="phone-home-bar"><div className="home-pill" /></div>
   </div>

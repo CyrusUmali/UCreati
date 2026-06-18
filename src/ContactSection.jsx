@@ -1,14 +1,38 @@
 import { useState, useRef , useEffect } from "react";
 import "./ContactSection.css";
 import ContactBgSVG from "./svg-bg/ContactBgSVG";
+ 
+import { IconSend, IconClock, IconBolt, IconLock, IconArrowRight, IconArrowLeft, IconCheck, IconBrandFacebook, IconBrandLinkedin, IconBrandGithub, IconMail } from "@tabler/icons-react";
 
-import { IconSend, IconClock, IconBolt, IconLock, IconArrowRight, IconArrowLeft, IconCheck } from "@tabler/icons-react";
 
 const PROJECT_TYPES = ["Web app", "Mobile", "Landing page", "Design system", "API / backend", "Other"];
 const STACK_OPTIONS = ["React", "Next.js", "Vue", "Node", "Python", "PostgreSQL", "No preference"];
 const TIMELINE_OPTIONS = ["ASAP (< 2 weeks)", "1–2 months", "3–6 months", "Ongoing / retainer", "Not sure yet"];
 const BUDGET_OPTIONS = ["Under $2k", "$2k – $5k", "$5k – $15k", "$15k – $40k", "$40k+", "Let's discuss"];
 const TEAM_OPTIONS = ["Just me", "2–5 people", "6–20 people", "20+ people"];
+ 
+const SOCIALS = [
+  {
+    label: "Email",
+    href: "mailto:umalic65@gmail.com",
+    icon: IconMail,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/CyrusUmali",
+    icon: IconBrandGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/cyrus-carbungco-778612383/",
+    icon: IconBrandLinkedin,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/cyrus.umali.1/",
+    icon: IconBrandFacebook,
+  },
+];
 
 export default function ContactSection() {
   const p1Ref = useRef(null);
@@ -110,6 +134,23 @@ useEffect(() => {
               No commitment
             </div>
           </div>
+
+          <div className="contact-socials">
+  {SOCIALS.map(({ label, href, icon: Icon }) => (
+    <a
+      key={label}
+      href={href}
+      target={href.startsWith("mailto") ? undefined : "_blank"}
+      rel="noopener noreferrer"
+      className="contact-social-link"
+    >
+      <Icon size={15} stroke={1.5} />
+      {label}
+    </a>
+  ))}
+</div>
+
+          
 
        
         </div>

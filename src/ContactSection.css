@@ -500,6 +500,40 @@ textarea.form-input {
 } 
 
 
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+  width: fit-content;
+}
+
+.contact-social-link svg {
+  color: var(--ink-mute);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.contact-social-link:hover {
+  color: var(--primary-d);
+}
+
+.contact-social-link:hover svg {
+  color: var(--primary-d);
+}
+
+
 
 
 /* ── Panels wrap ───────────────────────────────────────────────── */
