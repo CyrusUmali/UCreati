@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.3rem 3.5rem !important;
+    padding: 0.3rem 3.5rem ;
     z-index: 200;
     background: transparent;
     transition:

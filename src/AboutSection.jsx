@@ -77,17 +77,17 @@ export default function AboutSection() {
         <div className={styles.mainGrid}>
           {/* ── Left: Bio ── */}
           <div className={styles.leftCol}>
-          <p className={styles.bioText}>
-  I'm a <strong>graduating student at LSPU SPCC</strong>, looking for fullstack or mobile roles where I can build products end to end.
-</p>
-<p className={styles.bioText}>
-For my capstone project, I handled development from start to finish, covering everything from data modeling and backend logic to the cross-platform frontend.
-Along the way, I learned a new framework from scratch and used it to build and deliver a functional system for a real government client.
-</p>
-<p className={styles.bioText}>
-  I interned at <strong>Armada Logics</strong>, an offshore software firm in La Union. Working remotely alongside aspiring developers from across the Philippines reinforced something they stressed early on: strong fundamentals matter. AI can generate code, but understanding the underlying principles is what allows developers to evaluate its output, make informed decisions, and build reliable software.
-</p>
-{/* <p className={styles.bioText}>
+            <p className={styles.bioText}>
+              I'm a <strong>graduating student at LSPU SPCC</strong>, looking for fullstack or mobile roles where I can build products end to end.
+            </p>
+            <p className={styles.bioText}>
+              For my capstone project, I handled development from start to finish, covering everything from data modeling and backend logic to the cross-platform frontend.
+              Along the way, I learned a new framework from scratch and used it to build and deliver a functional system for a real government client.
+            </p>
+            <p className={styles.bioText}>
+              I interned at <strong>Armada Logics</strong>, an offshore software firm in La Union. Working remotely alongside aspiring developers from across the Philippines reinforced something they stressed early on: strong fundamentals matter. AI can generate code, but understanding the underlying principles is what allows developers to evaluate its output, make informed decisions, and build reliable software.
+            </p>
+            {/* <p className={styles.bioText}>
   I work primarily with <strong>React, React Native, and Flutter</strong>.
 </p> */}
             {/* Supervisor's Testimonial - using existing highlightBlock style */}
@@ -166,7 +166,7 @@ Along the way, I learned a new framework from scratch and used it to build and d
 
             {/* Stats row - updated for student/intern status */}
             <div className={styles.statsRow}>
-            <div className={styles.stripItem}>
+              <div className={styles.stripItem}>
                 <span className={styles.stripNum}>788+</span>
                 <span className={styles.stripLabel}>Active Users Served</span>
               </div>
@@ -182,9 +182,15 @@ Along the way, I learned a new framework from scratch and used it to build and d
               </div>
               <div className={styles.stripDivider} />
               <div className={styles.stripItem}>
-    <span className={styles.stripNum}>6</span>
-    <span className={styles.stripLabel}>Freelance clients</span>
-  </div>
+                <span className={styles.stripNum}>6</span>
+                <span className={styles.stripLabel}>Freelance clients</span>
+              </div>
+
+              <div className={styles.stripDivider} />
+              <div className={styles.stripItem}>
+                <span className={styles.stripNum}>2</span>
+                <span className={styles.stripLabel}>Certification</span>
+              </div>
             </div>
           </div>
         </div>

@@ -113,6 +113,7 @@ export const PROJECTS = [
     desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
     tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"], 
     viewType: "desktop",
+    demo:"https://agritracklp.vercel.app/",
     github: "https://github.com/CyrusUmali/Agritrack_",
     slides: [
       {
@@ -275,6 +276,7 @@ export const PROJECTS = [
     type: "featured", 
     color: "#1a2a4a", 
     bg: "#f0f4fa",
+    demo:"https://prime-road-motors-g3.vercel.app/",
     tagline: "Premium car e-commerce & test drive platform",
     desc: "Prime Road Motors is a full-featured car e-commerce platform built during our OJT internship with a randomly assigned team. The platform enables users to browse vehicles, filter by make/model/price, schedule test drives, and manage appointments. Built with React for the frontend and Node.js for the backend API.",
     tags: ["E-commerce", "Vehicle listings", "Test drive scheduler", "Team project", "React", "Node.js", "Random team"], 
@@ -335,6 +337,7 @@ export const PROJECTS = [
     Icon: CodeIcon,
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/ParangEverwing",
+
     slides: [
       {
         label: "Title Screen",
@@ -501,7 +504,7 @@ export const PROJECTS = [
     tagline: "Interactive EPUB cleaning and editing tool",
     desc: "BulkQuil is a React-based EPUB editor built to solve a specific problem residual HTML elements left behind by webtoepub tools that still get read by text-to-speech apps. The app provides an interactive interface where you can preview EPUB pages, click on unwanted elements, and remove similar elements across the entire book. These selections become rules that automatically apply to other pages. You can also edit CSS, change covers, and batch replace text.",
     tags: ["React", "EPUB Editor", "Text-to-speech clean", "CSS editing", "Batch replace", "Rule-based cleaning"],
-    Icon: PenIcon,
+    demo:"https://bulk-quil.vercel.app/",
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/BulkQuil",
     slides: [

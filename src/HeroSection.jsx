@@ -52,7 +52,7 @@ export default function HeroSection() {
       <div className={styles.statStrip}>
         <div className={styles.statItem}>
           <span className={styles.statNum}>6</span>
-          <span className={styles.statLabel}>Freelance clients.</span>
+          <span className={styles.statLabel}> Clients</span>
         </div>
         <div className={styles.statDivider} />
         <div className={styles.statItem}>

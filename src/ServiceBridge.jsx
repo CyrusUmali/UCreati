@@ -127,7 +127,7 @@ export default function ServiceBridge() {
           </p>
         </div>
 
-        <a
+        {/* <a
           href="#services"
           style={S.cta}
           onMouseEnter={(e) => {
@@ -141,7 +141,7 @@ export default function ServiceBridge() {
         >
           See my services
           <IconArrowNarrowRight size={14} />
-        </a>
+        </a> */}
       </div>
     </div>
   );
