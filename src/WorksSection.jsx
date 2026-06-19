@@ -5,12 +5,8 @@ import WorksSVG from "./svg-bg/WorksSVG";
 import { PROJECTS } from "./js/data";
 import ProjectInfoPanel from "./components/ProjectInfoPanel";
 import Carousel from "./components/Carusel";
-import WorksDivider from "./components/WorksDivider";
 
-export default function WorksSection() {
-  const [activeType, setActiveTypeState] = useState(
-    [...new Set(PROJECTS.map((p) => p.type))][0]
-  );
+export default function WorksSection({ activeType }) {
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [infoFading, setInfoFading] = useState(false);
@@ -20,6 +16,12 @@ export default function WorksSection() {
 
   const filteredProjects = PROJECTS.filter((p) => p.type === activeType);
   const activeProj = filteredProjects[activeProjectIdx] || null;
+
+  // ── Reset selection whenever the filter changes upstream ──
+  useEffect(() => {
+    setActiveProjectIdx(0);
+    setCurrentSlide(0);
+  }, [activeType]);
 
   // ── Intersection observer for section reveal ──
   useEffect(() => {
@@ -55,12 +57,6 @@ export default function WorksSection() {
   }, [resetTimer]);
 
   // ── Handlers ──
-  const handleTypeChange = (type) => {
-    setActiveTypeState(type);
-    setActiveProjectIdx(0);
-    setCurrentSlide(0);
-  };
-
   const handleProjectSwitch = (idx) => {
     if (idx === activeProjectIdx) return;
     setInfoFading(true);
@@ -97,38 +93,12 @@ export default function WorksSection() {
 
       <div className="works-inner">
 
-        {/* ── Header ── */}
-        <div className="works-fade-up works-fade-up-1 works-header">
-          <div className="works-section-label">
-            <span className="works-label-line" />
-            <div className="accent-dot" />
-            Selected work
-            <span className="works-label-line" />
-          </div>
-          <h2 className="works-title">
-            Built, shipped,<br />
-            <em>and worth showing off.</em>
-          </h2>
-          <p className="works-sub">
-            A look at the interfaces, tools, and web experiences I've shipped — from concept to production.
-          </p>
-        </div>
-
-        {/* <WorksDivider /> */}
-
-
-
-        <div className="works-divider" />
-
         {/* ── Filter + thumbnails + info panel ── */}
         <ProjectInfoPanel
-          allProjects={PROJECTS}
           filteredProjects={filteredProjects}
-          activeType={activeType}
           activeProjectIdx={activeProjectIdx}
           activeProj={activeProj}
           infoFading={infoFading}
-          onTypeChange={handleTypeChange}
           onProjectSwitch={handleProjectSwitch}
         />
 

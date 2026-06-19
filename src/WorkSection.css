@@ -134,37 +134,13 @@
 }
 
 /* ── Type Filter ── */
-.works-filter-strip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 1.75rem;
-}
 
-.type-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 13px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    border-radius: 8px;
-    font-family: "Space Mono", monospace;
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    white-space: nowrap;
-    user-select: none;
-    transition: all 0.18s;
-}
 
-.type-chip:hover {
-    border-color: var(--ink-mute);
-    color: var(--ink) !important;
-}
+
+ 
+
+
+
 
 .type-chip-dot {
     width: 5px;

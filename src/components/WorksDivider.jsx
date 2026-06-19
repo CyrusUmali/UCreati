@@ -1,8 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import "./WorksDivider.css";
-
-// Mirrors the CSS custom properties in index.css — kept here only
-// because SVG fill/stroke attributes can't read var() as reliably
-// across browsers as CSS properties can.
+import { PROJECT_TYPES } from "../js/data";
+ 
 const t = {
   surface:  "#f0f3ee",
   border:   "#c8d4c8",
@@ -10,9 +9,67 @@ const t = {
   primaryD: "#27500a",
 };
 
-function WorksDivider() {
+// ── Type chip ──
+const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
+  const pt = PROJECT_TYPES[typeKey];
   return (
-    <div className="wd-section">
+    <button
+      onClick={onClick}
+      className={`type-chip ${isActive ? "type-chip-active" : ""}`}
+      style={{
+        borderColor: isActive ? pt.color : "var(--border)",
+        background: isActive ? pt.color : "var(--bg)",
+        color: isActive ? "#EAF3DE" : pt.color,
+      }}
+    >
+      {label}
+      <span
+        className="type-chip-count"
+        style={{
+          background: isActive ? "rgba(255,255,255,0.15)" : null,
+          color: isActive ? "rgba(255,255,255,0.85)" : pt.countText,
+        }}
+      >
+        {count}
+      </span>
+    </button>
+  );
+};
+
+export default function WorksDivider({ allProjects, activeType, onTypeChange }) {
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
+ 
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    // Respect reduced-motion users by just showing everything immediately.
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      setInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={`wd-wrap ${inView ? "is-in-view" : ""}`}>
+      <div ref={sectionRef} className="wd-section">
 
       <svg className="wd-bg-svg" viewBox="0 0 1440 360"
         preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -31,18 +88,6 @@ function WorksDivider() {
             transform="scale(0.6) translate(-40, 0)"
             d="M40-95L-195,140c-20,20-20,52,0,72L40,347c20,20,52,20,72,0L347,112c20-20,20-52,0-72L112-95C92-115,60-115,40-95z" />
         </g>
-
-
-        {/* <g transform="translate(-100, 0)">
-        <g className="anim-diamond-group-3" style={{ transformOrigin: "178px 170px" }}>
-          <path fill={t.primaryD} className="anim-fill-pulse-1" opacity="0.28" transform="scale(0.65) translate(80, 120)"
-            d="M197,376L123,302c-11-11-11-29,0-40L197,188c11-11,29-11,40,0L311,262c11,11,11,29,0,40L237,376C226,387,208,387,197,376z" />
-          <path fill="none" stroke={t.primary} strokeWidth="1" opacity="0.45"
-            transform="scale(0.65) translate(80, 120)"
-            d="M201,388L127,314c-11-11-11-29,0-40L201,200c11-11,29-11,40,0L315,274c11,11,11,29,0,40L241,388C230,399,212,399,201,388z" />
-        </g></g> */}
-
-
 
         {/* ── RIGHT: 3 shapes ── */}
 
@@ -93,8 +138,10 @@ function WorksDivider() {
             <span className="wd-eline" />
           </div>
           <h2 className="wd-heading">
-            Built, shipped,
-            <em className="wd-heading-outline">and worth showing off.</em>
+            <span className="wd-heading-wipe">Built, shipped,</span>
+            <em className="wd-heading-outline">
+              <span className="wd-heading-wipe wd-heading-wipe-2">and worth showing off.</span>
+            </em>
           </h2>
           <p className="wd-sub">
             A look at the interfaces, tools, and web experiences I've shipped —
@@ -103,21 +150,27 @@ function WorksDivider() {
         </div>
 
         <div className="wd-meta">
-          <span className="wd-meta-num">42</span>
+          <span className="wd-meta-num">15+</span>
           <span className="wd-meta-label">Projects shipped</span>
         </div>
       </div>
 
       <div className="wd-bottom-bar" />
       <div className="wd-bottom-diamond" />
-    </div>
-  );
-}
-
-export default function App() {
-  return (
-    <div>
-      <WorksDivider />
+      </div>
+ 
+      <div className="works-filter-strip">
+        {[...new Set(allProjects.map((p) => p.type))].map((k) => (
+          <TypeChip
+            key={k}
+            typeKey={k}
+            label={PROJECT_TYPES[k].label}
+            count={allProjects.filter((p) => p.type === k).length}
+            isActive={activeType === k}
+            onClick={() => onTypeChange(k)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

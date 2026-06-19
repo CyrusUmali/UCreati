@@ -112,7 +112,7 @@ export default function Services() {
         <span className="svc-footer-note">
           Custom scope? Let's figure it out together.
         </span>
-        <a href="#" className="btn-primary">
+        <a href="#contact" className="btn-primary">
           Start a Project
           <IconArrowNarrowRight size={14} />
         </a>

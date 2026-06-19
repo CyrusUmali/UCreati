@@ -1,33 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { PROJECT_TYPES } from ".././js/data";
 
-// ── Type chip ──
-const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
-  const t = PROJECT_TYPES[typeKey];
-  return (
-    <button
-      onClick={onClick}
-      className={`type-chip ${isActive ? "type-chip-active" : ""}`}
-      style={{
-        borderColor: isActive ? t.color : "var(--border)",
-        background: isActive ? t.color : "var(--bg)",
-        color: isActive ? "#EAF3DE" : t.color,
-      }}
-    >
-      {label}
-      <span
-        className="type-chip-count"
-        style={{
-          background: isActive ? "rgba(255,255,255,0.15)" : null,
-          color: isActive ? "rgba(255,255,255,0.85)" : t.countText,
-        }}
-      >
-        {count}
-      </span>
-    </button>
-  );
-};
-
 // ── Project thumbnail ──
 const ProjThumb = ({ project, isActive, onClick }) => {
   const heroImage = project.slides?.find((s) => s.image)?.image || null;
@@ -61,14 +34,10 @@ const ProjThumb = ({ project, isActive, onClick }) => {
 
 // ── Main export ──
 export default function ProjectInfoPanel({
-  projectTypes,
-  allProjects,
   filteredProjects,
-  activeType,
   activeProjectIdx,
   activeProj,
   infoFading,
-  onTypeChange,
   onProjectSwitch,
 }) {
   const t = activeProj ? PROJECT_TYPES[activeProj.type] : null;
@@ -104,20 +73,6 @@ export default function ProjectInfoPanel({
 
   return (
     <>
-      {/* ── Type filter strip ── */}
-      <div className="works-fade-up works-fade-up-2 works-filter-strip">
-        {[...new Set(allProjects.map((p) => p.type))].map((k) => (
-          <TypeChip
-            key={k}
-            typeKey={k}
-            label={PROJECT_TYPES[k].label}
-            count={allProjects.filter((p) => p.type === k).length}
-            isActive={activeType === k}
-            onClick={() => onTypeChange(k)}
-          />
-        ))}
-      </div>
-
       {/* ── Horizontal project thumb strip ── */}
       <div className="works-thumb-strip-wrap">
         {thumbScroll.left && (

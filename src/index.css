@@ -8,7 +8,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 /* ─── Design Tokens ──────────────────────────────────────── */
 :root {
     --bg: #FFFFFF;
@@ -17,6 +19,10 @@
     --surface: #f0f3ee;
     --border: #c8d4c8;
     --primary: #3b6d11;
+    --primary-g: linear-gradient(
+        180deg,
+        #dbe9c7 0%,
+        #d4e4bd 100%);
     --primary-d: #27500a;
     --primary-p: #c0dd97;
     --primary-s: #eef0eb;
