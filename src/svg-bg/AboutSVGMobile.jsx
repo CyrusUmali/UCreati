@@ -24,7 +24,7 @@ export default function AboutSVGMobile() {
 
 
       {/* Trailing ellipse bottom-left */}
-      <ellipse cx="50" cy="590" rx="90" ry="90" fill="none" stroke="#3B6D11" strokeWidth="0.5" opacity="0" className="anim-trail-2" />
+      <ellipse cx="50" cy="590" rx="90" ry="90" fill="none" stroke="var(--primary)" strokeWidth="0.5" opacity="0" className="anim-trail-2" />
     </svg>
   );
 }

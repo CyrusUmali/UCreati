@@ -5,6 +5,7 @@ import WorksSVG from "./svg-bg/WorksSVG";
 import { PROJECTS } from "./js/data";
 import ProjectInfoPanel from "./components/ProjectInfoPanel";
 import Carousel from "./components/Carusel";
+import WorksDivider from "./components/WorksDivider";
 
 export default function WorksSection() {
   const [activeType, setActiveTypeState] = useState(
@@ -112,6 +113,10 @@ export default function WorksSection() {
             A look at the interfaces, tools, and web experiences I've shipped — from concept to production.
           </p>
         </div>
+
+        {/* <WorksDivider /> */}
+
+
 
         <div className="works-divider" />
 
