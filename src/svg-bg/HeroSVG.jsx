@@ -1,6 +1,19 @@
 import styles from "../HeroSection.module.css";
+import { useState, useEffect } from 'react';
 
 export default function HeroSVG() {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth <= 640);
+    console.log("Window width:", window.innerWidth, "Is mobile:", window.innerWidth <= 640);
+  };
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
   return (
     <svg
       className={styles.bgSvg}
@@ -45,14 +58,28 @@ export default function HeroSVG() {
         <path fill="var(--primary)" className="anim-fill-pulse-3" d="M1115,468L1038,391c-18-18-18-47,0-65L1115,249c18-18,47-18,65,0L1257,326c18,18,18,47,0,65L1180,468C1162,486,1133,486,1115,468z" />
         <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.7" d="M1111,488L1034,411c-18-18-18-47,0-65L1111,269c18-18,47-18,65,0L1253,346c18,18,18,47,0,65L1176,488C1158,506,1129,506,1111,488z" />
       </g>
+ 
+      {/* <g transform="translate(0, -300)"> */}
+       
+      <g transform={isMobile ? 'translate(-420, -170)' : 'translate(0)'}>
+
       <g className="anim-diamond-group-6" style={{ transformOrigin: "888px 392px" }}>
         <path fill="var(--primary-p)" opacity="0.82" d="M888,454L848,414c-12-12-12-32,0-44L888,330c12-12,32-12,44,0L972,370c12,12,12,32,0,44L932,454C920,466,900,466,888,454z" />
         <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.65" d="M884,472L844,432c-12-12-12-32,0-44L884,348c12-12,32-12,44,0L968,388c12,12,12,32,0,44L928,472C916,484,896,484,884,472z" />
       </g>
+
+      </g>
+
+      <g transform={isMobile ? 'translate(90, 50)' : 'translate(0)'}>
       <g className="anim-diamond-group-4" style={{ transformOrigin: "882px 578px" }}>
         <path fill="var(--border)" opacity="0.82" d="M882,669L814,601c-18-18-18-47,0-65L882,468c18-18,47-18,65,0L1015,535c18,18,18,47,0,65L947,669C929,687,900,687,882,669z" />
         <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.6" d="M878,685L810,617c-18-18-18-47,0-65L878,484c18-18,47-18,65,0L1011,551c18,18,18,47,0,65L943,685C925,703,896,703,878,685z" />
       </g>
+      </g>
+
+      
+
+
 
       
       <g transform="translate(30, -50)">

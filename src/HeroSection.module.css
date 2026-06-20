@@ -221,6 +221,11 @@
   gap: 3px;
   transition: transform 0.3s ease;
 }
+
+.statIcon {
+  color: transparent; 
+  margin-bottom: 4px;
+}
 .statItem:hover {
   transform: translateX(5px);
 }
@@ -460,7 +465,13 @@
   .heroName { margin-bottom: 1.25rem; }
   .heroRole { font-size: 15px; margin-bottom: 2rem; }
 
+  .heroInner{
+    
+  }
 
+  .statIcon {
+    color: var(--primary);  
+  }
 
   .heroCtas {
     flex-direction: column;
@@ -469,6 +480,7 @@
   }
   .heroCtas a {
     width: 100%;
+ 
     max-width: 280px; /* Adjust to your desired button width */
     margin: 0 auto;
     text-align: center;
@@ -478,11 +490,12 @@
   }
   
 
-  .statStrip {
+  .statStrip { 
     position: static;
     flex-direction: row;
     justify-content: center;
     padding: 2rem 1.5rem 0;
+    /* padding-top: 100px; */
     margin-top: 2rem;
     width: 100%;
   }

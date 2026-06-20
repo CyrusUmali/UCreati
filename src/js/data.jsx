@@ -1,39 +1,39 @@
 /* eslint-disable react-refresh/only-export-components */
- // ─── Icons ────────────────────────────────────────────────────────────────────
+// ─── Icons ────────────────────────────────────────────────────────────────────
 
 export const HomeIcon = ({ size = 20 }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
-      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-      <polyline points="9,22 9,12 15,12 15,22" />
-    </svg>
-  );
-  
-  export const PulseIcon = ({ size = 20 }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
-      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-    </svg>
-  );
-  
-  export const MapIcon = ({ size = 20 }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
-      <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
-      <line x1="8" y1="2" x2="8" y2="18" />
-      <line x1="16" y1="6" x2="16" y2="22" />
-    </svg>
-  );
-  
-  export const DollarIcon = ({ size = 20 }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
-      <line x1="12" y1="1" x2="12" y2="23" />
-      <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-    </svg>
-  );
-  
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+    <polyline points="9,22 9,12 15,12 15,22" />
+  </svg>
+);
 
-  
+export const PulseIcon = ({ size = 20 }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+  </svg>
+);
 
-  // ─── Icons ────────────────────────────────────────────────────────────────────
- 
+export const MapIcon = ({ size = 20 }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
+    <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
+    <line x1="8" y1="2" x2="8" y2="18" />
+    <line x1="16" y1="6" x2="16" y2="22" />
+  </svg>
+);
+
+export const DollarIcon = ({ size = 20 }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
+    <line x1="12" y1="1" x2="12" y2="23" />
+    <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+  </svg>
+);
+
+
+
+
+// ─── Icons ────────────────────────────────────────────────────────────────────
+
 export const CodeIcon = ({ size = 20 }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
     <polyline points="16,18 22,12 16,6" />
@@ -42,7 +42,7 @@ export const CodeIcon = ({ size = 20 }) => (
 );
 
 
-export   const PenIcon = ({ size = 20 }) => (
+export const PenIcon = ({ size = 20 }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={size} height={size}>
     <path d="M12 20h9" />
     <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
@@ -63,14 +63,14 @@ export const PROJECT_TYPES = {
     countText: "#1c3d2c"
   },
   ml: {
-  label: "ML/AI",
-  color: "#2b6e4f",
-  bg: "#eaf8f0",
-  border: "#c5e8d5",
-  dotColor: "#3a8a5f",
-  countBg: "#d4eedf",
-  countText: "#2b6e4f"
-}, 
+    label: "ML/AI",
+    color: "#2b6e4f",
+    bg: "#eaf8f0",
+    border: "#c5e8d5",
+    dotColor: "#3a8a5f",
+    countBg: "#d4eedf",
+    countText: "#2b6e4f"
+  },
   productivity: {
     label: "Productivity",
     color: "#5c1a3a",
@@ -79,7 +79,7 @@ export const PROJECT_TYPES = {
     dotColor: "#8b3a5a",
     countBg: "#f0d4e4",
     countText: "#5c1a3a"
-  }, 
+  },
   game: {
     label: "Games",
     color: "#1a4a5c",
@@ -97,7 +97,7 @@ export const PROJECT_TYPES = {
     dotColor: "#8b3a5a",
     countBg: "#f0d4e4",
     countText: "#5c1a3a"
-  }, 
+  },
 };
 
 // ─── Projects Data ─────────────────────────────────────────────────────────────
@@ -111,9 +111,9 @@ export const PROJECTS = [
     type: "featured", color: "#1c3d2c", bg: "#eaf5ef",
     tagline: "Farm management for local government units",
     desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
-    tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"], 
+    tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"],
     viewType: "desktop",
-    demo:"https://agritracklp.vercel.app/",
+    demo: "https://agritracklp.vercel.app/",
     github: "https://github.com/CyrusUmali/Agritrack_",
     slides: [
       {
@@ -153,7 +153,7 @@ export const PROJECTS = [
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
       },
     ],
-},
+  },
 
 
   {
@@ -161,7 +161,7 @@ export const PROJECTS = [
     type: "game", color: "#1a2e52", bg: "#e8eef8",
     tagline: "2D RPG game where coding meets combat",
     desc: "CodeBorn is a 2D RPG game built with RPG Game Maker for a school project. Players fight digital mobs and solve coding problems to progress blending turn-based combat with programming challenges that teach logic, syntax, and problem-solving.",
-    tags: ["2D RPG", "School project", "Coding combat", "Turn-based", "Educational"], 
+    tags: ["2D RPG", "School project", "Coding combat", "Turn-based", "Educational"],
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/Codeborn-Web-D",
     slides: [
@@ -263,70 +263,70 @@ export const PROJECTS = [
         hue: "335deg", screenLabel: "NovelNexus · Book Page",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756212/novelnexus_6_xarwan.png",
       },
- 
+
     ],
   },
 
 
 
   {
-    id: "primeroadmotors", 
-    name: "Prime Road Motors", 
+    id: "primeroadmotors",
+    name: "Prime Road Motors",
     short: "PrimeRoad",
-    type: "featured", 
-    color: "#1a2a4a", 
+    type: "featured",
+    color: "#1a2a4a",
     bg: "#f0f4fa",
-    demo:"https://prime-road-motors-g3.vercel.app/",
+    demo: "https://prime-road-motors-g3.vercel.app/",
     tagline: "Premium car e-commerce & test drive platform",
     desc: "Prime Road Motors is a full-featured car e-commerce platform built during our OJT internship with a randomly assigned team. The platform enables users to browse vehicles, filter by make/model/price, schedule test drives, and manage appointments. Built with React for the frontend and Node.js for the backend API.",
-    tags: ["E-commerce", "Vehicle listings", "Test drive scheduler", "Team project", "React", "Node.js", "Random team"], 
+    tags: ["E-commerce", "Vehicle listings", "Test drive scheduler", "Team project", "React", "Node.js", "Random team"],
     viewType: "desktop",
     github: "https://github.com/yourusername/primeroadmotors",
     slides: [
       {
         label: "Landing Page",
         desc: "Hero section showcasing featured vehicles with a clean, premium design that reflects the brand's luxury positioning.",
-        hue: "210deg", 
+        hue: "210deg",
         screenLabel: "Prime Road · Home",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757131/primeroad_p9af6t.png",
       },
       {
         label: "Featured Vehicles",
         desc: "Curated selection of premium vehicles displayed with key specs, pricing, and quick view options for browsing.",
-        hue: "220deg", 
+        hue: "220deg",
         screenLabel: "Prime Road · Features",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757135/primeroad_1_aembtt.png",
       },
       {
         label: "All Vehicles with Filters",
         desc: "Complete inventory with make, model, year, and price filters to help users find their perfect vehicle quickly.",
-        hue: "200deg", 
+        hue: "200deg",
         screenLabel: "Prime Road · Inventory",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757241/primeroad_3_wqtwvx.png",
       },
       {
         label: "Car Preview & Test Drive",
         desc: "Detailed vehicle view with specs, photos, and a test drive scheduler that lets users book appointments directly.",
-        hue: "190deg", 
+        hue: "190deg",
         screenLabel: "Prime Road · Schedule Drive",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757240/primeroad_4_pf5mpe.png",
       },
       {
         label: "Scheduled Test Drives",
         desc: "User dashboard showing upcoming test drive appointments with date, time, and vehicle details for easy management.",
-        hue: "180deg", 
+        hue: "180deg",
         screenLabel: "Prime Road · My Drives",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757237/primeroad_2_zqeorh.png",
       },
       {
         label: "Contact Us",
         desc: "Dealer contact information with inquiry form for sales, service, and general questions about the dealership.",
-        hue: "170deg", 
+        hue: "170deg",
         screenLabel: "Prime Road · Contact",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781757125/primeroad_5_erkpa0.png",
       },
     ],
-},
+  },
 
   {
     id: "aeroblast", name: "AeroBlast", short: "AeroBlast",
@@ -377,7 +377,62 @@ export const PROJECTS = [
       },
     ],
   },
-  
+
+
+
+  {
+    "id": "tailwindquiz",
+    "name": "Tailwind Quiz Game",
+    "short": "Tailwind Quiz",
+    "type": "academic",
+    "color": "#2c3e7a",
+    "bg": "#eef3fc",
+    "tagline": "Timed quiz game with dynamic scoring",
+    "desc": "QuizWiz is a timed quiz game where players choose difficulty and number of questions, answer against the clock, and get scored based on speed, difficulty, and streak. Built with PHP, MongoDB Atlas, and Tailwind CSS as a group project for a web development course.",
+    "tags": ["Tailwind", "PHP", "MongoDB Atlas", "Timed quiz", "Dynamic scoring", "Leaderboard", "Group project"],
+    "viewType": "desktop",
+    "demo": "https://tailwind-quiz-game.onrender.com",
+    "github": "https://github.com/CyrusUmali/Tailwind-Quiz-Game/tree/main",
+    "slides": [
+      {
+        "label": "Landing Page",
+        "desc": "Entry point with Login and View Leaderboard buttons. Clean Tailwind-styled interface.",
+        "hue": "220deg",
+        "screenLabel": "QuizWiz · Landing",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781949980/Screenshot_812_sejjwe.png"
+      },
+      {
+        "label": "Login Modal",
+        "desc": "Simple login overlay with username field and enter button to start the game.",
+        "hue": "240deg",
+        "screenLabel": "QuizWiz · Login",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781949975/Screenshot_813_tfzvvj.png"
+      },
+
+      {
+        "label": "Game Screen",
+        "desc": "Active quiz interface showing the question, answer options, timer, current score, and progress bar.",
+        "hue": "160deg",
+        "screenLabel": "QuizWiz · Playing",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781949969/Screenshot_816_fiahzf.png"
+      },
+      {
+        "label": "Score Breakdown",
+        "desc": "Detailed scoring summary showing points from speed bonus, difficulty multiplier, and streak rewards.",
+        "hue": "140deg",
+        "screenLabel": "QuizWiz · Results",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781949980/Screenshot_818_hgazol.png"
+      },
+      {
+        "label": "Leaderboard",
+        "desc": "Global rankings displaying top players with their total scores and average accuracy.",
+        "hue": "280deg",
+        "screenLabel": "QuizWiz · Leaderboard",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781949977/Screenshot_819_ztp1j3.png"
+      }
+    ]
+  },
+
   {
     id: "alpshop", name: "Alpshop", short: "Alpshop",
     type: "featured", color: "#2d5a3b", bg: "#eaf4e6",
@@ -426,7 +481,7 @@ export const PROJECTS = [
       },
     ],
   },
-    
+
   {
     id: "contactsapp",
     name: "Contacts",
@@ -442,7 +497,7 @@ export const PROJECTS = [
       "Contact Management",
       "Cloud Sync",
       "Mobile App"
-    ], 
+    ],
     viewType: "mobile",
     github: "https://github.com/CyrusUmali/contact_manager",
     slides: [
@@ -454,7 +509,7 @@ export const PROJECTS = [
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756541/contacts_vxu7he.jpg",
       },
 
-      
+
       {
         label: "Create Account View",
         desc: "New user registration sign up with email, password, and profile details to start managing contacts.",
@@ -490,10 +545,99 @@ export const PROJECTS = [
         screenLabel: "Contacts · Birthdays",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756545/contacts_4_httyuo.jpg",
       },
- 
+
     ],
   },
 
+
+  {
+    "id": "quizapp",
+    "name": "Quiz Game",
+    "short": "Quiz",
+    "type": "academic",
+    "color": "#7c3aed",
+    "bg": "#ede9fe",
+    "tagline": "Full-stack quiz platform with React, Node.js, MySQL & Google Auth",
+    "desc": "A full-stack quiz application built with React Vite on the frontend, Node.js Express on the backend, and MySQL for data persistence. Features Google OAuth authentication, quiz creation, real-time scoring, and answer review. One of my first full-stack projects with learning experiences in authentication, state management, and API design.",
+    "tags": [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Google Auth",
+      "Full Stack",
+      "Vite"
+    ],
+    "viewType": "mobile",
+    "github": "https://github.com/CyrusUmali/Quizziz",
+    "demo": "https://quizziz-client-fsez.onrender.com/",
+    "slides": [
+      {
+        "label": "Home & Authentication",
+        "desc": "Welcome screen with login and signup options. Users can authenticate using email/password or Google OAuth.",
+        "hue": "260deg",
+        "screenLabel": "Quiz · Welcome",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955652/Annotation_2026-06-20_181420_y4hcy1.png"
+      },
+      {
+        "label": "Sign Up Page",
+        "desc": "New user registration form with email, password, and name fields. Google OAuth also available as an alternative sign-up method.",
+        "hue": "280deg",
+        "screenLabel": "Quiz · Sign Up",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955652/Annotation_2026-06-20_181441_uvhhxs.png"
+      },
+      {
+        "label": "Login Page",
+        "desc": "Secure login screen for returning users. Credentials are validated against the MySQL database.",
+        "hue": "240deg",
+        "screenLabel": "Quiz · Login",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955653/Annotation_2026-06-20_181506_sxablh.png"
+      },
+      {
+        "label": "Dashboard",
+        "desc": "Post-login dashboard showing available quiz categories. Users can start a quiz or create their own custom quiz.",
+        "hue": "220deg",
+        "screenLabel": "Quiz · Dashboard",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955653/Annotation_2026-06-20_192721_plexas.png"
+      },
+      {
+        "label": "Quiz Selection",
+        "desc": "Browse and select from available quiz subjects. Each quiz displays its title, category, and question count.",
+        "hue": "200deg",
+        "screenLabel": "Quiz · Select Subject",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955653/Annotation_2026-06-20_192744_r4b23q.png"
+      },
+      {
+        "label": "Answering Questions",
+        "desc": "Interactive quiz interface showing a question with multiple choice options. Correct answers are highlighted for immediate feedback.",
+        "hue": "180deg",
+        "screenLabel": "Quiz · Playing",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955653/Annotation_2026-06-20_192820_d3bznv.png"
+      },
+      {
+        "label": "Quiz Results",
+        "desc": "Final score display after completing a quiz. Shows total correct answers with options to play again or return to dashboard.",
+        "hue": "160deg",
+        "screenLabel": "Quiz · Results",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955652/Annotation_2026-06-20_193002_f8yefw.png"
+      },
+      {
+        "label": "Answer Review",
+        "desc": "Detailed breakdown of all questions showing the user's selected answer alongside the correct answer for learning purposes.",
+        "hue": "140deg",
+        "screenLabel": "Quiz · Review Answers",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955652/Annotation_2026-06-20_193052_b4lm7k.png"
+      },
+      {
+        "label": "Create Quiz",
+        "desc": "Quiz creation interface where users can add questions, set correct answers, and define multiple choice options for each question.",
+        "hue": "120deg",
+        "screenLabel": "Quiz · Create",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781955652/Annotation_2026-06-20_193221_ipmflc.png"
+      }
+    ]
+  }
+  ,
   {
     id: "bulkquil",
     name: "BulkQuil",
@@ -504,7 +648,7 @@ export const PROJECTS = [
     tagline: "Interactive EPUB cleaning and editing tool",
     desc: "BulkQuil is a React-based EPUB editor built to solve a specific problem residual HTML elements left behind by webtoepub tools that still get read by text-to-speech apps. The app provides an interactive interface where you can preview EPUB pages, click on unwanted elements, and remove similar elements across the entire book. These selections become rules that automatically apply to other pages. You can also edit CSS, change covers, and batch replace text.",
     tags: ["React", "EPUB Editor", "Text-to-speech clean", "CSS editing", "Batch replace", "Rule-based cleaning"],
-    demo:"https://bulk-quil.vercel.app/",
+    demo: "https://bulk-quil.vercel.app/",
     viewType: "desktop",
     github: "https://github.com/CyrusUmali/BulkQuil",
     slides: [
@@ -556,10 +700,10 @@ export const PROJECTS = [
   {
     id: "aicrop", name: "Agritrack AI", short: "Agritrack AI",
     type: "ml",
-     color: "#2b6e4f", bg: "#eaf8f0",
+    color: "#2b6e4f", bg: "#eaf8f0",
     tagline: "ML-powered crop recommendation for San Pablo City farmers",
     desc: "Agritrack AI is a machine learning system trained on real soil data from farm fields across San Pablo City. Using Random Forest (the best-performing model among multiple algorithms tested), it recommends optimal crops based on environmental parameters helping farmers make data-driven planting decisions with 85%+ accuracy.",
-    tags: ["Random Forest", "Flutter frontend", "Python ML",   "Gemini API"], 
+    tags: ["Random Forest", "Flutter frontend", "Python ML", "Gemini API"],
     github: "https://github.com/CyrusUmali/AiCROP", Icon: PenIcon,
     viewType: "mobile",
     slides: [
@@ -586,7 +730,7 @@ export const PROJECTS = [
         desc: "Select a specific crop and enter environmental conditions to check compatibility shows a confidence breakdown where parameter analysis contributes 70% of the final score.",
         hue: "155deg", screenLabel: "Agritrack AI · Compatibility",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756763/aicrop_3_h46ovx.png",
-       },
+      },
       {
         label: "Parameter Analysis",
         desc: "Detailed breakdown of each soil parameter shows whether current levels are optimal, insufficient, or excessive for the selected crop.",
@@ -598,7 +742,7 @@ export const PROJECTS = [
         desc: "Gemini API generates actionable suggestions what the farmer can do to improve soil conditions for growing their desired crop, from fertilization to irrigation adjustments.",
         hue: "170deg", screenLabel: "Agritrack AI · Gemini Suggestions",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756758/aicrop_5_j3oztc.png",
-    },
+      },
     ],
   },
 
@@ -683,14 +827,14 @@ export const PROJECTS = [
       },
     ],
   }
-  
 
 
 
 
 
 
-  
+
+
 
 
 ];
@@ -703,19 +847,19 @@ export const PROJECTS = [
 
 
 
-  export const skills = [
-    { name: "Creative Dev",       pct: 95, delay: "0.5s"  },
-    { name: "UI / UX Design",     pct: 88, delay: "0.65s" },
-    { name: "Motion & Interaction", pct: 92, delay: "0.8s" },
-    { name: "3D & WebGL",         pct: 74, delay: "0.95s" },
-    { name: "Design Systems",     pct: 85, delay: "1.1s"  },
-  ];
-  
-  export const tags = [
-    "React/React Native", "Flutter", "MySQL", "Figma",
-    "JavaScript", "Firebase",  "Python", "Php",
-    "SpringBoot", "Tailwind", "GitHub", "Node.js","Supabase", "AI/ML"
-  ];
+export const skills = [
+  { name: "Creative Dev", pct: 95, delay: "0.5s" },
+  { name: "UI / UX Design", pct: 88, delay: "0.65s" },
+  { name: "Motion & Interaction", pct: 92, delay: "0.8s" },
+  { name: "3D & WebGL", pct: 74, delay: "0.95s" },
+  { name: "Design Systems", pct: 85, delay: "1.1s" },
+];
+
+export const tags = [
+  "React/React Native", "Flutter", "MySQL", "Figma",
+  "JavaScript", "Firebase", "Python", "Php",
+  "SpringBoot", "Tailwind", "GitHub", "Node.js", "Supabase", "AI/ML"
+];
 
 
-  export const BUDGET_OPTIONS = ["< $2k", "$2k – $5k", "$5k – $15k", "$15k+", "Let's talk"];
+export const BUDGET_OPTIONS = ["< $2k", "$2k – $5k", "$5k – $15k", "$15k+", "Let's talk"];

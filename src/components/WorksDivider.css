@@ -118,14 +118,16 @@
     margin-bottom: 18px;
 }
 
-/* The actual left-to-right "reveal" — a clip-path wipe rather than a
-   plain fade, so the text reads as being uncovered rather than just
-   appearing. Each line wipes independently so the <em> line can lag
-   slightly behind the first for a subtle cascading feel. */
 .wd-heading-wipe {
     display: inline-block;
-    clip-path: inset(0 100% 0 0);
+    padding-right: 0.12em;   /* buffer for glyphs like f that overhang their box */
+    margin-right: -0.12em;   /* cancel the layout shift from the padding */
+    clip-path: inset(0 calc(100% + 0.12em) 0 0);
     transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.25s;
+}
+
+.wd-wrap.is-in-view .wd-heading-wipe {
+    clip-path: inset(0 -0.12em 0 0); /* slightly past 0% so the overhang isn't cut */
 }
 
 .wd-heading-wipe-2 {

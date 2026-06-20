@@ -4,6 +4,13 @@ import styles from "./HeroSection.module.css";
 import HeroSVG from "./svg-bg/HeroSVG";
 import { BorderSnake } from "./BorderSnake";
 
+import { 
+  IconUsers, 
+  IconBriefcase2, 
+  IconUserCheck,
+  IconTrendingUp
+} from "@tabler/icons-react";
+
 export default function HeroSection() { 
   const [menuOpen, setMenuOpen] = useState(false);
   const heroRef = useRef(null);
@@ -51,16 +58,19 @@ export default function HeroSection() {
 
       <div className={styles.statStrip}>
         <div className={styles.statItem}>
+          <IconUserCheck size={28} stroke={1.5} className={styles.statIcon} />
           <span className={styles.statNum}>6</span>
-          <span className={styles.statLabel}> Clients</span>
+          <span className={styles.statLabel}>Clients</span>
         </div>
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
+          <IconBriefcase2 size={28} stroke={1.5} className={styles.statIcon} />
           <span className={styles.statNum}>20+</span>
           <span className={styles.statLabel}>Projects</span>
         </div>
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
+          <IconUsers size={28} stroke={1.5} className={styles.statIcon} />
           <span className={styles.statNum}>800+</span>
           <span className={styles.statLabel}>Active Users</span>
         </div>

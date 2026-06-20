@@ -248,6 +248,7 @@ body {
 .anim-diamond-group-6 {
     animation: floatB 10s ease-in-out 0.5s infinite;
     opacity: 0.9;
+    
 }
 .anim-diamond-mini {
     animation: smallFloat 5s ease-in-out infinite;
@@ -355,4 +356,34 @@ body {
     display: inline-block;
     flex-shrink: 0;
     transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 640px) {
+
+.btn-primary { 
+    padding: 18px 28px; 
+} 
+
+.btn-ghost { 
+    padding: 18px 28px !important; 
+}
+
 }

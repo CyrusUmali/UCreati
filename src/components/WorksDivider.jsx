@@ -18,7 +18,7 @@ const TypeChip = ({ typeKey, label, count, isActive, onClick }) => {
       className={`type-chip ${isActive ? "type-chip-active" : ""}`}
       style={{
         borderColor: isActive ? pt.color : "var(--border)",
-        background: isActive ? pt.color : "var(--bg)",
+        background: isActive ? "var(--primary)" : "var(--bg)",
         color: isActive ? "#EAF3DE" : pt.color,
       }}
     >
