@@ -106,54 +106,54 @@ export const PROJECTS = [
 
 
 
-  {
-    id: "agritrack", name: "AgriTrack", short: "AgriTrack",
-    type: "featured", color: "#1c3d2c", bg: "#eaf5ef",
-    tagline: "Farm management for local government units",
-    desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
-    tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"],
-    viewType: "desktop",
-    demo: "https://agritracklp.vercel.app/",
-    github: "https://github.com/CyrusUmali/Agritrack_",
-    slides: [
-      {
-        label: "Dashboard Overview",
-        desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
-        hue: "140deg", screenLabel: "AgriTrack · Dashboard",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
-      },
-      {
-        label: "Sector Data Analytics",
-        desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
-        hue: "155deg", screenLabel: "AgriTrack · Sector Analytics",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
-      },
-      {
-        label: "Barangay Yield Heat Map",
-        desc: "Color-coded choropleth map tracking yield trends per barangay for specific crops identify high and low performing areas at a glance.",
-        hue: "35deg", screenLabel: "AgriTrack · Heat Map",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
-      },
-      {
-        label: "Farm Information Modal",
-        desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
-        hue: "200deg", screenLabel: "AgriTrack · Farm Details",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
-      },
-      {
-        label: "Mapped Farm (Selected)",
-        desc: "Satellite view showing a specific farm's polygon boundary appears when you tap any farm on the map. Displays crop type and area data inline.",
-        hue: "280deg", screenLabel: "AgriTrack · Farm Select",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755824/agritrack_4_vkjx8q.png",
-      },
-      {
-        label: "Map View (Default)",
-        desc: "Full satellite map interface before farm selection all registered farms visible as interactive polygons across San Pablo City's agricultural lands.",
-        hue: "150deg", screenLabel: "AgriTrack · Map Explorer",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
-      },
-    ],
-  },
+    {
+      id: "agritrack", name: "AgriTrack", short: "AgriTrack",
+      type: "featured", color: "#1c3d2c", bg: "#eaf5ef",
+      tagline: "Farm management for local government units",
+      desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
+      tags: ["5 modules", "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform"],
+      viewType: "desktop",
+      demo: "https://agritracklp.vercel.app/",
+      github: "https://github.com/CyrusUmali/Agritrack_",
+      slides: [
+        {
+          label: "Dashboard Overview",
+          desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
+          hue: "140deg", screenLabel: "AgriTrack · Dashboard",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
+        },
+        {
+          label: "Sector Data Analytics",
+          desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
+          hue: "155deg", screenLabel: "AgriTrack · Sector Analytics",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
+        },
+        {
+          label: "Barangay Yield Heat Map",
+          desc: "Color-coded choropleth map tracking yield trends per barangay for specific crops identify high and low performing areas at a glance.",
+          hue: "35deg", screenLabel: "AgriTrack · Heat Map",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
+        },
+        {
+          label: "Farm Information Modal",
+          desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
+          hue: "200deg", screenLabel: "AgriTrack · Farm Details",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
+        },
+        {
+          label: "Mapped Farm (Selected)",
+          desc: "Satellite view showing a specific farm's polygon boundary appears when you tap any farm on the map. Displays crop type and area data inline.",
+          hue: "280deg", screenLabel: "AgriTrack · Farm Select",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755824/agritrack_4_vkjx8q.png",
+        },
+        {
+          label: "Map View (Default)",
+          desc: "Full satellite map interface before farm selection all registered farms visible as interactive polygons across San Pablo City's agricultural lands.",
+          hue: "150deg", screenLabel: "AgriTrack · Map Explorer",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
+        },
+      ],
+    },
 
 
   {
@@ -478,6 +478,44 @@ export const PROJECTS = [
         desc: "Complete catalog grid showing all available fashion items with filters and sorting options.",
         hue: "150deg", screenLabel: "Alpshop · All Products",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756434/alpshop_5_p0weeq.png",
+      },
+    ],
+  },
+
+
+  {
+    id: "cytdlp", name: "Cytdlp", short: "Cytdlp",
+    type: "productivity", color: "#2a1f0e", bg: "#fdf3e7",
+    tagline: "Pull video or audio from any link",
+    desc: "Cytdlp is a mobile app that lets you paste any video URL and download it in your chosen format — up to 4K MP4 or extracted MP3 audio. Built on a local Python/Flask backend bundled with yt-dlp, it supports YouTube, SoundCloud, Twitter, and thousands of other sites. Files save directly to your device storage with no cloud middleman.",
+    tags: ["yt-dlp", "Flask", "Capacitor", "Android", "4K", "MP3", "YouTube", "Offline"],
+    viewType: "mobile",
+    github: "https://github.com/CyrusUmali/cytdlp",
+    demo: "https://cyrusumali.github.io/cytdlp/",
+    slides: [
+      {
+        label: "Splash Screen",
+        desc: "Custom loading screen that polls the local Flask server on startup — EQ animation and status dot give live feedback while the Python runtime initializes.",
+        hue: "30deg", screenLabel: "Cytdlp · Startup",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301781/c41f72c7-d3e1-4d74-84cf-c3d93588a747_cv3aig.jpg",
+      },
+      {
+        label: "URL Input & Recent Downloads",
+        desc: "Main screen after startup — paste any video link to look it up, with a recent downloads panel showing thumbnails and file info from the current session.",
+        hue: "35deg", screenLabel: "Cytdlp · Home",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301780/bb071bca-4071-4ee6-b8f6-fbc43132b015_dy5va1.jpg",
+      },
+      {
+        label: "Format Picker",
+        desc: "After lookup, choose between Video or Audio Only tabs — resolution options from 360p up to 4K are shown with estimated file sizes. One tap queues the download.",
+        hue: "28deg", screenLabel: "Cytdlp · Format Select",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301781/ca130943-98bb-4119-b2ac-46fabb0f2382_voocop.jpg",
+      },
+      {
+        label: "Format Picker — Alt Source",
+        desc: "Same format picker flow with a different URL — demonstrating multi-site support. Resolution and audio options adapt to whatever the source platform provides.",
+        hue: "25deg", screenLabel: "Cytdlp · Format Select",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301782/0c5e0c28-772b-49ba-8e41-1b2556ae96e0_zohlon.jpg",
       },
     ],
   },
