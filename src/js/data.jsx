@@ -117,6 +117,13 @@ export const PROJECTS = [
       github: "https://github.com/CyrusUmali/Agritrack_",
       slides: [
         {
+          label: "Agritrack Login Page",
+          desc: "Secure login portal for accessing the AgriTrack system, enabling authorized users to manage agricultural data, monitor farm records, and view analytics.",
+          hue: "140deg",
+          screenLabel: "AgriTrack · Login",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782479262/7aaca0bf-a525-4622-b77a-feb408122d1d.png",
+        },
+        {
           label: "Dashboard Overview",
           desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
           hue: "140deg", screenLabel: "AgriTrack · Dashboard",
@@ -485,7 +492,7 @@ export const PROJECTS = [
 
   {
     id: "cytdlp", name: "Cytdlp", short: "Cytdlp",
-    type: "productivity", color: "#2a1f0e", bg: "#fdf3e7",
+    type: "academic", color: "#2a1f0e", bg: "#fdf3e7",
     tagline: "Pull video or audio from any link",
     desc: "Cytdlp is a mobile app that lets you paste any video URL and download it in your chosen format — up to 4K MP4 or extracted MP3 audio. Built on a local Python/Flask backend bundled with yt-dlp, it supports YouTube, SoundCloud, Twitter, and thousands of other sites. Files save directly to your device storage with no cloud middleman.",
     tags: ["yt-dlp", "Flask", "Capacitor", "Android", "4K", "MP3", "YouTube", "Offline"],
@@ -512,7 +519,7 @@ export const PROJECTS = [
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301781/ca130943-98bb-4119-b2ac-46fabb0f2382_voocop.jpg",
       },
       {
-        label: "Format Picker — Alt Source",
+        label: "Format Picker — Alt Video",
         desc: "Same format picker flow with a different URL — demonstrating multi-site support. Resolution and audio options adapt to whatever the source platform provides.",
         hue: "25deg", screenLabel: "Cytdlp · Format Select",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782301782/0c5e0c28-772b-49ba-8e41-1b2556ae96e0_zohlon.jpg",
