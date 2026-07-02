@@ -275,6 +275,72 @@ export const PROJECTS = [
   },
 
 
+  {
+    "id": "lspuportal",
+    "name": "LSPU Portal",
+    "short": "LSPU Portal",
+    "type": "academic",
+    "color": "#1a4d2e",
+    "bg": "#f0f7f3",
+    "tagline": "Student portal interface clone for learning React & CSS",
+    "desc": "LSPU Portal is a React-based student information system interface clone created as a personal learning project to master React.js and advanced CSS techniques. The project replicates a university portal with features including student dashboard, course curriculum, subject lists, grade management, and faculty directory. Built with React, Tailwind CSS, and React Router for navigation.",
+    "tags": ["React", "Tailwind CSS", "React Router", "Student Portal", "CSS Practice", "UI Clone", "Personal Project"],
+    "viewType": "desktop",
+    "demo": "https://cyrusumali.github.io/LSPU-PORTAL/",
+    "github": "https://github.com/CyrusUmali/LSPU-PORTAL",
+    "slides": [
+      {
+        "label": "Login Page",
+        "desc": "Portal login interface with university branding, username/password fields, and role selection for different user types.",
+        "hue": "140deg",
+        "screenLabel": "LSPU Portal · Login",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001249/Screenshot_828_dpvshj.png"
+      },
+      {
+        "label": "Student Dashboard",
+        "desc": "Main dashboard showing academic summary including annual fee breakdown, upcoming events, and quick access cards to key features.",
+        "hue": "160deg",
+        "screenLabel": "LSPU Portal · Dashboard",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001237/Screenshot_829_qmtc9w.png"
+      },
+      {
+        "label": "Student Profile",
+        "desc": "Personal information page displaying student details including ID, program, year level, contact information, and profile photo.",
+        "hue": "200deg",
+        "screenLabel": "LSPU Portal · Profile",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001234/Screenshot_834_cmekjs.png"
+      },
+      {
+        "label": "Course Curriculum",
+        "desc": "Complete program curriculum showing all subjects organized by year and semester with units, prerequisites, and course codes.",
+        "hue": "220deg",
+        "screenLabel": "LSPU Portal · Curriculum",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001231/Screenshot_832_n0xlyv.png"
+      },
+      {
+        "label": "Subject List",
+        "desc": "Enrolled subjects for the current academic term displaying schedule, instructor, room, and credit units for each course.",
+        "hue": "260deg",
+        "screenLabel": "LSPU Portal · Subjects",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001230/Screenshot_831_e2a5uv.png"
+      },
+      {
+        "label": "Exam Master",
+        "desc": "Grade management page showing student grades across all subjects with subject codes, credit units, and computed GPA.",
+        "hue": "280deg",
+        "screenLabel": "LSPU Portal · Grades",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001230/Screenshot_833_jxgu7i.png"
+      },
+      {
+        "label": "Faculty List",
+        "desc": "Directory of instructors showing faculty members, their subject assignments, and specialization areas.",
+        "hue": "300deg",
+        "screenLabel": "LSPU Portal · Faculty",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783001229/Screenshot_830_crkgrf.png"
+      }
+    ]
+  },
+
 
   {
     id: "primeroadmotors",

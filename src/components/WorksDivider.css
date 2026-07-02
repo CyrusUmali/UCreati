@@ -120,14 +120,14 @@
 
 .wd-heading-wipe {
     display: inline-block;
-    padding-right: 0.12em;   /* buffer for glyphs like f that overhang their box */
-    margin-right: -0.12em;   /* cancel the layout shift from the padding */
-    clip-path: inset(0 calc(100% + 0.12em) 0 0);
+    padding-right: 0.12em;
+    margin-right: -0.12em;
+    clip-path: inset(-0.3em calc(100% + 0.12em) -0.3em 0);
     transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.25s;
 }
 
 .wd-wrap.is-in-view .wd-heading-wipe {
-    clip-path: inset(0 -0.12em 0 0); /* slightly past 0% so the overhang isn't cut */
+    clip-path: inset(-0.3em -0.12em -0.3em 0);
 }
 
 .wd-heading-wipe-2 {
@@ -135,7 +135,7 @@
 }
 
 .wd-wrap.is-in-view .wd-heading-wipe {
-    clip-path: inset(0 0% 0 0);
+    clip-path: inset(-0.3em 0% -0.3em 0);
 }
 
 .wd-heading-outline {
@@ -260,7 +260,7 @@
     backdrop-filter: blur(16px);
 
     border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 12px;
+    border-radius: 8px;
 
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 
@@ -293,7 +293,7 @@
     padding: 10px 16px;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
 
     background: transparent;
     border: 1px solid rgba(0,0,0,0.08);
