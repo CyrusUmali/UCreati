@@ -167,8 +167,8 @@ export default function AboutSection() {
             {/* Stats row - updated for student/intern status */}
             <div className={styles.statsRow}>
               <div className={styles.stripItem}>
-                <span className={styles.stripNum}>788+</span>
-                <span className={styles.stripLabel}>Active Users Served</span>
+                <span className={styles.stripNum}>2026</span>
+                <span className={styles.stripLabel}>BSIT Graduate</span>
               </div>
               <div className={styles.stripDivider} />
               <div className={styles.stripItem}>

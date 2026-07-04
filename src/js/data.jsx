@@ -121,7 +121,7 @@ export const PROJECTS = [
           desc: "Secure login portal for accessing the AgriTrack system, enabling authorized users to manage agricultural data, monitor farm records, and view analytics.",
           hue: "140deg",
           screenLabel: "AgriTrack · Login",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1782479262/7aaca0bf-a525-4622-b77a-feb408122d1d.png",
+          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783141908/77285e20-2d64-4c01-87e2-dd6321f2473e.png",
         },
         {
           label: "Dashboard Overview",
@@ -346,7 +346,7 @@ export const PROJECTS = [
     id: "primeroadmotors",
     name: "Prime Road Motors",
     short: "PrimeRoad",
-    type: "featured",
+    type: "academic",
     color: "#1a2a4a",
     bg: "#f0f4fa",
     demo: "https://prime-road-motors-g3.vercel.app/",

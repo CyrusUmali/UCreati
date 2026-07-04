@@ -71,8 +71,8 @@ export default function HeroSection() {
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
           <IconUsers size={28} stroke={1.5} className={styles.statIcon} />
-          <span className={styles.statNum}>800+</span>
-          <span className={styles.statLabel}>Active Users</span>
+          <span className={styles.statNum}>2026</span>
+          <span className={styles.statLabel}>BSIT Graduate</span>
         </div>
       </div>
 
