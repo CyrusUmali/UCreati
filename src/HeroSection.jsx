@@ -65,7 +65,7 @@ export default function HeroSection() {
         <div className={styles.statDivider} />
         <div className={styles.statItem}>
           <IconBriefcase2 size={28} stroke={1.5} className={styles.statIcon} />
-          <span className={styles.statNum}>20+</span>
+          <span className={styles.statNum}>15+</span>
           <span className={styles.statLabel}>Projects</span>
         </div>
         <div className={styles.statDivider} />

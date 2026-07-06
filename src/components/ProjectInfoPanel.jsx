@@ -1,16 +1,41 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { PROJECT_TYPES } from ".././js/data";
 
+
 // ── Project thumbnail ──
-const ProjThumb = ({ project, isActive, onClick }) => {
+const ProjThumb = ({ project, isActive, distance, onClick }) => {
   const heroImage = project.slides?.find((s) => s.image)?.image || null;
   const [imgError, setImgError] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 600);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const absDist = Math.abs(distance);
+
+  // responsive width table: [active, ±1, further]
+  const widths = isMobile ? [120, 95] : [150, 130];
+  const width = absDist === 0 ? widths[0] : absDist === 1 ? widths[1] : widths[2];
+
+  const scale   = absDist === 0 ? 1 : absDist === 1 ? 0.82 : 0.68;
+  const opacity = absDist === 0 ? 1 : absDist === 1 ? 0.6  : 0.32;
+  const blur    = absDist === 0 ? 0 : absDist === 1 ? 1    : 2.5;
 
   return (
     <button
       onClick={onClick}
       className={`proj-thumb ${isActive ? "proj-thumb-active" : ""}`}
-      style={{ "--thumb-color": project.color }}
+      style={{
+        "--thumb-color": project.color,
+        width: `${width}px`,
+        opacity,
+        filter: `blur(${blur}px)`,
+        transform: `scale(${scale})`,
+      }}
     >
       <div className="proj-thumb-img-wrap" style={{ background: project.bg }}>
         {heroImage && !imgError ? (
@@ -31,6 +56,8 @@ const ProjThumb = ({ project, isActive, onClick }) => {
     </button>
   );
 };
+
+
 
 // ── Main export ──
 export default function ProjectInfoPanel({
@@ -88,6 +115,7 @@ export default function ProjectInfoPanel({
               key={p.id}
               project={p}
               isActive={i === activeProjectIdx}
+              distance={i - activeProjectIdx}
               onClick={() => onProjectSwitch(i)}
             />
           ))}

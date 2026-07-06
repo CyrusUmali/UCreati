@@ -557,6 +557,59 @@ export const PROJECTS = [
 
 
   {
+    "id": "osrs",
+    "name": "Online Student Result System ",
+    "short": "OSRS",
+    "type": "academic",
+    "color": "#2c3e50",
+    "bg": "#f8f9fa",
+    "tagline": "Student records management with CRUD operations",
+    "desc": "Student Management System is a comprehensive web application for managing student records, subjects, classes, and academic results. Built as an early learning project using PHP for backend logic, MySQL for database management, and Bootstrap for responsive UI. Features include analytics dashboard, CRUD operations for subjects and student results, and detailed result breakdown with grade computation.",
+    "tags": ["PHP", "MySQL", "Bootstrap", "CRUD", "Student Records", "Dashboard Analytics", "Grade Management", "Learning Project"],
+    "viewType": "desktop",
+    "demo": "",
+    "github": "https://github.com/CyrusUmali/osrs",
+    "slides": [
+      {
+        "label": "Login Page",
+        "desc": "Secure login interface with username and password fields, designed with a clean gradient background and institution branding.",
+        "hue": "210deg",
+        "screenLabel": "SMS · Login",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783305901/Screenshot_838_v22o9h.png"
+      },
+      {
+        "label": "Analytics Dashboard",
+        "desc": "Administrative dashboard displaying key metrics including total students, total classes, total subjects, and total instructors with visual cards.",
+        "hue": "190deg",
+        "screenLabel": "SMS · Dashboard",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783305900/Screenshot_839_gp89im.png"
+      },
+      {
+        "label": "Subject Management",
+        "desc": "CRUD table for managing subjects showing subject code, name, and assigned instructor. Includes add, edit, and delete functionality.",
+        "hue": "160deg",
+        "screenLabel": "SMS · Subjects",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783305901/Screenshot_841_ryx4tl.png"
+      },
+      {
+        "label": "Student Results",
+        "desc": "CRUD table displaying student results with student code, name, and computed average score. Features search and sorting capabilities.",
+        "hue": "130deg",
+        "screenLabel": "SMS · Results",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783305901/Screenshot_844_hyprj7.png"
+      },
+      {
+        "label": "Result Details Modal",
+        "desc": "Detailed breakdown modal showing individual subject grades, attendance, and other components contributing to the student's overall average.",
+        "hue": "280deg",
+        "screenLabel": "SMS · Result Breakdown",
+        "image": "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783305901/Screenshot_845_xulchk.png"
+      }
+    ]
+  },
+
+
+  {
     id: "cytdlp", name: "Cytdlp", short: "Cytdlp",
     type: "academic", color: "#2a1f0e", bg: "#fdf3e7",
     tagline: "Pull video or audio from any link",
