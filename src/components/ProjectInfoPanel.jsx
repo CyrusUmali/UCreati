@@ -22,8 +22,8 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
   const width = absDist === 0 ? widths[0] : absDist === 1 ? widths[1] : widths[2];
 
   const scale   = absDist === 0 ? 1 : absDist === 1 ? 0.82 : 0.68;
-  const opacity = absDist === 0 ? 1 : absDist === 1 ? 0.6  : 0.32;
-  const blur    = absDist === 0 ? 0 : absDist === 1 ? 1    : 2.5;
+  const opacity = absDist === 0 ? 1 : absDist === 1 ? 0.8  : 0.72;
+  const blur    = absDist === 0 ? 0 : absDist === 1 ? 1    :  1;
 
   return (
     <button
@@ -43,8 +43,8 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
             src={heroImage}
             alt={project.name}
             onError={() => setImgError(true)}
-            className="proj-thumb-img"
-          />
+            className={`proj-thumb-img${project.viewType === "mobile" ? " proj-thumb-img--contain" : ""}`}
+/>
         ) : (
           <div className="proj-thumb-fallback" style={{ color: project.color }}>
             <project.Icon size={20} />

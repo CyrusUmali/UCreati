@@ -352,7 +352,7 @@ export const PROJECTS = [
     demo: "https://prime-road-motors-g3.vercel.app/",
     tagline: "Premium car e-commerce & test drive platform",
     desc: "Prime Road Motors is a full-featured car e-commerce platform built during our OJT internship with a randomly assigned team. The platform enables users to browse vehicles, filter by make/model/price, schedule test drives, and manage appointments. Built with React for the frontend and Node.js for the backend API.",
-    tags: ["E-commerce", "Vehicle listings", "JS", "Team project", "HTHML", "CSS", "Random team"],
+    tags: ["E-commerce", "Vehicle listings", "JS", "Team project", "HTML", "CSS", "Random team"],
     viewType: "desktop",
     github: "https://github.com/yourusername/primeroadmotors",
     slides: [
