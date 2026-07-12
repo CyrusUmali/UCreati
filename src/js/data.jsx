@@ -105,62 +105,85 @@ export const PROJECT_TYPES = {
 export const PROJECTS = [
 
 
-
+{
+  id: "agritrack", 
+  name: "AgriTrack", 
+  short: "AgriTrack",
+  type: "featured", 
+  color: "#1c3d2c", 
+  bg: "#eaf5ef",
+  tagline: "Farm management for local government units",
+  desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
+  tags: [ "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform" , "Node.js"],
+  viewType: "desktop",
+  demo: "https://agritracklp.vercel.app/",
+  github: "https://github.com/CyrusUmali/Agritrack_",
+  slides: [
     {
-      id: "agritrack", name: "AgriTrack", short: "AgriTrack",
-      type: "featured", color: "#1c3d2c", bg: "#eaf5ef",
-      tagline: "Farm management for local government units",
-      desc: "AgriTrack gives municipal agriculture offices a single platform to register farms, track crop production, and report data to the Department of Agriculture replacing paper-based records with live dashboards and exportable reports. Built with Flutter for web, Android, and Windows.",
-      tags: [ "Municipal-level", "DA-compliant", "Barangay mapping", "Multi-crop", "Flutter", "Cross-platform" , "Node.js"],
-      viewType: "desktop",
-      demo: "https://agritracklp.vercel.app/",
-      github: "https://github.com/CyrusUmali/Agritrack_",
-      slides: [
-        {
-          label: "Agritrack Login Page",
-          desc: "Secure login portal for accessing the AgriTrack system, enabling authorized users to manage agricultural data, monitor farm records, and view analytics.",
-          hue: "140deg",
-          screenLabel: "AgriTrack · Login",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783141908/77285e20-2d64-4c01-87e2-dd6321f2473e.png",
-        },
-        {
-          label: "Dashboard Overview",
-          desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
-          hue: "140deg", screenLabel: "AgriTrack · Dashboard",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
-        },
-        {
-          label: "Sector Data Analytics",
-          desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
-          hue: "155deg", screenLabel: "AgriTrack · Sector Analytics",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
-        },
-        {
-          label: "Barangay Yield Heat Map",
-          desc: "Color-coded choropleth map tracking yield trends per barangay for specific crops identify high and low performing areas at a glance.",
-          hue: "35deg", screenLabel: "AgriTrack · Heat Map",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
-        },
-        {
-          label: "Farm Information Modal",
-          desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
-          hue: "200deg", screenLabel: "AgriTrack · Farm Details",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
-        },
-        {
-          label: "Mapped Farm (Selected)",
-          desc: "Satellite view showing a specific farm's polygon boundary appears when you tap any farm on the map. Displays crop type and area data inline.",
-          hue: "280deg", screenLabel: "AgriTrack · Farm Select",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755824/agritrack_4_vkjx8q.png",
-        },
-        {
-          label: "Map View (Default)",
-          desc: "Full satellite map interface before farm selection all registered farms visible as interactive polygons across San Pablo City's agricultural lands.",
-          hue: "150deg", screenLabel: "AgriTrack · Map Explorer",
-          image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
-        },
-      ],
+      label: "Agritrack Login Page",
+      desc: "Secure login portal for accessing the AgriTrack system, enabling authorized users to manage agricultural data, monitor farm records, and view analytics.",
+      hue: "140deg",
+      screenLabel: "AgriTrack · Login",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783141908/77285e20-2d64-4c01-87e2-dd6321f2473e.png",
     },
+    {
+      label: "Dashboard Overview",
+      desc: "Central command for San Pablo City agriculture total farm counts, crop yield summaries, sector distribution, and key metrics at a glance.",
+      hue: "140deg", 
+      screenLabel: "AgriTrack · Dashboard",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
+    },
+    {
+      label: "Sector Data Analytics",
+      desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
+      hue: "155deg", 
+      screenLabel: "AgriTrack · Sector Analytics",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
+    },
+    {
+      label: "Barangay Yield Heat Map",
+      desc: "Color-coded choropleth map tracking yield trends per barangay for specific crops identify high and low performing areas at a glance.",
+      hue: "35deg", 
+      screenLabel: "AgriTrack · Heat Map",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
+    },
+    {
+      label: "Farm Information Modal",
+      desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
+      hue: "200deg", 
+      screenLabel: "AgriTrack · Farm Details",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755818/agritrack_3_sscs7a.png",
+    },
+    {
+      label: "Mapped Farm (Selected)",
+      desc: "Satellite view showing a specific farm's polygon boundary appears when you tap any farm on the map. Displays crop type and area data inline.",
+      hue: "280deg", 
+      screenLabel: "AgriTrack · Farm Select",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755824/agritrack_4_vkjx8q.png",
+    },
+    {
+      label: "Map View (Default)",
+      desc: "Full satellite map interface before farm selection all registered farms visible as interactive polygons across San Pablo City's agricultural lands.",
+      hue: "150deg", 
+      screenLabel: "AgriTrack · Map Explorer",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
+    },
+    {
+      label: "Farmer Chatbot Assistant",
+      desc: "AI-powered chatbot for farmers with quick conversation starters, smart response suggestions extracted from replies, and built-in text-to-speech for accessibility. Helps farmers get instant answers about crop care, weather, and farm advisories.",
+      hue: "210deg",
+      screenLabel: "AgriTrack · Chatbot",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783840819/Screenshot_858_sfqual.png",
+    },
+    {
+      label: "Reports & Data Export",
+      desc: "Comprehensive reports page with print, Excel, and PDF export options. Filter data by report type, apply custom filters, and select specific columns to generate tailored reports for DA submissions and local planning.",
+      hue: "45deg",
+      screenLabel: "AgriTrack · Reports",
+      image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783840819/Screenshot_857_h1tphh.png",
+    },
+  ],
+},
 
 
   {
@@ -262,7 +285,7 @@ export const PROJECTS = [
         label: "Search Books",
         desc: "Advanced search page with filters by title, author, genre, and availability results shown instantly.",
         hue: "310deg", screenLabel: "NovelNexus · Search",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781756213/novelnexus_5_p3mamp.png",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1783841544/94f6be77-91dc-495f-9dc4-2475d1a6e774.png",
       },
       {
         label: "Book Details Page",
