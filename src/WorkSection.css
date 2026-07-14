@@ -472,7 +472,7 @@ img.slide-real-image {
     height: 36px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 50%;
+    border-radius: 8px;
     display: grid;
     place-items: center;
     cursor: pointer;

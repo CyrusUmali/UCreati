@@ -78,7 +78,7 @@ export default function AboutSection() {
           {/* ── Left: Bio ── */}
           <div className={styles.leftCol}>
             <p className={styles.bioText}>
-              I'm a <strong>graduating student at LSPU SPCC</strong>, looking for fullstack or mobile roles where I can build products end to end.
+              I'm a <strong>recent gradute at LSPU SPCC</strong>, looking for fullstack or mobile roles where I can build products end to end.
             </p>
             <p className={styles.bioText}>
               For my capstone project, I handled development from start to finish, covering everything from data modeling and backend logic to the cross-platform frontend.

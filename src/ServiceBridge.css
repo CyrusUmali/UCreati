@@ -100,7 +100,7 @@
     width: 24px;
     height: 1px;
     background: var(--primary-d);
-    opacity: 0.5;
+    opacity: 1;
   }
   
   .sb-edot {
@@ -137,7 +137,7 @@
   
   .sb-heading-outline {
     color: var(--bg);
-    -webkit-text-stroke: 1.5px var(--primary-d);
+    -webkit-text-stroke: 0.5px var(--primary-d);
   }
   
   .sb-sub {
@@ -232,7 +232,11 @@
   
   @media (max-width: 700px) {
     .sb-section {
-      padding: 56px 24px 64px;
+      padding: 56px 40px 64px;
+    }
+
+    .sb-heading {
+      font-size: 50px;
     }
     .sb-rule-left {
       left: 24px;
