@@ -175,7 +175,7 @@
 .form-card {
   background: var(--bg);
   border: 1.5px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem 2.25rem;
   position: relative;
 }
