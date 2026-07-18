@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { PROJECT_TYPES } from ".././js/data";
 import "./WorksDivider.css";
+import './ProjectInfoPanel.css'
 
 
 // ── Project thumbnail ──
@@ -20,7 +21,7 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
 
   // responsive width table: [active, ±1, further]
   const widths = isMobile ? [120, 95] : [150];
-  const width = absDist === 0 ? widths[0] : absDist === 1 ? widths[1] : widths[2];
+  const width = absDist === 0 ? widths[0] : absDist === 1 ? widths[1] : widths[1];
 
   const scale   = absDist === 0 ? 1 : absDist === 1 ? 0.82 : 0.75;
   const opacity = absDist === 0 ? 1 : absDist === 1 ? 0.8  : 0.72;

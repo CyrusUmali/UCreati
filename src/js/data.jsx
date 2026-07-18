@@ -1034,12 +1034,20 @@ export const PROJECTS = [
 
 
 
+// export const skills = [
+//   { name: "Creative Dev", pct: 95, delay: "0.5s" },
+//   { name: "UI / UX Design", pct: 88, delay: "0.65s" },
+//   { name: "Motion & Interaction", pct: 92, delay: "0.8s" },
+//   { name: "3D & WebGL", pct: 74, delay: "0.95s" },
+//   { name: "Design Systems", pct: 85, delay: "1.1s" },
+// ];
+
 export const skills = [
-  { name: "Creative Dev", pct: 95, delay: "0.5s" },
-  { name: "UI / UX Design", pct: 88, delay: "0.65s" },
-  { name: "Motion & Interaction", pct: 92, delay: "0.8s" },
-  { name: "3D & WebGL", pct: 74, delay: "0.95s" },
-  { name: "Design Systems", pct: 85, delay: "1.1s" },
+  { name: "Frontend Development", pct: 95, delay: "0.5s" }, // React, React Native, Flutter, Tailwind
+  { name: "Backend Development", pct: 90, delay: "0.65s" }, // Node.js, Spring Boot, PHP
+  { name: "UI/UX Design", pct: 88, delay: "0.8s" }, // Figma
+  { name: "Database Management", pct: 87, delay: "0.95s" }, // MySQL, Firebase, Supabase
+  { name: "AI & Python", pct: 82, delay: "1.1s" }, // Python, AI/ML
 ];
 
 export const tags = [

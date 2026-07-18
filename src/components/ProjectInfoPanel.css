@@ -59,8 +59,9 @@
 }
 
 .proj-thumb-active .proj-thumb-img-wrap {
-    border-width: 2px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-width: 3px;
+    border-color: var(--ink-mute);
+    box-shadow: 0 8px 24px rgba(177, 245, 134, 0.12);
 }
 
 .proj-thumb-img {

@@ -1,0 +1,398 @@
+/* ProjectInfoPanel specific styles */
+
+/* ── Hero image + vertical thumb list row ── */
+.works-hero-row {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 900px;
+    height: 200px;
+    margin: 1.5rem auto 0;
+    transition: opacity 0.22s ease;
+}
+
+.works-hero-image-wrap {
+    flex: 1 1 40%;
+    max-width: 280px;
+    min-width: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.works-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.works-hero-image--visible {
+    opacity: 1;
+}
+
+.works-hero-image--contain {
+    object-fit: contain;
+}
+
+.works-hero-fallback {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/* ── Hero image loading states ── */
+.hero-skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: panel-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.hero-spinner-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-spinner {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2.5px solid var(--border);
+    border-top-color: var(--ink-mute);
+    animation: panel-spin 0.8s linear infinite;
+}
+
+@keyframes panel-skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@keyframes panel-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Vertical thumb list (scrolls, never expands the layout) ── */
+.works-thumb-list-wrap {
+    flex: 1 1 300px;
+    max-width: 580px; 
+    min-width: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.works-thumb-list-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.works-thumb-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 16px;
+    align-content: start;
+}
+
+.proj-thumb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: none;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.15s;
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+}
+
+.proj-thumb-row:hover {
+    background: var(--surface);
+}
+
+.proj-thumb-row-img-wrap {
+    width: 60px;
+    height: 42px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.proj-thumb-row-active .proj-thumb-row-img-wrap {
+    border-color: var(--thumb-color);
+    border-width: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.proj-thumb-row-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proj-thumb-row-img--visible {
+    opacity: 1;
+}
+
+.proj-thumb-row-img--contain {
+    object-fit: contain;
+}
+
+.proj-thumb-row-fallback {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/* ── Thumb row image loading states ── */
+.thumb-skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: panel-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.thumb-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumb-spinner::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    border-top-color: var(--ink-mute);
+    animation: panel-spin 0.8s linear infinite;
+}
+
+.proj-thumb-row-name {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 500;
+    white-space: normal;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.proj-thumb-row-active .proj-thumb-row-name {
+    color: var(--thumb-color);
+    font-weight: 700;
+}
+
+/* ── Info Panel ── */
+.works-info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 1.5rem auto;
+    max-width: 780px;
+    border-radius: 12px;
+    text-align: center;
+    transition: opacity 0.22s ease;
+}
+
+.works-info-panel-fading {
+    opacity: 0;
+}
+
+/* Left-aligned variant, used under the hero row */
+.works-info-panel-left {
+    align-items: flex-start;
+    text-align: left;
+    margin: 1.75rem auto 0;
+    max-width: 900px;
+}
+
+.works-info-panel-left .info-panel-top,
+.works-info-panel-left .info-panel-tags,
+.works-info-panel-left .info-panel-links {
+    justify-content: flex-start;
+}
+
+.works-info-panel-left .info-panel-desc {
+    max-width: none;
+}
+
+.info-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.info-panel-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.info-panel-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ink-mute);
+    flex-shrink: 0;
+}
+
+.info-panel-tagline {
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.info-panel-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    max-width: 560px;
+}
+
+.info-panel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.info-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    border-radius: 4px;
+}
+
+.info-panel-links {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.info-panel-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.18s;
+}
+
+.info-panel-demo:hover {
+    background: var(--surface);
+}
+
+/* ── Responsive: hero grows wider, list stays a single scrollable column ── */
+@media (max-width: 720px) {
+    .works-hero-row {
+        gap: 14px;
+        height: 200px;
+    }
+    .works-hero-image-wrap {
+        flex: 0 0 65%;
+        max-width: none;
+    }
+    .works-thumb-list-wrap {
+        flex: 1 1 auto;
+        max-width: none;
+    }
+    .works-thumb-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .proj-thumb-row {
+        gap: 10px;
+    }
+    .proj-thumb-row-img-wrap {
+        width: 56px;
+        height: 40px;
+    }
+    .proj-thumb-row-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .works-hero-row {
+        gap: 10px;
+        height: 170px;
+    }
+    .works-hero-image-wrap {
+        flex: 0 0 65%;
+        max-width: none;
+    }
+    .works-thumb-list-wrap {
+        flex: 1 1 auto;
+        max-width: none;
+    }
+    .works-thumb-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .proj-thumb-row {
+        gap: 8px;
+    }
+    .proj-thumb-row-img-wrap {
+        width: 42px;
+        height: 32px;
+    }
+    .proj-thumb-row-name {
+        font-size: 11px;
+    }
+    .works-info-panel-left {
+        text-align: left;
+    }
+}

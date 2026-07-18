@@ -245,7 +245,7 @@
     padding: 2rem 1.875rem;
     display: flex;
     flex-direction: column;
-    border-radius: 24px;
+    border-radius: 12px;
     gap: 0.875rem;
     transition: box-shadow 0.25s, transform 0.25s, background 0.25s;
     position: relative;
@@ -280,7 +280,7 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    border-radius: 50%;
+    border-radius: 12px;
     border: 2px solid rgba(192, 221, 151, 0.45);
     color: var(--primary-p);
     align-self: flex-start;
@@ -344,7 +344,8 @@
   .card-icon-wrap {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-radius: 12px;
     border: 1.5px solid var(--border);
     display: flex;
     align-items: center;

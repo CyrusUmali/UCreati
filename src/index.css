@@ -379,7 +379,8 @@ body {
 @media (max-width: 640px) {
 
 .btn-primary { 
-    padding: 18px 28px; 
+    padding: 18px 20px; 
+    
 } 
 
 .btn-ghost { 
