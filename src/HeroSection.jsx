@@ -25,6 +25,8 @@ export default function HeroSection() {
         <div className={styles.heroEyebrow}>Full-Stack Developer</div>
         <h1 className={styles.heroName}>
           Crafting<br /><em>Digital</em> Worlds
+            
+           {/* Engineering <br /> <em>Digital</em>  Experiences */}
         </h1>
         <p className={styles.heroRole}>
         I design and develop modern web applications, combining strong engineering

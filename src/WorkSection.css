@@ -425,7 +425,7 @@ img.slide-real-image {
 
 @media (max-width: 600px) {
     .works-carousel:not(.works-carousel--mobile) .slide-placeholder {
-        height: 205px;
+        height: 285px;
     }
     
     .works-carousel--mobile .slide-placeholder {

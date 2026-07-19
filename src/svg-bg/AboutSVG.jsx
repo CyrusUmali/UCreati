@@ -27,19 +27,19 @@ export default function AboutSVG() {
         </g>
       </g>
 
-      <polygon fill="var(--accent)" className="anim-accent-triangle" points="1058,342 1054,368 1038,352" />
+      {/* <polygon fill="var(--accent)" className="anim-accent-triangle" points="1058,342 1054,368 1038,352" /> */}
 
       <g transform="translate(0, -300)">
-        <g className="anim-diamond-group-4" style={{ transformOrigin: "60px 620px" }}>
-          <path fill="var(--surface)" d="M60,740L-50,630c-16-16-16-42,0-58L60,462c16-16,42-16,58,0L178,520c16,16,16,42,0,58L118,740C102,756,76,756,60,740z" />
-          <path fill="none" stroke="var(--primary)" strokeWidth="1.2" className="anim-fill-pulse-3" d="M56,758L-54,648c-16-16-16-42,0-58L56,480c16-16,42-16,58,0L174,538c16,16,16,42,0,58L114,758C98,774,72,774,56,758z" />
+        <g className="anim-diamond-group-4" style={{ transformOrigin: "76px 588px" }}>
+          <path fill="var(--surface)" d="M-54,556L77,426c18-18,46-18,64,0L207,556c18,18,18,46,0,64L77,750c-18,18,-46,18,-64,0L-54,620C-72,602,-72,574,-54,556z" />
+          <path fill="none" stroke="var(--primary)" strokeWidth="1.2" className="anim-fill-pulse-3" d="M-68,552L63,422c18-18,46-18,64,0L221,552c18,18,18,46,0,64L91,746c-18,18,-46,18,-64,0L-68,616C-86,598,-86,570,-68,552z" />
         </g>
         <g className="anim-diamond-group-5" style={{ transformOrigin: "170px 500px" }}>
           <path fill="var(--primary-p)" opacity="0.8" d="M170,558L138,526c-12-12-12-31,0-43L170,451c12-12,31-12,43,0L255,483c12,12,12,31,0,43L213,558C201,570,182,570,170,558z" />
           <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.6" d="M167,576L135,544c-12-12-12-31,0-43L167,469c12-12,31-12,43,0L252,501c12,12,12,31,0,43L210,576C198,588,179,588,167,576z" />
         </g>
-        <g className="anim-diamond-group-2" style={{ transformOrigin: "55px 430px" }}>
-          <path fill="var(--primary)" className="anim-fill-pulse-1" opacity="0.7" d="M55,490L25,460c-10-10-10-26,0-36L55,394c10-10,26-10,36,0L127,424c10,10,10,26,0,36L91,490C81,500,65,500,55,490z" />
+        <g className="anim-diamond-group-2" style={{ transformOrigin: "279px 418px" }}>
+          <path fill="var(--primary)" className="anim-fill-pulse-1" opacity="0.7" d="M279,478L249,448c-10-10-10-26,0-36L279,382c10-10,26-10,36,0L351,412c10,10,10,26,0,36L315,478C305,488,289,488,279,478z" />
         </g>
       </g>
       {/* Trailing ellipses - adjusted positions to match the moved diamonds */}

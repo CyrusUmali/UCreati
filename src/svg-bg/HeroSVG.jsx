@@ -101,7 +101,7 @@ useEffect(() => {
         <path fill="var(--primary-p)" opacity="0.78" d="M1129,275L1096,242c-14-14-14-37,0-51L1129,158c14-14,37-14,51,0L1213,191c14,14,14,37,0,51L1180,275C1166,289,1143,289,1129,275z" />
         <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.65" d="M1126,293L1093,260c-14-14-14-37,0-51L1126,176c14-14,37-14,51,0L1210,209c14,14,14,37,0,51L1177,293C1163,307,1140,307,1126,293z" />
       </g>
-      <polygon fill="var(--accent)" className="anim-accent-triangle" points="1033,587 1029,620 1010,600" />
+      {/* <polygon fill="var(--accent)" className="anim-accent-triangle" points="1033,587 1029,620 1010,600" /> */}
       <ellipse cx="76" cy="119" rx="240" ry="240" fill="none" stroke="var(--primary)" strokeWidth="0.5" opacity="0" style={{ transformOrigin: "76px 119px", animation: "trailFade 6s ease-out 1s infinite" }} />
       <ellipse cx="76" cy="119" rx="240" ry="240" fill="none" stroke="var(--primary)" strokeWidth="0.5" opacity="0" style={{ transformOrigin: "76px 119px", animation: "trailFade 6s ease-out 3.5s infinite" }} />
       <ellipse cx="1173" cy="544" rx="220" ry="220" fill="none" stroke="var(--primary)" strokeWidth="0.5" opacity="0" style={{ transformOrigin: "1173px 544px", animation: "trailFade 7s ease-out 2s infinite" }} />

@@ -42,7 +42,7 @@ export default function WorksSVG() {
             <path fill="var(--primary-p)" opacity="0.8" d="M1140,415L1104,379c-13-13-13-35,0-48L1140,295c13-13,35-13,48,0L1224,331c13,13,13,35,0,48L1188,415C1175,428,1153,428,1140,415z" />
             <path fill="none" stroke="var(--primary)" strokeWidth="1" opacity="0.5" d="M1137,434L1101,398c-13-13-13-35,0-48L1137,314c13-13,35-13,48,0L1221,350c13,13,13,35,0,48L1185,434C1172,447,1150,447,1137,434z" />
           </g>
-          <polygon fill="var(--accent)" className="at" points="1050,360 1046,386 1030,370" style={{ transform: "translate(60px, -20px)" }} />
+          {/* <polygon fill="var(--accent)" className="at" points="1050,360 1046,386 1030,370" style={{ transform: "translate(60px, -20px)" }} /> */}
         </g>
         <g className="dg4" style={{ transformOrigin: "50px 680px", transform: "translate(-20px, 10px)" }}>
           <path fill="var(--surface)" d="M50,800L-60,690c-16-16-16-42,0-58L50,522c16-16,42-16,58,0L168,580c16,16,16,42,0,58L108,800C92,816,66,816,50,800z" />
