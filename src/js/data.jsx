@@ -141,26 +141,19 @@ export const PROJECTS = [
         screenLabel: "AgriTrack · Dashboard",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755813/agritrack_dideql.png",
       },
-      {
-        label: "Sector Data Analytics",
-        desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
-        hue: "155deg",
-        screenLabel: "AgriTrack · Sector Analytics",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
-      },
+      // {
+      //   label: "Sector Data Analytics",
+      //   desc: "Breakdown of production data by sector compare yield performance across different farm types and crop categories.",
+      //   hue: "155deg",
+      //   screenLabel: "AgriTrack · Sector Analytics",
+      //   image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755814/agritrack_1_iqx7b0.png",
+      // },
       {
         label: "Barangay Yield Heat Map",
         desc: "Color-coded choropleth map tracking yield trends per barangay for specific crops identify high and low performing areas at a glance.",
         hue: "35deg",
         screenLabel: "AgriTrack · Heat Map",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755815/agritrack_2_qud5to.png",
-      },
-      {
-        label: "Farm Information Modal",
-        desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
-        hue: "200deg",
-        screenLabel: "AgriTrack · Farm Details",
-        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755818/agritrack_3_sscs7a.png",
       },
       {
         label: "Mapped Farm (Selected)",
@@ -175,6 +168,15 @@ export const PROJECTS = [
         hue: "150deg",
         screenLabel: "AgriTrack · Map Explorer",
         image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755828/agritrack_5_raofmd.png",
+      },
+
+      
+      {
+        label: "Farm Information Modal",
+        desc: "Detailed farm profile with owner details, location, crop list, and built-in production analytics all accessible in one modal view.",
+        hue: "200deg",
+        screenLabel: "AgriTrack · Farm Details",
+        image: "https://res.cloudinary.com/dk41ykxsq/image/upload/v1781755818/agritrack_3_sscs7a.png",
       },
       {
         label: "Farmer Chatbot Assistant",

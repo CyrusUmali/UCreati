@@ -4,11 +4,16 @@ import "./WorksDivider.css";
 import './ProjectInfoPanel.css'
 
 
+import { Star, Gamepad2, GraduationCap, Bot, Sparkles } from "lucide-react";
+
+
+ 
 // ── Project thumbnail ──
 const ProjThumb = ({ project, isActive, distance, onClick }) => {
   const heroImage = project.slides?.find((s) => s.image)?.image || null;
   const [imgError, setImgError] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const FallbackIcon = TYPE_ICONS[project.type] || Star;
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth <= 600);
@@ -18,7 +23,7 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
   }, []);
 
   const absDist = Math.abs(distance);
-
+ 
   // responsive width table: [active, ±1, further]
   const widths = isMobile ? [120, 95] : [150];
   const width = absDist === 0 ? widths[0] : absDist === 1 ? widths[1] : widths[1];
@@ -46,10 +51,10 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
             alt={project.name}
             onError={() => setImgError(true)}
             className={`proj-thumb-img${project.viewType === "mobile" ? " proj-thumb-img--contain" : ""}`}
-/>
+          />
         ) : (
           <div className="proj-thumb-fallback" style={{ color: project.color }}>
-            <project.Icon size={20} />
+            <FallbackIcon size={20} />
           </div>
         )}
       </div>
@@ -58,8 +63,36 @@ const ProjThumb = ({ project, isActive, distance, onClick }) => {
     </button>
   );
 };
+const TYPE_ICONS = {
+  featured: Star,
+  ml: Bot,
+  productivity: Sparkles,
+  game: Gamepad2,
+  academic: GraduationCap,
+};
 
 
+
+// ── Type filter icon button ──
+const TypeIconChip = ({ typeKey, isActive, onClick }) => {
+  const pt = PROJECT_TYPES[typeKey];
+  const Icon = TYPE_ICONS[typeKey] || Star; // fallback in case a type is missing an icon
+  return (
+    <button
+      onClick={onClick}
+      className={`type-icon-chip ${isActive ? "type-icon-chip-active" : ""}`}
+      style={{
+        borderColor: isActive ? pt.color : "var(--border)",
+        background: isActive ? "var(--primary)" : "var(--bg)",
+        color: isActive ? "#EAF3DE" : pt.color,
+      }}
+      aria-label={pt.label}
+      title={pt.label}
+    >
+      <Icon size={20} />
+    </button>
+  );
+};
 
 // ── Main export ──
 export default function ProjectInfoPanel({
@@ -68,6 +101,9 @@ export default function ProjectInfoPanel({
   activeProj,
   infoFading,
   onProjectSwitch,
+  allProjects,
+  activeType,
+  onTypeChange,
 }) {
   const t = activeProj ? PROJECT_TYPES[activeProj.type] : null;
 
@@ -102,6 +138,20 @@ export default function ProjectInfoPanel({
 
   return (
     <>
+      {/* ── Type filter icon strip ── */}
+      {allProjects && (
+        <div className="type-icon-strip">
+          {[...new Set(allProjects.map((p) => p.type))].map((k) => (
+            <TypeIconChip
+              key={k}
+              typeKey={k}
+              isActive={activeType === k}
+              onClick={() => onTypeChange(k)}
+            />
+          ))}
+        </div>
+      )}
+
       {/* ── Horizontal project thumb strip ── */}
       <div className="works-thumb-strip-wrap">
         {thumbScroll.left && (
@@ -152,6 +202,7 @@ export default function ProjectInfoPanel({
           {(activeProj.github || activeProj.demo) && (
             <div className="info-panel-links">
               {activeProj.github && (
+                
                 <a
                   href={activeProj.github}
                   target="_blank"

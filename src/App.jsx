@@ -26,7 +26,11 @@ export default function App() {
         activeType={activeType}
         onTypeChange={setActiveType}
       />
-      <WorksSection activeType={activeType} />
+      
+      <WorksSection
+  activeType={activeType}
+  onTypeChange={setActiveType}
+/>
       <ServiceBridge />
       <ServicesSection />
       <ContactSection />

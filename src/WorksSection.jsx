@@ -6,7 +6,8 @@ import { PROJECTS } from "./js/data";
 import ProjectInfoPanel from "./components/ProjectInfoPanel";
 import Carousel from "./components/Carusel";
 
-export default function WorksSection({ activeType }) {
+
+export default function WorksSection({ activeType, onTypeChange }) {
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [infoFading, setInfoFading] = useState(false);
@@ -93,13 +94,15 @@ export default function WorksSection({ activeType }) {
 
       <div className="works-inner">
 
-        {/* ── Filter + thumbnails + info panel ── */}
-        <ProjectInfoPanel
+      <ProjectInfoPanel
           filteredProjects={filteredProjects}
           activeProjectIdx={activeProjectIdx}
           activeProj={activeProj}
           infoFading={infoFading}
           onProjectSwitch={handleProjectSwitch}
+          allProjects={PROJECTS}
+          activeType={activeType}
+          onTypeChange={onTypeChange}
         />
 
         {/* ── Carousel (or empty state) ── */}

@@ -159,7 +159,7 @@ export default function WorksDivider({ allProjects, activeType, onTypeChange }) 
       <div className="wd-bottom-diamond" />
       </div>
  
-      <div className="works-filter-strip">
+      {/* <div className="works-filter-strip">
         {[...new Set(allProjects.map((p) => p.type))].map((k) => (
           <TypeChip
             key={k}
@@ -168,9 +168,9 @@ export default function WorksDivider({ allProjects, activeType, onTypeChange }) 
             count={allProjects.filter((p) => p.type === k).length}
             isActive={activeType === k}
             onClick={() => onTypeChange(k)}
-          />
+          /> 
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

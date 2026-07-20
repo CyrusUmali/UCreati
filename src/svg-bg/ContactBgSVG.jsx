@@ -58,8 +58,8 @@ export default function ContactBgSVG() {
         </g>
   
         {/* accent triangles — reuses .anim-accent-triangle from index.css */}
-        <polygon fill="var(--accent)" className="anim-accent-triangle" points="1028,582 1024,615 1005,595" />
-        <polygon fill="var(--accent)" className="anim-accent-triangle" opacity="0.6" points="195,460 191,485 175,470" style={{ animationDelay: "1.2s" }} />
+        {/* <polygon fill="var(--accent)" className="anim-accent-triangle" points="1028,582 1024,615 1005,595" />
+        <polygon fill="var(--accent)" className="anim-accent-triangle" opacity="0.6" points="195,460 191,485 175,470" style={{ animationDelay: "1.2s" }} /> */}
   
         {/* ripple trails */}
         <ellipse cx="70" cy="110" rx="230" ry="230" fill="none" stroke="var(--primary)" strokeWidth="0.5" opacity="0"
